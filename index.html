@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>StringCalc</title>
+
+		<meta charset="utf-8">
+
+    <link rel="apple-touch-startup-image" href="images/lutes.png">
+    <link rel="apple-touch-icon" href="images/rose.png">
+
+		<meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+		<link rel="stylesheet" href="css/jquery.mobile.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="js/jquery.1.6.4.js"></script>
+		<script src="js/stringCalc.js"></script>
+		<script src="js/jquery.mobile.1.1.0.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Opening page -->
+
+		<div data-role="page" data-iscroll="enable" id="index" data-theme="c">
+
+			<div data-role="header">
+				<h1>StringCalc</h1>
+			</div>
+
+			<div data-role="content" class="iOSlist-container">
+
+				<ul data-role="none">
+					<li><a class="instrument-type" data-instrument-type="bowed" href="#instrument-lists-page">Bowed instruments</a></li>
+					<li><a class="instrument-type" data-instrument-type="plucked" href="#instrument-lists-page">Plucked instruments</a></li>
+					<li><a href="#custom-tunings-page">Custom tunings</a></li>
+					<li><a href="#saved-results-page">Saved results</a></li>
+					<li><a class="instrument-type quickie" data-instrument-type="quickie" href="#options">Quick calculation</a></li>
+				</ul>
+
+				<ul data-role="none">
+					<li><a href="#instructions">How to use the calculator</a></li>
+					<!-- <li><a href="#settings">Settings</a></li> -->
+					<li><a href="#about">About StringCalc</a></li>
+				</ul>
+
+			</div>
+
+		</div>
+
+
+		<!-- Instrument lists page -->
+		
+		<div data-role="page" id="instrument-lists-page" data-theme="c" dataprefech>
+	
+			<div data-role="header">			
+				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Select an instrument</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" id="instrument-list-container" class="iOSlist-container"></div>
+					
+		</div>
+
+
+		<!-- Options -->
+
+		<div data-role="page" id="options" data-theme="c" dataprefech>
+		
+			<div data-role="header" class="header">
+				<a id="options-page-back-link" href="#instrument-lists-page" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1 id="options-title"></h1>
+				<a id="home-link" href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" id="optionsContent" class="iOSlist-container"></div>
+			
+		</div>
+
+
+		<!-- Custom instruments / tunings page -->
+				
+		<div data-role="page" id="custom-tunings-page" data-theme="c">
+	
+			<div data-role="header">
+				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Custom Tunings</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" id="custom-tunings-container" class="iOSlist-container"></div>
+			
+		</div>
+
+
+		<!-- Saved results page -->
+				
+		<div data-role="page" id="saved-results-page" data-theme="c">
+	
+			<div data-role="header">
+				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Saved Results</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" id="saved-results-container"></div>
+			
+		</div>
+
+
+		<!-- Individual results page -->
+				
+		<div data-role="page" id="individual-results-page" data-theme="c">
+	
+			<div data-role="header">
+				<a href="#saved-results-page" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Saved Results</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content">
+			
+				<div id="individual-results-container" class="pretty-bg"></div>
+				
+				<a id="delete-these-results" class="button" href="#">Delete results</a>
+								
+			</div>
+			
+		</div>
+
+
+		<!-- Edit Custom instruments / tunings page -->
+				
+		<div data-role="page" id="edit-custom-tunings-page" data-theme="c">
+	
+			<div data-role="header">
+				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Edit Custom Tunings</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" id="edit-custom-daddy">
+		
+			  <div id="edit-custom-container" data-role="collapsible-set"></div>
+								
+			</div>
+					
+		</div>
+
+
+		<!-- Edit Current instrument tuning page -->
+				
+		<div data-role="page" id="edit-current-custom-tuning-page" data-theme="c">
+		
+			<div data-role="header">
+				<h1>Edit Custom Tuning</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c" class="container">
+			
+				<div data-role="fieldcontain">
+				
+					<label for="editCustomTuningName">Enter a name for the instrument / tuning</label>
+						<input type="text" id="editCustomTuningName" name="customTuningName"  />
+					
+					<label class="whatUnit" for="editCustomTuningStringLength">Enter a string length (in <span></span>) *</label>
+						<input type="number" id="editCustomTuningStringLength"  />
+											
+					<p>Enter a note in the format <strong>A4</strong>. Start with the highest (top) string</p>
+			    
+			    <div id="edit-current-container"></div>
+				     	
+					<a class="button addNewNote" class="button">Add another string</a>
+				
+				</div>
+				
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a">
+						<a class="button cancelCustomTuning">Cancel</a>
+					</div>
+					<div class="ui-block-b">
+						<a class="button" id="editCustomTuning">Save</a>
+					</div>
+				</fieldset>
+				
+			</div>
+		
+		</div>
+
+
+		<!-- Settings page -->
+		
+		<div data-role="page" id="settings" data-theme="c">
+		
+			<div data-role="header">
+				
+				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Settings</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			
+			</div>
+			
+			<div data-role="content">
+		
+				<div data-role="fieldcontain">
+				
+					<fieldset data-role="controlgroup">
+						
+						<label for="metric">Metric</label>
+		       		<input class="metric" type="radio" name="metric" data-key="metric" id="metric" value="metric" />
+
+		       <label for="imperial">Imperial *</label>		
+		       		<input class="metric" type="radio" name="metric" data-key="metric" id="imperial" value="imperial" />
+							
+					</fieldset>
+				
+				</div>
+				
+				<p>* Custom densities must be given in kg/m&sup3;</p>
+			
+			</div>
+			
+		</div>
+
+
+
+		<!-- pitch -->		
+
+		<div data-role="page" id="pitch" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Select Pitch</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c">
+		
+				<div data-role="fieldcontain" id="pitch-container"></div>
+					
+				<div data-role="field contain" class="quickChange">
+					<input id="customPitch" type="number" name="pitch" data-key="pitch"  placeholder="Enter any pitch in Hz" />
+				</div>
+				
+				<a class="button" data-rel="back">Ok</a>
+				
+			</div>
+		
+		</div>
+
+
+
+		<!-- Materials -->
+
+		<div data-role="page" id="material" data-theme="c">
+
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Materials</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c">
+		
+				<div data-role="fieldcontain" id="material-container"></div>
+					
+				<div data-role="field contain">
+					<input id="customDensity" type="number" name="density" data-key="density"  placeholder="Enter any density in kg/m&sup3;" />
+				</div>
+				
+				<a class="button" data-rel="back">Ok</a>
+				
+			</div>
+		
+		</div>
+
+
+
+		<!-- String Length -->		
+
+		<div data-role="page" id="string-length" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>String Length</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+			
+				<div id="string-length-container"></div>
+				
+				<a class="button" data-rel="back">Ok</a>
+				
+				<p>* The string length or <em>'scale length'</em> is the measured as the distance between the nut and the bridge on an instrument.</p>
+				<p>The provided measurements are averages only. For more accurate results it's recommended that you take your own measurements.</p>
+		
+			</div>
+			
+		</div>
+
+
+		<!-- Get number of courses for various pluckers -->
+
+		<div data-role="page" id="number-courses" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Number of courses</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+		
+				<div data-role="fieldcontain" id="num-courses-div">
+					<label for="num-courses">Number of courses</label>
+						<input type="range" id="num-courses" />
+				</div>
+				
+				<a class="button" data-rel="back">Ok</a>
+		
+			</div>
+			
+		</div>
+
+
+
+		<!-- Get number of fretted courses for archlutes and theorboes -->
+
+		<div data-role="page" id="number-fretted-courses" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Fretted Courses</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+		
+				<div data-role="fieldcontain">
+					<label for="frettedCourses">Number of fretted courses</label>
+					<input type="range" class="frettedCourses" id="frettedCourses" data-key="frettedCourses"  min="0" max="16" />
+				</div>
+				
+				<a class="button" data-rel="back">Ok</a>
+		
+			</div>
+			
+		</div>
+
+
+		<!-- Get number of octave courses for lutes &co. -->
+
+		<div data-role="page" id="octave-courses" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Fretted Courses</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+			
+				<div data-role="fieldcontain" id="octave-courses-container">
+					<label id="labLab" for="octaveCourses">Show octave stringing from course:</label>
+					<input type="range" class="octaveCourses" id="octaveCourses" data-key="octaveCourses" />
+	      </div>
+
+				<div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup">
+			    	<input class="yes-no-octaves" type="radio" name="yes-no-octaves" id="yes-octaves" value="yes" checked="checked" />
+			      <label for="yes-octaves">Show octave courses</label>
+	         	<input class="yes-no-octaves" type="radio" name="yes-no-octaves" id="no-octaves" value="no"  />
+	         	<label for="no-octaves">Don't show octave courses</label>
+	        </fieldset>
+	      </div>
+				
+				<a class="button" data-rel="back">Ok</a>
+		
+			</div>
+			
+		</div>
+
+
+		<!-- Tunings for the diapasons. -->
+
+		<div data-role="page" id="diapason-tuning" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Diapason tuning</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+				
+				<fieldset class="pretty-bg custom-select-pitch-container">
+					<div id="diapason-show-hide">
+						<div class="cnc" id="diapason-tuning-note-container"></div>
+						<div class="cnc" id="diapason-tuning-octave-container"></div>
+						<div class="cust-desc">
+							<a href="#">Ok</a>
+						</div>
+					</div>
+					<div class="clear" id="diapason-tuning-container"></div>
+				</fieldset>
+				
+				<a class="button" data-rel="back">Ok</a>
+		
+			</div>
+			
+		</div>
+
+
+		<!-- Select single or double courses for diapason strings. -->
+
+		<div data-role="page" id="single-diapasons-page" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Diapasons</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+		
+			<div data-role="content" data-theme="c">
+
+				<div data-role="fieldcontain">
+			    <fieldset class="ctcd" data-role="controlgroup" data-type="horizontal">
+			    	<input class="single-double-diapasons" type="radio" name="single-double-diapasons" id="single-diapasons" value="single" checked="checked" />
+			      <label for="single-diapasons">Single courses</label>
+	         	<input class="single-double-diapasons" type="radio" name="single-double-diapasons" id="double-diapasons" value="double"  />
+	         	<label for="double-diapasons">Double courses</label>
+	        </fieldset>
+	      </div>
+				
+				<a class="button" data-rel="back">Ok</a>
+		
+			</div>
+			
+		</div>
+
+
+		<!-- Dynamic tunings page template -->
+
+		<div data-role="page" id="dynamic-tuning" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Select Tuning</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c" id="tunings-container">
+				
+				<a class="button" data-rel="back">Ok</a>
+				
+			</div>
+		
+		</div>
+
+
+
+		<!-- Calculation Page template -->
+		
+		<div data-cache="false" data-role="page" id="calculations-page" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1 id="instrument-name"></h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" class="content calcsContainer">
+
+			<!--
+				<div data-role="fieldcontain" class="lessPad">
+			    <fieldset class="ctcd" data-role="controlgroup" data-type="horizontal" class="select-tension-diameter">
+			    	<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-1" value="tension" checked="checked" />
+			      <label for="radio-choice-1">Tension</label>
+	         	<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-2" value="diameter"  />
+	         	<label for="radio-choice-2">Diameter</label>
+	        </fieldset>
+	      </div>
+	      <div id="tension-container">
+					<fieldset class="r-grid-3 pretty-bg">
+						<div class="rg-1" id="tension-1-container"></div>
+						<div class="point">.</div>
+						<div class="rg-2" id="tension-2-container"></div>
+						<div class="rg-3">
+							<p><span class="unitDensity"></span> = <span class="diameterResults"></span></p>
+						</div>
+					</fieldset>
+	      </div>
+	      <div id="diameter-container">
+					<fieldset class="r-grid-3 pretty-bg">
+						<div class="rg-1" id="diameter-1-container"></div>
+						<div class="point">.</div>
+						<div class="rg-2" id="diameter-2-container"></div>
+						<div class="rg-3">
+							<p><span class="unitDiameter"></span> = <span class="tensionResults"></span></p>
+						</div>
+					</fieldset>
+	      </div>
+			-->
+			
+
+				<div id="selectBox"></div>
+				
+	      <div data-role="fieldcontain" class="lessPad">
+		    	<fieldset class="ctcd select-tension-diameter" data-role="controlgroup" data-type="horizontal">
+		    		<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-1" value="tension" />
+			      <label for="radio-choice-1">Tension</label>
+	         	<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-2" value="diameter"  />
+  	       	<label for="radio-choice-2">Diameter</label>
+    	    </fieldset>
+    	  </div>
+        
+			  <div class="calc-1">
+	      	<input type="number" id="tension-diameter-input">
+	      </div>
+	      <div class="calc-2">
+	      	<span id="tension-diameter-span"></span>
+	      </div>
+	      <div class="calc-3">
+	      	<a id="calc-button" class="button" href="#">Go</a>
+	      </div>
+				
+				<div class="clear"></div>
+				
+	      <div class="pretty-bg" id="calc-results"></div>
+	      
+	      <a id="save-this-calculation" class="button">Save this calculation</a>
+	      
+	      <div id="save-calcs-container"></div>
+	      
+	      <div class="iOSlist-container">
+				
+					<ul data-role="none">
+						<li><a href="#custom-note">Calculate custom note</a></li>
+						<li><a href="#calculation-help">Help using the calculator</a></li>
+					</ul>
+					
+				</div>
+										
+			</div>
+
+		</div>	
+
+
+		<!-- Custom note templates -->
+
+		<div data-role="page" id="custom-note" data-theme="c">
+		
+			<div data-role="header">
+				<a data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext">Back</a>
+				<h1>Choose a note</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" class="cust-calcs-container">
+			
+				<fieldset class="pretty-bg custom-select-pitch-container">
+					<div class="cust-desc">
+						<p class="cust-select-help">Select note &amp; octave *</p>
+					</div>
+					<div class="cnc" id="cust-select-note-container"></div>
+					<div class="cnc" id="cust-select-octave-container"></div>  
+				</fieldset>
+				
+				<div data-role="fieldcontain" class="lessPad">
+			    <fieldset class="ctcd select-tension-diameter" data-role="controlgroup" data-type="horizontal">
+			    	<input class="tension-diameter" type="radio" name="tensDiam" id="cust-radio-choice-1" value="tension" checked="checked" />
+			      <label for="cust-radio-choice-1">Tension</label>
+	         	<input class="tension-diameter" type="radio" name="tensDiam" id="cust-radio-choice-2" value="diameter"  />
+	         	<label for="cust-radio-choice-2">Diameter</label>
+	        </fieldset>
+	      </div>
+	      
+	      <div id="cust-tension-container">
+					<fieldset class="r-grid-3 pretty-bg">
+						<div class="rg-1" id="cust-tension-1-container"></div>
+						<div class="point">
+							.
+						</div>
+						<div class="rg-2" id="cust-tension-2-container"></div>
+						<div class="rg-3">
+							<p>Kg = <span class="diameterResults"></span></p>
+						</div>
+					</fieldset>
+	      </div>
+	      
+	      <div id="cust-diameter-container">
+					<fieldset class="r-grid-3 pretty-bg">
+						<div class="rg-1" id="cust-diameter-1-container"></div>
+						<div class="point">
+							.
+						</div>
+						<div class="rg-2" id="cust-diameter-2-container"></div>
+						<div class="rg-3">
+							<p>mm = <span class="tensionResults"></span></p>
+						</div>
+					</fieldset>
+	      </div>
+	      
+	      <p>Select a note and octave from above to perform a custom calculation. You can use the chart below to help you calculate the correct notation for the pitch you're looking for.</p>
+				<img class="nice-img" src="images/pitch.png" alt="pitch notation">				
+			
+			</div>
+		
+		</div>
+
+
+
+
+		<!-- Custom tuning page template -->
+
+		<div data-role="page" id="create-custom-tuning-page" data-theme="c">
+		
+			<div data-role="header">
+				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Create custom tuning</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c" id="create-custom-tuning-container">
+			
+				<div data-role="fieldcontain">
+					<input class="nicelySpaced customTuningName" type="text" id="customTuningName"  placeholder="Name of the instrument/tuning">
+					<input class="nicelySpaced customTuningStringLength" type="number" id="customTuningStringLength"  placeholder="String length (optional)">
+				</div>
+				
+				<fieldset class="pretty-bg custom-select-pitch-container">
+					<div class="cnc" id="cust-tuning-note-container"></div>
+					<div class="cnc" id="cust-tuning-octave-container"></div>
+					<div class="cust-desc" id="plus-button-container">
+						<a data-role="button" data-icon="plus" id="add-custom-tuning-note" data-iconpos="notext">Add note</a>
+					</div>
+				</fieldset>
+				
+				<div id="custom-tuning-ol-container">
+				
+					<ol id="custom-tuning-ol"></ol>
+					
+				</div>
+		      
+	      <p id="cust-tuning-help">Select a note and octave from above and click the plus symbol to add the note to your tuning. You can use the chart below to help you calculate the correct notation for the pitch you're looking for.</p>
+				<img class="nice-img" src="images/pitch.png" alt="pitch notation">
+				
+			</div>
+		
+		</div>
+
+
+
+		<!-- About page -->
+
+		<div data-role="page" id="about" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>About</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content">
+		
+				<p><strong>StringCalc</strong> was designed and built by Richard Sweeney in Malm&ouml;, Sweden.</p>
+				<p>The formulae to calculate tension &amp; diameter were generously shared by Arto Wikla whose online String Calculator (that I've been using for years!) was the inspiration behind this app.</p>
+			
+			</div>
+			
+		</div>
+
+
+		<!-- Instructions page -->
+
+		<div data-role="page" id="instructions" data-theme="c">
+		
+			<div data-role="header">
+				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Instructions</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content">
+				
+				<div data-role="collapsible-set">
+					
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>Step by step instructions</h3>
+						
+						<ul>
+							<li>Choose an instrumental group (bowed or plucked)</li>
+							<li>Select your instrument from the list on the following page</li>
+							<li>Change the relevant options for your instrument - <strong>material</strong>, <strong>pitch</strong> and <strong>sting length</strong></li>
+							<li>When you're happy with this, click ok to go to the calculations page</li>
+							<li>The calculations page lists the stings on the selected instrument in descending order (highest to lowest)</li>
+						</ul>
+				
+					</div>
+					
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>Calculating the tension</h3>
+				
+						<p><strong>Example 1:</strong> Calculate the tension of the top string on a lute in kg.</p>
+						
+						<p>The highest pitched sting on a lute usually has a diameter of around <strong>.44 mm</strong>. Click on the first string and type <strong>44</strong> in the text field that appears (leave out the decimal point and unit of measurement). Click <strong>Calculate Tension</strong> to perform the calculation.</p>
+						<p><strong>Example 2:</strong> Calculate the tension of the top string on a guitar in lbs.</p>
+						
+						<p>Let's say the highest string on my guitar is <strong>0.028 inches</strong> in diameter. Click on the first string and just enter <strong>0.028</strong> in the text field. Click <strong>Calculate Tension</strong> to get the tension.</p>
+				
+					</div>
+					
+					<div data-role="collapsible" data-collapsed="true">
+									
+						<h3>Calculating the diameter</h3>
+						
+						<p><strong>Example 1:</strong> Calculate the diameter of the e string on a baroque violin in mm.</p>
+						
+						<p>Let's say I want to find out how thick a string should use at a a tension of <strong>6 kg</strong>. Click on the first string and enter the number <strong>6</strong> in the text field (you can leave out the kg). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
+						
+						<p><strong>Example 2:</strong> Calculate the diameter of the top string on a ukulele in inches.</p>
+						
+						<p>I want my uke's top string to have a tension of <strong>8 lbs</strong>. Click on the first string and enter the number <strong>8</strong> in the text field (you can leave out the lbs). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
+							
+					</div>
+				
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>How the calculator works</h3>
+					
+						<p>This app will help you to calculate the tension and/or the diameter of the strings on your instrument.</p>
+						
+						<p>In order to perform these calculations we need to first know the <strong>density</strong> of the material, the <strong>length</strong> of the string and the <strong>frequency</strong> of the pitch.</p>
+						
+						<p>After selecting your instrument you'll be able to review these options required to perform your own calculations.</p>
+				
+					</div>
+					
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>Different materials</h3>
+						
+						<p>The provided densities for the various string materials are as accurate as the information I could find!</p>
+						
+						<p>Nylon may vary slightly in density between manufacturers and gut strings may feel like they have a higher or lesser tension depending on the thickness of the string and how the string has been prepared.</p>
+						
+						<p>It's difficult to calculate the density of a wound string, as it depends on both the material in the core and the outer winding. This varies from maker to maker. Most commercial retailers seem reluctant to make this information available. No wound string densities are provided for this reason.</p>
+						
+					</div>
+					
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>String lengths</h3>
+						
+						<p>The string lengths provided are averages only. As string lengths vary between instruments you'll get the most accurate results if you measure the string length of your own instrument.</p>
+						
+						<p><strong>N.B.</strong> the string length is measured as the distance between the nut and the bridge of the instrument.</p>
+					
+					</div>
+					
+					<div data-role="collapsible" data-collapsed="true">
+					
+						<h3>Choice of pitch</h3>
+						
+						<p>Historical musicians often tune to different pitches according to what music they're performing. Modern instruments are tuned to 440 Hz, or thereabouts.</p>
+						
+						<p>If you're not sure about this setting, leave it as is!</p>
+						
+					</div>
+					
+				</div>
+
+			</div>
+			
+		</div>
+
+
+		<!-- Calcultation help template -->
+
+		<div data-role="page" id="calculation-help" data-theme="c">
+		
+			<div data-role="header">
+				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Calculations help</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c">
+			
+				<p>In order to calculate the <strong>tension</strong> of a string you need to know first the <strong>diameter</strong> of the string, or vice versa. Here's a couple of examples to help you get your head around this.</p>
+			
+				<h3>Calculating the tension</h3>
+				
+				<p><strong>Example 1:</strong> Calculate the tension of the top string on a lute in kg.</p>
+				
+				<p>The highest pitched sting on a lute usually has a diameter of around <strong>.44 mm</strong>. Click on the first string and type <strong>44</strong> in the text field that appears (leave out the decimal point and unit of measurement). Click <strong>Calculate Tension</strong> to perform the calculation.</p>
+				<p><strong>Example 2:</strong> Calculate the tension of the top string on a guitar in lbs.</p>
+				
+				<p>Let's say the highest string on my guitar is <strong>0.028 inches</strong> in diameter. Click on the first string and just enter <strong>0.028</strong> in the text field. Click <strong>Calculate Tension</strong> to get the tension.</p>
+				
+				<hr>
+				
+				<h3>Calculating the diameter</h3>
+				
+				<p><strong>Example 1:</strong> Calculate the diameter of the e string on a baroque violin in mm.</p>
+				
+				<p>Let's say I want to find out how thick a string should use at a a tension of <strong>6 kg</strong>. Click on the first string and enter the number <strong>6</strong> in the text field (you can leave out the kg). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
+				
+				<p><strong>Example 2:</strong> Calculate the diameter of the top string on a ukulele in inches.</p>
+				
+				<p>I want my uke's top string to have a tension of <strong>8 lbs</strong>. Click on the first string and enter the number <strong>8</strong> in the text field (you can leave out the lbs). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
+				
+			</div>
+			
+		</div>
+
+
+		<!-- Custom tone help template -->
+
+		<div data-role="page" id="custom-tone-help" data-theme="c">
+		
+			<div data-role="header">
+				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<h1>Custom note help</h1>
+				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+			</div>
+			
+			<div data-role="content" data-theme="c">
+			
+				<p>On this page you can enter any note and calculate either the diameter or tension. This is useful if you only need to retune one or two of your strings and don't want to add an entire custom tuning.</p>
+				
+				<p>You must enter the tone using 'scientific' pitch notation (in the format <strong>A4</strong>, <strong>C3</strong> etc). Use the following chart to help you to figure this out what pitch you need.</p>
+				
+				<img class="nice-img" src="images/pitch.png" alt="image of pitches">
+				
+			</div>
+			
+		</div>
+
+	</body>
+	
+</html>
