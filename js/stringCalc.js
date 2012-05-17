@@ -995,6 +995,8 @@ jQuery( function( $ ){
 			$('#calc-results').text( this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity );
 			
 		}
+
+		$('#calc-results').addClass('pretty-bg').css({ 'margin-top': '15px' });
 		
 		console.log( this.diameter, this.tension );
 
@@ -1683,154 +1685,61 @@ jQuery( function( $ ){
 
 
 	// Calculations page
-	$('#calculations-page')
-	
-		.bind('pagebeforecreate', function calculactionsPageBeforeCreate(){
-/*
-			var selectArray = [
-					[ 'tension-1-container', 31, 'tension-1' ],
-					[ 'tension-2-container', 10, 'tension-2' ],
-					[ 'diameter-1-container', 10, 'diameter-1' ],
-					[ 'diameter-2-container', 100, 'diameter-2' ] 
-				],
-				listClass = 'selTensDiam';
-				
-			rico.createDiameterTensionSelectLists( selectArray, listClass );
-*/
-		})
-		
-		.bind('pagebeforeshow', function calculactionsPageBeforeShow(){
-		
+	$('#calculations-page').bind('pagebeforeshow', function calculactionsPageBeforeShow() {
+
+			$('#tension-diameter-input').val('');
+
 			var calcBlob = rico.addCalcsToPage(),
 				container = $('<div id="container" />');
-				
-			// Create helper object to get around jQuery mobile's cashing wank. Would drive a man to drink it would.
+
+			// Create helper object to get around jQuery mobile's caching stuff.
 			rico.calcHelper = {
 				diapason: false,
 				showOctave: false,
 				disTuningArray: ( rico.instruments.current.multipleTunings === true ) ? rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[0] : rico.instruments.current.tuning[0],
-				tensDiam: 4,
-/*
-				tensionOne: 4,
-				tensionTwo: 0,
-				actualTension: 4,
-				diameterOne: 0,
-				diameterTwo: 50,
-				actualDiameter: 0.5,
-*/
+				tensDiam: '',
 				currentString: 0
 			};
-			
+
 			rico.calcHelper.octaveOffset = rico.oct[ rico.calcHelper.disTuningArray[1] ];
 	  	rico.frequency = rico.calculateFrequency( rico.calcHelper.disTuningArray[0], rico.calcHelper.octaveOffset );
-	  	rico.tensionOrDiameter = 'diameter';
-	  	
+	  	rico.tensionOrDiameter = 'tension';
+
 			$('#selectBox').prepend( container );
-			
+
 			container.append( calcBlob ).trigger('create');
-			
+
 			$('#diameter-container').hide();
 	  	$('h1#instrument-name').text( rico.instruments.current.name );
 			$('#tension-diameter-span').text( rico.unitDensity );
-			
-/*
-	  	$('span.unitDiameter').text( rico.unitDiameter );
-	  	$('span.unitDensity').text( rico.unitDensity );
-			var disSel = $('#tension-1'), disSel2 = $('#diameter-2');
-			disSel[0].selectedIndex = 4;
-			disSel2[0].selectedIndex = 50;
-			disSel.add( disSel2 ).selectmenu('refresh');
-*/
-
 	  	$('.tension-diameter').filter(':first').attr('checked', true).checkboxradio('refresh');
 	  	$('#radio-choice-2').attr('checked', false).checkboxradio('refresh');
 		
-		})
-		
-		.bind('pageinit', function calculactionsPageInit() {
-		
-			$('#tension-diameter-input')
-				
-				.val( rico.calcHelper.tensDiam )
-				.bind('change', function getTensionDiameterInput() {
-		
-					rico.calcHelper.tensDiam = +$(this).val();
-					rico.doCalcs();
-		
-				});
-/*
-			var diameterContainer = $('#diameter-container'),
-				tensionContainer = $('#tension-container');
-				
-	  	$('.selTensDiam').live('change', function(){
-	  		
-	  		var thisId = $(this).attr('id'),
-	  			thisVal = +$(this).val();
-	  			
-	  		switch( thisId ){
-	  			case 'tension-1' :
-	  				rico.calcHelper.tensionOne = thisVal;
-	  				rico.calcHelper.actualTension = rico.calcHelper.tensionOne + '.' + rico.calcHelper.tensionTwo;
-				  	rico.doCalcs( rico.calcHelper.actualTension, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-	  			break;
-	  			case 'tension-2' :
-	  				rico.calcHelper.tensionTwo = thisVal;
-	  				rico.calcHelper.actualTension = rico.calcHelper.tensionOne + '.' + rico.calcHelper.tensionTwo;
-				  	rico.doCalcs( rico.calcHelper.actualTension, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-	  			break;
-	  			case 'diameter-1' :
-	  				rico.calcHelper.diameterOne = thisVal;
-	  				rico.calcHelper.actualDiameter = rico.calcHelper.diameterOne + '.' + rico.calcHelper.diameterTwo;
-				  	rico.doCalcs( rico.calcHelper.actualDiameter, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-	  			break;
-	  			case 'diameter-2' :
-	  				rico.calcHelper.diameterTwo = thisVal;
-	  				rico.calcHelper.actualDiameter = rico.calcHelper.diameterOne + '.' + rico.calcHelper.diameterTwo;
-				  	rico.doCalcs( rico.calcHelper.actualDiameter, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-	  			break;
-	  		}
-	  	});
-*/		
+		}).bind('pageinit', function calculactionsPageInit() {
+
+			$('#tension-diameter-input').bind('change', function getTensionDiameterInput() {
+				rico.calcHelper.tensDiam = +$(this).val();
+				rico.doCalcs();
+			});
 
 			$('#calc-button').bind('click', function doCalculations() {
-				
+
 				rico.doCalcs();
-				
+
 			});
 			
 	  	$('.tension-diameter').bind('change', function() {
 
-/*
-	  		if( thisVal === 'diameter' ){
-					$('#tension-diameter-span').text( rico.unitDiameter );
-	  			diameterContainer.show();
-	  			tensionContainer.hide();
-				  rico.doCalcs( rico.calcHelper.actualDiameter, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-	  		} else if( thisVal === 'tension' ){
-					$('#tension-diameter-span').text( rico.unitDensity );
-	  			diameterContainer.hide();
-	  			tensionContainer.show();
-				  rico.doCalcs( rico.calcHelper.actualTension, rico.calcHelper.diapason, rico.calcHelper.showOctave );
-				}
-*/
-
-				rico.tensionOrDiameter = $( this ).val();
+				rico.tensionOrDiameter = $(this).val();
+				$('#tension-diameter-input').val('');
 				
 				if( rico.tensionOrDiameter === 'diameter' ) {
-				
-					$('#tension-diameter-span').text( rico.unitDiameter );
-					rico.calcHelper.tensDiam = rico.diameter || 4;
-					$('#tension-diameter-input').val( rico.diameter );
-				
+					rico.calcHelper.tensDiam = rico.diameter;
+					$('#tension-diameter-span').text('mm');
 				} else if( rico.tensionOrDiameter === 'tension' ) {
-				
-					$('#tension-diameter-span').text( rico.unitDensity );
-					rico.calcHelper.tensDiam = rico.tension || 4;
-					$('#tension-diameter-input').val( rico.tension );
-				
+					rico.calcHelper.tensDiam = rico.tension;
+					$('#tension-diameter-span').text('kg');
 				}
-
-				rico.doCalcs();
 
 	  	});
 
@@ -1847,9 +1756,9 @@ jQuery( function( $ ){
 	  				rico.calcHelper.diapason = false;
 	  			}
 	  		}
-			
+
 				if( rico.instruments.current.octavesFromCourse === undefined ) {
-					rico.calcHelper.showOctave = false;§
+					rico.calcHelper.showOctave = false;
 				} else {
 					if( rico.calcHelper.currentString >= ( +rico.instruments.current.octavesFromCourse - 1 ) ) {
 						if( $.inArray( rico.instruments.current.dataName, [ 'theorbo', 'archlute' ] ) >= 0 && rico.calcHelper.diapason === true ) {
@@ -1861,7 +1770,7 @@ jQuery( function( $ ){
 						rico.calcHelper.showOctave = false;
 					}
 				}
-	  		
+
 	  		rico.calcHelper.disTuningArray = ( rico.instruments.current.multipleTunings === true ) ? rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString] : rico.instruments.current.tuning[rico.calcHelper.currentString];
 				rico.calcHelper.octaveOffset = rico.oct[ rico.calcHelper.disTuningArray[1] ];
 	  		rico.frequency = rico.calculateFrequency( rico.calcHelper.disTuningArray[0], rico.calcHelper.octaveOffset );
@@ -1871,58 +1780,49 @@ jQuery( function( $ ){
 		  });
 		  
 		  $('#save-this-calculation').bind('click', function saveThisCalculation() {
+
+		  	console.log(rico.calcHelper.tensDiam);
+
+		  	if( $('#tension-diameter-input').val() != '' ) {
 		  
-		  	var saveResultsButton = '<a id="save-results-list" class="button">Save all results</a>',
-		  		table = '<table id="results-table"><thead><tr><th scope="col">Str</th><th scope="col">Note</th><th>' + rico.unitDensity + '</th><th>' + rico.unitDiameter + '</th><th>action</th></tr></thead><tbody></tbody></table>',
-		  		noteName;
+			  	var saveResultsButton = '<a id="save-results-list" class="button">Save all results</a>',
+			  		table = '<table id="results-table"><thead><tr><th scope="col">Str</th><th scope="col">Note</th><th>' + rico.unitDensity + '</th><th>' + rico.unitDiameter + '</th><th>action</th></tr></thead><tbody></tbody></table>',
+			  		noteName;
+			  		
+			  	if( rico.instruments.current.multipleTunings === true ) {
+		  			noteName = rico.whichNote( rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][1];
+		  		} else {
+		  		  noteName = rico.whichNote( rico.instruments.current.tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[rico.calcHelper.currentString][1];
+		  		}
 		  		
-		  	if( rico.instruments.current.multipleTunings === true ) {
-	  			
-	  			noteName = rico.whichNote( rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][1];
-	  		
-	  		} else {
-	  		
-	  		  noteName = rico.whichNote( rico.instruments.current.tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[rico.calcHelper.currentString][1];
-	  		
-	  		}
-	  		
-	  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-noteName ="' + noteName + '" data-tension="' + rico.tension + '" data-diameter="' + rico.diameter +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '.</td><td>' + noteName + '</td><td>' + rico.tension + '</td>';
-		  	
-		  	if( rico.calcHelper.showOctave === false ) {
-		  	
-		  		results += '<td>' + rico.diameter + '</td>';
-		  		
-		  	} else {
-		  	
-		  		results += '<td>' + rico.diameter + ' / ' + rico.diameterOct  + '</td>';		  		
-		  	}
-		  	
-		  	results += '<td><a href="#" class="delete-results">Delete</a></td></tr>';
-		  	
-		  	if( !$('#results-table').length ) {
-		  	
-		  		$('#save-calcs-container').append( table ).addClass('pretty-bg');
-		  		
-		  	}
-		  	
-		  	$('#results-table tbody').append( results ).trigger('create');
-		  	
-		  	if( !$('#save-results-list').length ) {
-		  	
-		  		$('#save-calcs-container').append( saveResultsButton ).trigger('create');
-		  		
-		  	}
-		  	
+		  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-noteName ="' + noteName + '" data-tension="' + rico.tension + '" data-diameter="' + rico.diameter +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '.</td><td>' + noteName + '</td><td>' + rico.tension + '</td>';
+			  	
+			  	if( rico.calcHelper.showOctave === false ) {
+			  		results += '<td>' + rico.diameter + '</td>';
+			  	} else {
+			  		results += '<td>' + rico.diameter + ' / ' + rico.diameterOct  + '</td>';		  		
+			  	}
+			  	results += '<td><a href="#" class="delete-results">Delete</a></td></tr>';
+			  	
+			  	if( !$('#results-table').length ) {
+			  		$('#save-calcs-container').append( table ).addClass('pretty-bg');
+			  	}
+			  	
+			  	$('#results-table tbody').append( results ).trigger('create');
+			  	
+			  	if( !$('#save-results-list').length ) {
+			  		$('#save-calcs-container').append( saveResultsButton ).trigger('create');
+			  	}
+
+			  }
+			  	
 		  });
 		  
 		  $('a.delete-results').live('vclick', function deleteResults() {
 		  
 		  	$(this).parent().parent().remove();
-		  	
 		  	if( !$('#results-table tr').length ) {
-		  	
 		  		$('#save-calcs-container').empty().removeClass('pretty-bg');
-		  		
 		  	}
 		  	
 		  });
@@ -1941,7 +1841,6 @@ jQuery( function( $ ){
 		  			tension: $(this).attr('data-tension'),
 		  			diameter: $(this).attr('data-diameter')
 		  		};
-		  	
 		  		fullResults.results.push( myVals );
 		  	
 		  	});
@@ -1958,21 +1857,19 @@ jQuery( function( $ ){
 		  	console.log( localStorage.resultsList );
 		  	
 		  });
-		  
-		})
-		
-		.bind('pagehide', function removeHTMLonPageHide(){
-		
+
+		}).bind('pagehide', function removeHTMLonPageHide() {
+			
+			rico.calcHelper.tensDiam = '';
 			$('#container, #container2').remove();
 			$('.diameterResults, .tensionResults, #save-calcs-container').empty().removeClass('pretty-bg');
-			
+			$('#calc-results').empty().removeClass('pretty-bg').css({ 'margin-top': 0 });
+
 		}
 		
 	);
 
 
-
-	
 	// Custom note shenannigans	
 	$('#custom-note')
 		.bind('pagebeforecreate', function(){
