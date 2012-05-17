@@ -570,7 +570,6 @@ a.back span {
 }
 
 #calc-results {
-	margin-top: 15px;
 	padding: 10px;
 	text-align: center;
 	clear: both;
@@ -580,7 +579,6 @@ a.back span {
 #save-calcs-container {
 	padding: 0 3% 3%;
 }
-
 
 .ui-body-c .ui-link {
 	font-weight: normal;
