@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="css/jquery.mobile.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<script src="js/jquery.1.6.4.js"></script>
+		<script src="js/jquery.1.7.1.js"></script>
 		<script src="js/stringCalc.js"></script>
 		<script src="js/jquery.mobile.1.1.0.js"></script>
 
@@ -480,40 +480,8 @@
 			
 			<div data-role="content" class="content calcsContainer">
 
-			<!--
-				<div data-role="fieldcontain" class="lessPad">
-			    <fieldset class="ctcd" data-role="controlgroup" data-type="horizontal" class="select-tension-diameter">
-			    	<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-1" value="tension" checked="checked" />
-			      <label for="radio-choice-1">Tension</label>
-	         	<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-2" value="diameter"  />
-	         	<label for="radio-choice-2">Diameter</label>
-	        </fieldset>
-	      </div>
-	      <div id="tension-container">
-					<fieldset class="r-grid-3 pretty-bg">
-						<div class="rg-1" id="tension-1-container"></div>
-						<div class="point">.</div>
-						<div class="rg-2" id="tension-2-container"></div>
-						<div class="rg-3">
-							<p><span class="unitDensity"></span> = <span class="diameterResults"></span></p>
-						</div>
-					</fieldset>
-	      </div>
-	      <div id="diameter-container">
-					<fieldset class="r-grid-3 pretty-bg">
-						<div class="rg-1" id="diameter-1-container"></div>
-						<div class="point">.</div>
-						<div class="rg-2" id="diameter-2-container"></div>
-						<div class="rg-3">
-							<p><span class="unitDiameter"></span> = <span class="tensionResults"></span></p>
-						</div>
-					</fieldset>
-	      </div>
-			-->
-			
-
 				<div id="selectBox"></div>
-				
+
 	      <div data-role="fieldcontain" class="lessPad">
 		    	<fieldset class="ctcd select-tension-diameter" data-role="controlgroup" data-type="horizontal">
 		    		<input class="tension-diameter" type="radio" name="tensDiam" id="radio-choice-1" value="tension" />
@@ -522,7 +490,7 @@
   	       	<label for="radio-choice-2">Diameter</label>
     	    </fieldset>
     	  </div>
-        
+
 			  <div class="calc-1">
 	      	<input type="number" id="tension-diameter-input">
 	      </div>
@@ -532,10 +500,10 @@
 	      <div class="calc-3">
 	      	<a id="calc-button" class="button" href="#">Go</a>
 	      </div>
-				
+
 				<div class="clear"></div>
 				
-	      <div class="pretty-bg" id="calc-results"></div>
+	      <div id="calc-results"></div>
 	      
 	      <a id="save-this-calculation" class="button">Save this calculation</a>
 	      
@@ -547,18 +515,18 @@
 						<li><a href="#custom-note">Calculate custom note</a></li>
 						<li><a href="#calculation-help">Help using the calculator</a></li>
 					</ul>
-					
+
 				</div>
-										
+
 			</div>
 
-		</div>	
+		</div>
 
 
 		<!-- Custom note templates -->
 
 		<div data-role="page" id="custom-note" data-theme="c">
-		
+
 			<div data-role="header">
 				<a data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext">Back</a>
 				<h1>Choose a note</h1>
