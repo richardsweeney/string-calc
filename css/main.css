@@ -6,14 +6,48 @@ a {
 	text-decoration: none;
 }
 
-body, .ui-page, .ui-body-c {
-/* 	background: #eaeaea url(images/ios-bg.png) repeat 0 0: */
+body, .ui-page {
+ 	background: #eaeaea;
 	font-family: GillSans, Cochin, Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3 {
 	font-weight: normal;
 	font-size: 20px;
+}
+
+.ui-header {
+	margin: 0;
+	padding: 5px 0;
+	background: #444;
+	color: #fff;
+}
+
+.ui-header .ui-btn {
+	border-radius: 18px;
+	box-shadow: 0 0 8px rgba(255,255,255,0.5);
+	background: rgba(0,0,0,0.3);
+	top: 12px;
+}
+
+.ui-icon {
+	background: url(images/icons-18-white.png) no-repeat 0 0;
+}
+
+.ui-icon-back {
+	background-position: -397px 1px;
+}
+
+.ui-icon-home {
+	background-position: -576px 0;
+}
+
+.ui-header .ui-btn-left {
+	left: 15px;
+}
+
+.ui-header .ui-btn-right {
+	right: 15px;
 }
 
 .styleCustomTuningHeader > h2 {
@@ -42,32 +76,6 @@ input.nicelySpaced.ui-input-text {
 .rps .ui-btn-inner {
 	padding: 5px 0;
 }
-
-/*
-.rico-grid-2 {
-	width: 100%;
-}
-
-.rico-grid-2 label {
-	font-size: 90%;
-	text-align: center;
-	display: block;
-}
-
-.rico-grid-2 input {
-	margin: 0.5em 0;
-}
-
-.rico-grid-a, .rico-grid-b {
-	width: 49%;
-	float: left;
-}
-
-.rico-grid-a {
-	margin-right: 1.5%;
-}
-*/
-
 
 #save-this-calculation {
 	margin: 15px 0 30px;
@@ -451,7 +459,7 @@ p.off {
 	border-bottom: 1px solid #ccc;
 }
 
-.ui-body-c .iOSlist-container a.ui-link {
+.iOSlist-container a.ui-link {
 	color: #333;
 }
 
@@ -464,13 +472,6 @@ p.off {
 	border-radius: 0 0 10px 10px;
 }
 
-.iOSlist-container ul a:hover {
-/*
-	background: #f1f2f1;
-	color: #333 !important;
-*/
-}
-
 .iOSlist-container ul a.active-link, .iOSlist-container ul a:active, .iOSlist-container ul a:focus {
 	background-color: #2489CE;
 	color: #fff !important;
@@ -480,6 +481,28 @@ p.off {
 	-webkit-box-shadow: none !important;
 	outline: none;
 }
+
+.ui-checkbox {
+	width: 100%;
+	padding: 0;
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+}
+
+.ui-checkbox input {
+	display: none;
+}
+
+.ui-icon-checkbox-off, .ui-icon-checkbox-on {
+	background: rgba(0,0,0,0.2) url(images/icons-18-black.png) no-repeat -683px 0;
+	border-radius: 5px;
+}
+
+.ui-icon-checkbox-on {
+	background-position: -648px 0;	
+}
+
 
 a:hover {
 	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ) !important;

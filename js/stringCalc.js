@@ -3,6 +3,7 @@ $(document).bind('mobileinit', function() {
 	$.extend($.mobile, {
 		touchOverflowEnabled: true,
 		defaultPageTransition: 'slide'
+		//transitionFallbacks.flip: 'slide'
 	});
 
 });
