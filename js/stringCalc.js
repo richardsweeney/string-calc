@@ -457,7 +457,7 @@ jQuery( function( $ ){
 		*/
 		listInstruments: function( instrumentType ) {
 			var instType = rico.instruments[instrumentType],
-				instrumentBlob = '<ul id="instrumentList" data-role="listview" data-theme="c" data-inset="true">';
+				instrumentBlob = '<ul id="instrumentList" data-role="listview" data-inset="true">';
 			for( var i = 0, l = instType.length; i < l; i++ ){
 				instrumentBlob +=	'<li><a class="choose-instrument" href="#options" data-id="' + i + '" data-instrument="' + instType[i].dataName + '">' + instType[i].name + '</a></li>';
 			}
@@ -510,12 +510,12 @@ jQuery( function( $ ){
 						+ '<div class="ui-block-a">'
 							+ '<button class="trigger calculateDiameter';
 							if( diapason === true ) calcBlob += ' diapason';
-							calcBlob += '" type="submit" data-theme="c">Calculate Diameter</button>'
+							calcBlob += '" type="submit">Calculate Diameter</button>'
 						+ '</div>'
 						+ '<div class="ui-block-b">'
 							+ '<button class="trigger calculateTension';
 							if( diapason === true ) calcBlob += ' diapason';
-							calcBlob += '" type="submit" data-theme="c">Calculate Tension</button>'
+							calcBlob += '" type="submit">Calculate Tension</button>'
 						+ '</div>'
 					+ '</fieldset>'
 					+ '<p class="resultat off"></p>'
@@ -655,20 +655,25 @@ jQuery( function( $ ){
 				;
 				optionsBlob += '<li><a data-transition="flip" href="#dynamic-tuning"><span>Tuning:</span> ' + thisTuning + '</a></li>';
 			}
-			if( thisInstrument.numberCourses !== undefined && thisInstrument.dataName !== 'baroqueGuitar' ) {				
-				var
-					arr = ( thisInstrument.multipleTunings === true ) ? thisInstrument.tuning[ +thisInstrument.tuningId ].tuning : thisInstrument.tuning,
-					diapasonsArray = arr.slice( 6, thisInstrument.numberCourses ), // from the 7th course, downward
-					diapasonString = ''
-				;
-				for( var i = 0, l = diapasonsArray.length; i < l; i++ ) {
-					diapasonString += this.whichNote( diapasonsArray[i][0] );
-					if( i !== l - 1 ) {
-						diapasonString += ', ';
-					}
-				}
-				optionsBlob += '<li><a data-transition="flip" href="#diapason-tuning"><span>Diapasons:</span> ' + diapasonString + '</a></li>';
-			}
+
+
+			/* Remove alternate diapason tuning for now */
+
+			// if( thisInstrument.numberCourses !== undefined && thisInstrument.dataName !== 'baroqueGuitar' ) {				
+			// 	var
+			// 		arr = ( thisInstrument.multipleTunings === true ) ? thisInstrument.tuning[ +thisInstrument.tuningId ].tuning : thisInstrument.tuning,
+			// 		diapasonsArray = arr.slice( 6, thisInstrument.numberCourses ), // from the 7th course, downward
+			// 		diapasonString = ''
+			// 	;
+			// 	for( var i = 0, l = diapasonsArray.length; i < l; i++ ) {
+			// 		diapasonString += this.whichNote( diapasonsArray[i][0] );
+			// 		if( i !== l - 1 ) {
+			// 			diapasonString += ', ';
+			// 		}
+			// 	}
+			// 	optionsBlob += '<li><a data-transition="flip" href="#diapason-tuning"><span>Diapasons:</span> ' + diapasonString + '</a></li>';
+			// }
+
 			if( thisInstrument.showOctaves !== undefined ) {
 				if( thisInstrument.showOctaves === true ) {
 					optionsBlob += '<li><a data-transition="flip" href="#octave-courses"><span>Show octaves from course:</span> ' + +thisInstrument.octavesFromCourse + '</a></li>';
@@ -1775,8 +1780,6 @@ jQuery( function( $ ){
 	  		rico.calcHelper.disTuningArray = ( rico.instruments.current.multipleTunings === true ) ? rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString] : rico.instruments.current.tuning[rico.calcHelper.currentString];
 				rico.calcHelper.octaveOffset = rico.oct[ rico.calcHelper.disTuningArray[1] ];
 	  		rico.frequency = rico.calculateFrequency( rico.calcHelper.disTuningArray[0], rico.calcHelper.octaveOffset );
-
-				rico.doCalcs();
 				
 		  });
 		  
@@ -2047,7 +2050,7 @@ jQuery( function( $ ){
 					tuningId = current.customTuningId,
 					ol = $('#custom-tuning-ol'),
 					saveDelButtons = '<fieldset class="ui-grid-a saveDeleteButtons">'
-						+ '<div class="ui-block-a"><a data-role="button" data-iconpos="right" id="delete-custom-tuning" data-icon="delete" data-theme="b" href="#">Delete</a></div>'
+						+ '<div class="ui-block-a"><a data-role="button" data-iconpos="right" id="delete-custom-tuning" data-icon="delete" href="#">Delete</a></div>'
 						+	'<div class="ui-block-b"><a data-role="button" data-iconpos="right" id="save-custom-tuning" data-icon="check" href="#">Save</a></div>'
 					+ '</fieldset>'
 				;
