@@ -961,30 +961,25 @@ jQuery( function( $ ){
 				this.diameterOct = ( this.diameter / 2 ).toFixed( 3 );
 			
 			}
+
+			var resultsText = '';
 			
 			// If we should show the octave results too
 			if( this.calcHelper.showOctave === true && currInst.showOctaves === true ) {
-			
-				// Append both results to the DOM
-				$('#calc-results').text( this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' / ' + this.diameterOct + ' ' + this.unitDiameter );
-			
-			// Otherwise	
+				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' / ' + this.diameterOct + ' ' + this.unitDiameter;
 			} else {
-			
-				// Just append results to DOM
-				$('#calc-results').text( this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' ' + this.unitDiameter );
+				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' ' + this.unitDiameter;
 			}
 		
 		// If we should calculate the diameter	
 		} else if( this.tensionOrDiameter === 'diameter' ) {
 			
-			// Set diameter variable
 			this.diameter = tensDiam;
 			
 			// Imperial conversion
 			var diameter = ( this.metricImperial === 'imperial' ) ? tensDiam * this.mmToInch : tensDiam;
 			
-			// Calculate the tension of the string (BIG thanks to Arto Wikla for the formula)
+			// Calculate the tension of the string (HUGE thanks to Arto Wikla for the formula!)
 			this.tension = Math.pow( ( this.frequency * ( stringLength * 10 ) * diameter ), 2 ) * ( Math.PI * currInst.density / 981e+10 );
 			
 			// Correct results for decimal points & metric/imperial
@@ -998,13 +993,11 @@ jQuery( function( $ ){
 			}
 			
 			// Append results to the DOM
-			$('#calc-results').text( this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity );
+			resultsText = this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity;
 			
 		}
 
-		$('#calc-results').addClass('pretty-bg').css({ 'margin-top': '15px' });
-		
-		console.log( this.diameter, this.tension );
+		$('#calc-results').text(resultsText).addClass('pretty-bg').css({ 'margin-top': '15px' });
 
 	}
 
