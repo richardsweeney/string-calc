@@ -1774,12 +1774,10 @@ jQuery( function( $ ){
 		  
 		  $('#save-this-calculation').bind('click', function saveThisCalculation() {
 
-		  	console.log(rico.calcHelper.tensDiam);
-
 		  	if( $('#tension-diameter-input').val() != '' ) {
 		  
 			  	var saveResultsButton = '<a id="save-results-list" class="button">Save all results</a>',
-			  		table = '<table id="results-table"><thead><tr><th scope="col">Str</th><th scope="col">Note</th><th>' + rico.unitDensity + '</th><th>' + rico.unitDiameter + '</th><th>action</th></tr></thead><tbody></tbody></table>',
+			  		table = '<table id="results-table"><thead><tr><th scope="col">Str</th><th>' + rico.unitDensity + '</th><th>' + rico.unitDiameter + '</th><th>action</th></tr></thead><tbody></tbody></table>',
 			  		noteName;
 			  		
 			  	if( rico.instruments.current.multipleTunings === true ) {
@@ -1788,7 +1786,7 @@ jQuery( function( $ ){
 		  		  noteName = rico.whichNote( rico.instruments.current.tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[rico.calcHelper.currentString][1];
 		  		}
 		  		
-		  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-noteName ="' + noteName + '" data-tension="' + rico.tension + '" data-diameter="' + rico.diameter +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '.</td><td>' + noteName + '</td><td>' + rico.tension + '</td>';
+		  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-tension="' + rico.tension + '" data-diameter="' + rico.diameter +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '.</td><td>' + rico.tension + '</td>';
 			  	
 			  	if( rico.calcHelper.showOctave === false ) {
 			  		results += '<td>' + rico.diameter + '</td>';
