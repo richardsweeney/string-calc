@@ -1820,7 +1820,8 @@ jQuery( function( $ ){
 		  	
 		  });
 		  
-		  $('#save-results-list').live('vclick', function saveResultsList(){
+		  /*
+		  $('#save-results-list').live('click', function saveResultsList(){
 		  
 		  	var fullResults = {
 		  		results: []
@@ -1830,7 +1831,6 @@ jQuery( function( $ ){
 		  	
 		  		var myVals = {
 		  			string: $(this).attr('data-string'),
-		  			noteName: $(this).attr('data-noteName'),
 		  			tension: $(this).attr('data-tension'),
 		  			diameter: $(this).attr('data-diameter')
 		  		};
@@ -1839,7 +1839,6 @@ jQuery( function( $ ){
 		  	});
 		  	
 		  	fullResults.name = rico.instruments.current.name;
-		  	fullResults.pitch = rico.instruments.current.pitch;
 		  	fullResults.material = rico.instruments.current.material;
 		  	fullResults.stringLength = rico.instruments.current.stringLength;
 		  	
@@ -1850,6 +1849,7 @@ jQuery( function( $ ){
 		  	console.log( localStorage.resultsList );
 		  	
 		  });
+			*/
 
 		}).bind('pagehide', function removeHTMLonPageHide() {
 			
@@ -1864,7 +1864,7 @@ jQuery( function( $ ){
 
 
 	// Custom note shenannigans	
-	$('#custom-note')
+	/*$('#custom-note')
 		.bind('pagebeforecreate', function(){
 			var
 				noteBlob = rico.createNoteSelectList('cust-select-note'),
@@ -1982,11 +1982,12 @@ jQuery( function( $ ){
 			rico.doCalcs( 4, false, false );
 		})
 	;
+	*/
 
 
 
 	// List custom tunings page
-	$('#custom-tunings-page')
+	/*$('#custom-tunings-page')
 		.bind('pagebeforeshow', function customTuningsPageBeforeShow(){
 			var
 				cTblob = rico.addCustomTuningsToPage(),
@@ -2019,10 +2020,11 @@ jQuery( function( $ ){
 			$('#ct-box').remove();
 		})
 	;
+	*/
 	
 	
 	// Create / edit custom tunings page
-	$('#create-custom-tuning-page')
+	/*$('#create-custom-tuning-page')
 		.bind('pagebeforeshow', function(){
 			rico.editingOneString = false;
 			// We need to make sure that the relevant fields are empty if we've previously been viewing a custom tuning
@@ -2057,7 +2059,7 @@ jQuery( function( $ ){
 				rico.customTunings.tempTuning.name = rico.instruments.current.name;
 				rico.customTunings.tempTuning.stringLength = rico.instruments.current.stringLength;
 			}
-			/* $('.whatUnit span').text( rico.unitLength ); */
+			// $('.whatUnit span').text( rico.unitLength );
 			if( $('#cust-tuning-select-note').length === 0 ) {
 				var
 					noteBlob = rico.createNoteSelectList('cust-tuning-select-note'),
@@ -2171,10 +2173,14 @@ jQuery( function( $ ){
 		});
 	});
 
+	*/
+
 
 	
  	/* Edit custom tunings */
 	
-	$('#edit-current-custom-tuning-page').bind('pagehide', function(){
-		$('#edit-current-container').empty();
-	});
+	// $('#edit-current-custom-tuning-page').bind('pagehide', function(){
+	// 	$('#edit-current-container').empty();
+	// });
+
+});
