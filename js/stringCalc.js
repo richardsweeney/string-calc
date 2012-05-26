@@ -1068,19 +1068,15 @@ jQuery( function( $ ){
  /**
   * Give links an active class when clicked
   */
-	$('.iOSlist-container ul a')
-		.bind('vclick', function addActiveClassStatic(){
-			$(this).addClass('active-link');
-		})
-		.live('vclick', function addActiveClassDynamic(){
-			$(this).addClass('active-link');
-		});
+	$('.iOSlist-container ul a').live('vclick', function (){
+		$(this).addClass('active-link');
+	});
 	
 	
  /**
   * Remove active class on page hide
   */
-	$( document ).bind( 'pagehide', function removeActiveClass() {
+	$(document).bind('pagehide', function () {
 		$( '.iOSlist-container li a' ).removeClass('active-link');
 	});
 
