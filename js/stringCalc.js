@@ -1717,11 +1717,7 @@ jQuery( function( $ ){
 				rico.doCalcs();
 			});
 
-			$('#calc-button').bind('click', function doCalculations() {
-
-				rico.doCalcs();
-
-			});
+			$('#calc-button').bind('click', rico.doCalcs);
 			
 	  	$('.tension-diameter').bind('change', function() {
 
@@ -1809,7 +1805,7 @@ jQuery( function( $ ){
 			  	
 		  });
 		  
-		  $('a.delete-results').live('vclick', function deleteResults() {
+		  $('a.delete-results').live('click', function deleteResults() {
 		  
 		  	$(this).parent().parent().remove();
 		  	if( !$('#results-table tr').length ) {
