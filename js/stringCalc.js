@@ -741,10 +741,10 @@ jQuery( function( $ ){
 	})();
 	
 
+
+
 	// Test object - MUST comment this out!!!	
 	rico.instruments.current = rico.instruments.plucked[1];
-	
-	console.log( rico.instruments.current );
 	
 
 
@@ -1027,14 +1027,14 @@ jQuery( function( $ ){
  /**
  	* Add list of results to results page
  	*
- 	* @return HRML blob of results
+ 	* @return HTML blob of results
  	*/
 	rico.listResults = function() {
 		var resultsBlob;
 		if( rico.resultsList.length ) {
 			resultsBlob = '<ul id="results-list" data-role="none">';
 			for( var i = 0, l = rico.resultsList.length; i < l; i++ ){
-				resultsBlob += '<li><a href="#" data-id="' + i + '">' + rico.resultsList[i].name + ': ' + rico.resultsList[i].material + ', '  + rico.resultsList[i].stringLength + ' ' + rico.unitLength + ', ' + rico.resultsList[i].pitch + ' Hz</a></li>';
+				resultsBlob += '<li><a href="#" data-id="' + i + '">' + rico.resultsList[i].name + ': ' + rico.resultsList[i].stringLength + rico.unitLength + ', ' + rico.resultsList[i].pitch + 'Hz</a></li>';
 			}
 			resultsBlob += '</ul>';
 		} else {
@@ -1042,21 +1042,28 @@ jQuery( function( $ ){
 		}
 		return resultsBlob;
 	}
-	
-	
+
+
+ /**
+ 	* Add results to single results page
+ 	*
+ 	* @return HTML blob of results
+ 	*/
 	rico.listSingleResults = function() {
-		var theseResults = rico.resultsList[this.theseResultsId];
-		var theseResultsBlob = '<h3>Results</h3>'
-			+ '<p><strong>Instrument</strong>: ' + theseResults.name + '<br>'
-			+ '<strong>Material</strong>: ' + theseResults.material + '<br>'
-			+ '<strong>Pitch</strong>: ' + theseResults.pitch + ' Hz<br>'
-			+ '<strong>String length</strong>: ' + theseResults.stringLength + ' ' + this.unitLength + '</p>'
-			+ '<table id="saved-results-table">'
+		var theseResults = rico.resultsList[this.theseResultsId],
+			materialName = '';
+		for( var i = 0, l = rico.materials.length; i < l; i++ ) {
+			if( rico.materials[i].dataName === theseResults.material ) {
+				materialName = rico.materials[i].name + ', ';
+			}
+		}
+		var theseResultsBlob = '<h3 class="header">' + theseResults.name + ': ' + materialName + theseResults.stringLength + rico.unitLength + ', ' + theseResults.pitch + 'Hz</h3>'
+			+ '<table id="	"><thead><tr><th scope="col">Str</th><th>' + rico.unitDensity + '</th><th>' + rico.unitDiameter + '</th></tr></thead><tbody>';
 		;
 		for( var i = 0, l = theseResults.results.length; i < l; i++ ){
-		  theseResultsBlob += '<tr><td>' + theseResults.results[i].string + '.</td><td>' + theseResults.results[i].noteName + '</td><td>' + theseResults.results[i].tension + rico.unitDensity + '</td><td>' + theseResults.results[i].diameter + rico.unitDiameter + '</td></tr>';
+		  theseResultsBlob += '<tr><td>' + theseResults.results[i].string + '.</td><td>' + theseResults.results[i].tension + '</td><td>' + theseResults.results[i].diameter + '</td></tr>';
 		}
-		theseResultsBlob += '</table>';
+		theseResultsBlob += '</tbody></table>';
 		return theseResultsBlob;
 	}
 
@@ -1717,7 +1724,9 @@ jQuery( function( $ ){
 				rico.doCalcs();
 			});
 
-			$('#calc-button').bind('click', rico.doCalcs);
+			$('#calc-button').click( function () {
+				rico.doCalcs();
+			});
 			
 	  	$('.tension-diameter').bind('change', function() {
 
@@ -1765,6 +1774,10 @@ jQuery( function( $ ){
 	  		rico.calcHelper.disTuningArray = ( rico.instruments.current.multipleTunings === true ) ? rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString] : rico.instruments.current.tuning[rico.calcHelper.currentString];
 				rico.calcHelper.octaveOffset = rico.oct[ rico.calcHelper.disTuningArray[1] ];
 	  		rico.frequency = rico.calculateFrequency( rico.calcHelper.disTuningArray[0], rico.calcHelper.octaveOffset );
+
+	  		if( rico.calcHelper.tensDiam !== '' ) {
+	  			rico.doCalcs();
+				}
 				
 		  });
 		  
@@ -1792,7 +1805,7 @@ jQuery( function( $ ){
 			  	results += '<td><a href="#" class="delete-results">Delete</a></td></tr>';
 			  	
 			  	if( !$('#results-table').length ) {
-			  		$('#save-calcs-container').append( table ).addClass('pretty-bg');
+			  		$('#save-calcs-container').append( table );
 			  	}
 			  	
 			  	$('#results-table tbody').append( results ).trigger('create');
@@ -1814,36 +1827,33 @@ jQuery( function( $ ){
 		  	
 		  });
 		  
-		  /*
 		  $('#save-results-list').live('click', function saveResultsList(){
-		  
+
 		  	var fullResults = {
+		  		name: rico.instruments.current.name,
+		  		material: rico.instruments.current.material,
+		  		stringLength: rico.instruments.current.stringLength,
+		  		pitch: rico.instruments.current.pitch,
 		  		results: []
 		  	};
 		  	
-		  	$.each( $('#results-table tr'), function(){
-		  	
-		  		var myVals = {
-		  			string: $(this).attr('data-string'),
-		  			tension: $(this).attr('data-tension'),
-		  			diameter: $(this).attr('data-diameter')
-		  		};
-		  		fullResults.results.push( myVals );
+		  	$.each( $('#results-table tr'), function(i){
+		  		var $this = $(this);
+		  		// First result is the table header!
+		  		if( i >= 1 ) {
+		  			var myVals = {
+			  			string: +$this.attr('data-string'),
+			  			tension: +$this.attr('data-tension'),
+			  			diameter: +$this.attr('data-diameter')
+			  		};
+		  			fullResults.results.push( myVals );
+		  		}
 		  	
 		  	});
-		  	
-		  	fullResults.name = rico.instruments.current.name;
-		  	fullResults.material = rico.instruments.current.material;
-		  	fullResults.stringLength = rico.instruments.current.stringLength;
-		  	
 		  	rico.resultsList.push( fullResults );
-		  	
-		  	console.log( rico.resultsList );
 		  	localStorage.resultsList = JSON.stringify( rico.resultsList );
-		  	console.log( localStorage.resultsList );
 		  	
 		  });
-			*/
 
 		}).bind('pagehide', function removeHTMLonPageHide() {
 			
