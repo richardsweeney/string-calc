@@ -18,7 +18,7 @@ body, .ui-page {
 
 h1, h2, h3 {
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 19px;
 }
 
 .ui-header {
@@ -370,24 +370,19 @@ li.center {
 
 table {
 	text-align: left;
-	// padding: 10px;
 	border-collapse: separate;
-	border-spacing: 0;
+	border-spacing: 1px;
 	width: 100%;
-	padding-bottom: 15px;
+	padding: 10px 0 15px;
 }
 
 thead, tr:nth-of-type( even ) {
 	background: #fff;
 }
 
-th {
+th, td {
 	font-weight: normal;
-	padding: 5px;
-}
-
-td {
-	padding: 5px;
+	padding: 8px;
 }
 
 #diapason-tuning-list td:nth-of-type( 1 ) {
@@ -541,6 +536,13 @@ p.off {
 			&:active, &:focus {
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
 			}
+			&.active-link {
+				background-color: $blue !important;
+				color: #fff;
+				text-shadow: none;
+				@inlcude box-shadow(0);
+				outline: none;
+			}
 		}
 		&:first-child a {
 			@include border-radius(10px 10px 0 0);
@@ -556,15 +558,6 @@ p.off {
 			background: #e2e2e2;
 		}
 	}
-}
-
-.iOSlist-container li a.active-link {
-	background-color: $blue !important;
-	color: #fff;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	text-shadow: none;
-	@inlcude box-shadow(0);
-	outline: none;
 }
 
 .ui-checkbox, .ui-radio, .ui-select {

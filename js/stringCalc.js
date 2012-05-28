@@ -1067,7 +1067,7 @@ jQuery( function( $ ){
 			}
 		}
 
-		var theseResultsBlob = '<h3 class="header">' + theseResults.name + ': ' + materialName + theseResults.stringLength + rico.unitLength + ', ' + theseResults.pitch + 'Hz</h3>'
+		var theseResultsBlob = '<h3 class="header">' + materialName + theseResults.stringLength + ' ' + rico.unitLength + ', ' + theseResults.pitch + ' Hz</h3>'
 			+ '<table id="	"><thead><tr><th scope="col">string</th><th>tension</th><th>diameter</th></tr></thead><tbody>';
 		;
 		for( var i = 0, l = theseResults.results.length; i < l; i++ ){
@@ -1177,16 +1177,13 @@ jQuery( function( $ ){
 	$('#individual-results-page')
 		.bind('pagebeforeshow', function individualResultsPageBeforeShow(){
 			var singleResults = rico.listSingleResults();
+			$('h1.page-header').text(rico.resultsList[rico.theseResultsId]['name']);
 			$('#individual-results-container').append( singleResults ).trigger('create');
 		})
 		.bind('pageinit', function individualResultsPageInit(){
-			$('delete-these-results').bind('vclick', function(){
+			$('#delete-these-results').bind('vclick', function(){
 				rico.resultsList.splice( rico.theseResultsId );
-				/*
-				
-				 // Fix local storage!!!
-				
-				*/
+	  		localStorage.resultsList = JSON.stringify( rico.resultsList );
 				$.mobile.changePage( $('#saved-results-page'), {
 					reverse: true
 				});
