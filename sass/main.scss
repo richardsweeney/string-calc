@@ -25,7 +25,7 @@ h1, h2, h3 {
 	margin: 0;
 	padding: 5px 0;
 	background: #333;
-	@include background-image(linear-gradient(#333, #4a4a4a));
+	@include background-image(linear-gradient(#2A2A2A, #444));
 	color: #fff;
 	.ui-btn {
 		@include border-radius(18px);
@@ -35,6 +35,9 @@ h1, h2, h3 {
 		&.ui-btn-down-a {
 			@include background-image(linear-gradient($blue, $blue));
 		}
+	}
+	.ui-title {
+		margin: 10px 20px;
 	}
 }
 
@@ -380,11 +383,11 @@ thead, tr:nth-of-type( even ) {
 
 th {
 	font-weight: normal;
-	padding: 5px 3px;
+	padding: 5px;
 }
 
 td {
-	padding: 3px;
+	padding: 5px;
 }
 
 #diapason-tuning-list td:nth-of-type( 1 ) {
@@ -535,7 +538,7 @@ p.off {
 			&.ui-link {
 				color: #333;
 			}
-			&.active-link, &:active, &:focus {
+			&:active, &:focus {
 				background-color: $blue !important;
 				color: #fff;
 				-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -558,6 +561,15 @@ p.off {
 			background: #e2e2e2;
 		}
 	}
+}
+
+body.ui-mobile-viewport-transitioning .iOSlist-container li a.active-link {
+	background-color: $blue !important;
+	color: #fff;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	text-shadow: none;
+	@inlcude box-shadow(0);
+	outline: none;
 }
 
 .ui-checkbox, .ui-radio, .ui-select {

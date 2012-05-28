@@ -258,19 +258,19 @@ jQuery( function( $ ){
 					tuningId: 0,
 					tuning: [
 						{
-							name: 'A: re-entrant 1 &amp; 2',
+							name: 'A: re-entrant 1 + 2',
 							tuning: [ [0,3], [5,3], [-2,3], [2,3], [7,3], [0,2], [2,2], [4,2], [5,2], [7,2], [9,2], [-2,1], [0,1], [2,1] ]
 						},
 						{
-							name: 'A: re-entrant 1st',
+							name: 'A: re-entrant 1',
 							tuning: [ [0,3], [5,4], [-2,3], [2,3], [7,3], [0,2], [2,2], [4,2], [5,2], [7,2], [9,2], [-2,1], [0,1], [2,1] ]
 						},
 						{
-							name: 'G: re-entrant 1 &amp; 2',
+							name: 'G: re-entrant 1 + 2',
 							tuning: [ [2,3], [7,3], [0,3], [4,3], [9,3], [2,2], [4,2], [5,2], [7,2], [9,2], [-2,1], [0,1], [2,1], [4,1] ]
 						},
 						{
-							name: 'G: re-entrant 1st',
+							name: 'G: re-entrant 1',
 							tuning: [ [2,3], [7,4], [0,3], [4,3], [9,3], [2,2], [4,2], [5,2], [7,2], [9,2], [-2,1], [0,1], [2,1], [4,1] ]
 						},
 						{
@@ -1674,10 +1674,8 @@ jQuery( function( $ ){
 	// Alternate tunings
 	$('#dynamic-tuning')
 		.bind('pagebeforeshow', function(){
-			var
-				tunings = rico.addTuningsToPage(),
-				fieldsetContainer = $('<div data-role="fieldcontain" />')
-			;
+			var tunings = rico.addTuningsToPage(),
+				fieldsetContainer = $('<div data-role="fieldcontain" />');
 			$('#tunings-container').prepend( fieldsetContainer );
 			fieldsetContainer.append( tunings ).trigger('create');
 		})
@@ -1859,7 +1857,6 @@ jQuery( function( $ ){
 	  		}
 	  	
 	  	});
-	  	console.log(fullResults);
 	  	rico.resultsList.push( fullResults );
 	  	localStorage.resultsList = JSON.stringify( rico.resultsList );
 	  	
@@ -1999,194 +1996,183 @@ jQuery( function( $ ){
 
 
 	// List custom tunings page
-	/*$('#custom-tunings-page')
-		.bind('pagebeforeshow', function customTuningsPageBeforeShow(){
-			var
-				cTblob = rico.addCustomTuningsToPage(),
-				ct = $('<div id="ct-box" />'),
-				createDeleteList = '<a data-role="button" data-icon="arrow-r" data-iconpos="right" id="create-custom-tuning-page-link" href="#">Create custom tuning</a>'
-			;
-			$('#custom-tunings-container').prepend( ct );
-			ct.append( cTblob ).append( createDeleteList ).trigger('create');
-		})
-		.bind('pageinit', function(){
-			$('.customTuning').live('vclick', function(){
-				var disId = +$(this).attr('data-id');
-				rico.instruments.current = rico.customTunings.tuningsArray[ disId ];
-				rico.instruments.current.customTuningId = disId;
-				rico.instruments.current.stringLength = ( rico.customTunings.tuningsArray[disId].stringLength !== false ) ? rico.customTunings.tuningsArray[disId].stringLength : 60;
-				rico.instruments.current.dataName = 'customTuning';
-				rico.instruments.current.yepTuning = 'false';
-				rico.instruments.current.density = 1300;
-				rico.instruments.current.material = 'gut';
-				rico.instruments.current.pitch = 415;
-				$.mobile.changePage( $('#options') );
-			});
-			$('#create-custom-tuning-page-link').live('vclick', function(e){
-				e.preventDefault();
-				rico.customTunings.editing = false;
-				$.mobile.changePage( $('#create-custom-tuning-page') );
-			});
-		})
-		.bind('pagehide', function(){
-			$('#ct-box').remove();
-		})
-	;
-	*/
+	// $('#custom-tunings-page').bind('pagebeforeshow', function customTuningsPageBeforeShow(){
+	// 	var
+	// 		cTblob = rico.addCustomTuningsToPage(),
+	// 		ct = $('<div id="ct-box" />'),
+	// 		createDeleteList = '<a data-role="button" data-icon="arrow-r" data-iconpos="right" id="create-custom-tuning-page-link" href="#">Create custom tuning</a>'
+	// 	;
+	// 	$('#custom-tunings-container').prepend( ct );
+	// 	ct.append( cTblob ).append( createDeleteList ).trigger('create');
+	// }).bind('pageinit', function(){
+	// 	$('.customTuning').live('vclick', function(){
+	// 		var disId = +$(this).attr('data-id');
+	// 		rico.instruments.current = rico.customTunings.tuningsArray[ disId ];
+	// 		rico.instruments.current.customTuningId = disId;
+	// 		rico.instruments.current.stringLength = ( rico.customTunings.tuningsArray[disId].stringLength !== false ) ? rico.customTunings.tuningsArray[disId].stringLength : 60;
+	// 		rico.instruments.current.dataName = 'customTuning';
+	// 		rico.instruments.current.yepTuning = 'false';
+	// 		rico.instruments.current.density = 1300;
+	// 		rico.instruments.current.material = 'gut';
+	// 		rico.instruments.current.pitch = 415;
+	// 		$.mobile.changePage( $('#options') );
+	// 	});
+	// 	$('#create-custom-tuning-page-link').live('vclick', function(e){
+	// 		e.preventDefault();
+	// 		rico.customTunings.editing = false;
+	// 		$.mobile.changePage( $('#create-custom-tuning-page') );
+	// 	});
+	// }).bind('pagehide', function(){
+	// 	$('#ct-box').remove();
+	// });
 	
 	
 	// Create / edit custom tunings page
-	/*$('#create-custom-tuning-page')
-		.bind('pagebeforeshow', function(){
-			rico.editingOneString = false;
-			// We need to make sure that the relevant fields are empty if we've previously been viewing a custom tuning
-			$('#customTuningName, #customTuningStringLength').val('');
-			$('#custom-tuning-ol').empty();
-			$('#save-custom-tuning, .saveDeleteButtons, #name-exists').remove();
-			$('#custom-tuning-ol-container').removeClass('pretty-bg');
-			if( rico.customTunings.editing === true ) {
-				var
-					current = rico.instruments.current,
-					tuningName = current.name,
-					stringLength = current.stringLength,
-					tuning = current.tuning,
-					tuningId = current.customTuningId,
-					ol = $('#custom-tuning-ol'),
-					saveDelButtons = '<fieldset class="ui-grid-a saveDeleteButtons">'
-						+ '<div class="ui-block-a"><a data-role="button" data-iconpos="right" id="delete-custom-tuning" data-icon="delete" href="#">Delete</a></div>'
-						+	'<div class="ui-block-b"><a data-role="button" data-iconpos="right" id="save-custom-tuning" data-icon="check" href="#">Save</a></div>'
-					+ '</fieldset>'
-				;
-				$('#customTuningName').val( tuningName );
-				$('#customTuningStringLength').val( stringLength );
-				$('#custom-tuning-ol-container').addClass('pretty-bg').parent().append( saveDelButtons ).trigger('create');
-				for( var i = 0, l = tuning.length; i < l; i++ ){
-					var
-						note = tuning[i][0],
-						octave = tuning[i][1],
-						li = '<li data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
-					;
-					ol.append( li ).trigger('create');
-				}
-				rico.customTunings.tempTuning.name = rico.instruments.current.name;
-				rico.customTunings.tempTuning.stringLength = rico.instruments.current.stringLength;
-			}
-			// $('.whatUnit span').text( rico.unitLength );
-			if( $('#cust-tuning-select-note').length === 0 ) {
-				var
-					noteBlob = rico.createNoteSelectList('cust-tuning-select-note'),
-					octaveBlob = rico.createOctaveSelectList('cust-tuning-select-octave')
-				;
-				$('#cust-tuning-note-container').append( noteBlob ).trigger('create');
-				$('#cust-tuning-octave-container').append( octaveBlob ).trigger('create');
-				var noteSel = $('#cust-tuning-select-note');
-				noteSel[0].selectedIndex = 0;
-				var octSel = $('#cust-tuning-select-octave');
-				octSel[0].selectedIndex = 4;
-				noteSel.add( octSel ).selectmenu('refresh');
-			}
-		})
-		.bind('pageinit', function(){
-			// Bind vclick events to pageinit to stop them firing mulitple times.
-			$('#customTuningName')
-				.bind('change', function(){
-					rico.customTunings.tempTuning.name = $(this).val();
-				})
-				.blur(function(){
-					if( $('.noName').length ){
-						$('.noName').remove();
-					}
-				})
-			;
-			$('#customTuningStringLength').bind('change', function(){
-				rico.customTunings.tempTuning.stringLength = +$(this).val();
-			});
-			$('#add-custom-tuning-note').live('vclick', function(){
-				var
-					saveButton = '<a data-role="button" id="save-custom-tuning" data-icon="check" data-role="button" href="#">Save tuning</a>',
-					note = +$('#cust-tuning-select-note').val(),
-					octave = +$('#cust-tuning-select-octave').val(),
-					ol = $('#custom-tuning-ol'),
-					listNum = $('#custom-tuning-ol li').length + 1,
-					li = '<li data-list-number="' + listNum + '" data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
-				;
-				if( rico.editingOneString === true ) {
-					var listItem = $('#custom-tuning-ol li').eq( rico.editingThisString );
-					listItem.attr('data-note', note).attr('data-octave', octave).html('<span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a>');
-					ol.trigger('create');
-					$('#add-custom-tuning-note').find('span').removeClass('ui-icon-check').addClass('ui-icon-plus');
-					rico.editingOneString = false;
-				} else {
-					if( $('#save-custom-tuning').length === 0 ){
-						$('#custom-tuning-ol-container').addClass('pretty-bg');
-						$('#cust-tuning-help').before( saveButton );
-						$('#create-custom-tuning-page').trigger('create');
-					}
-					ol.append( li ).trigger('create');
-				}
-			});
-			$('.editLi').live('vclick', function(){
-				rico.editingOneString = true;
-				rico.editingThisString = $(this).parent().index();
-				console.log( rico.editingThisString );
-				$(this).parent().html('select a note above');
-				$('#add-custom-tuning-note').find('span').removeClass('ui-icon-plus').addClass('ui-icon-check');
-			});
-			$('.deleteLi').live('vclick', function(){
-				$(this).parent().remove();
-			});
-			$('#save-custom-tuning').live('vclick', function(){
-				if( rico.customTunings.editing === false ) {
-					for( var i = 0, l = rico.customTunings.tuningsArray.length; i < l; i++ ){	
-						if( rico.customTunings.tempTuning.name === rico.customTunings.tuningsArray[i].name ){
-							var nameExists = '<p id="name-exists">There is already a tuning called <strong>' + rico.customTunings.tempTuning.name + '</strong>. Please choose another name.</p>';
-							$('#custom-tuning-ol-container').append( nameExists ).trigger('create');
-							$('#customTuningName').val('').focus();
-							return true;
-						}
-					}
-				}
-				if( rico.customTunings.tempTuning.name == '' ) {
-					$('#customTuningName').focus();
-				} else {
-					var newTuning = {};
-					newTuning.name = rico.customTunings.tempTuning.name;
-					newTuning.stringLength = ( rico.customTunings.tempTuning.stringLength != '' ) ? rico.customTunings.tempTuning.stringLength : 60;
-					newTuning.tuning = [];
-					$.each( $('#custom-tuning-ol li'), function(){
-						var noteOctave = [];
-						noteOctave.push( +$(this).attr('data-note'), +$(this).attr('data-octave') );
-						newTuning.tuning.push( noteOctave );
-					});
-					if( rico.customTunings.editing === true ) {
-						rico.customTunings.tuningsArray[ rico.instruments.current.customTuningId ] = newTuning;
-					} else {
-						rico.customTunings.tuningsArray.push( newTuning );
-					}
-					localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
-					// Reset all the temp tunings properties.
-					rico.customTunings.tempTuning.name = '';
-					rico.customTunings.tempTuning.stringLength = '';
-					rico.customTunings.tempTuning.tuning = [];
-					$('#name-exists').remove();
-					$.mobile.changePage( $('#custom-tunings-page'), {
-						reverse: true
-					});
-				}
-			});
-			$('#delete-custom-tuning').live('vclick', function(){
-				// Id of the tuning we're editing
-				rico.customTunings.tuningsArray.splice( rico.instruments.current.customTuningId, 1 );
-				localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
-				$.mobile.changePage( $('#custom-tunings-page'), {
-					reverse: true
-				});
-			});
-		});
-	});
-
-	*/
-
+	// $('#create-custom-tuning-page').bind('pagebeforeshow', function(){
+	// 		rico.editingOneString = false;
+	// 		// We need to make sure that the relevant fields are empty if we've previously been viewing a custom tuning
+	// 		$('#customTuningName, #customTuningStringLength').val('');
+	// 		$('#custom-tuning-ol').empty();
+	// 		$('#save-custom-tuning, .saveDeleteButtons, #name-exists').remove();
+	// 		$('#custom-tuning-ol-container').removeClass('pretty-bg');
+	// 		if( rico.customTunings.editing === true ) {
+	// 			var
+	// 				current = rico.instruments.current,
+	// 				tuningName = current.name,
+	// 				stringLength = current.stringLength,
+	// 				tuning = current.tuning,
+	// 				tuningId = current.customTuningId,
+	// 				ol = $('#custom-tuning-ol'),
+	// 				saveDelButtons = '<fieldset class="ui-grid-a saveDeleteButtons">'
+	// 					+ '<div class="ui-block-a"><a data-role="button" data-iconpos="right" id="delete-custom-tuning" data-icon="delete" href="#">Delete</a></div>'
+	// 					+	'<div class="ui-block-b"><a data-role="button" data-iconpos="right" id="save-custom-tuning" data-icon="check" href="#">Save</a></div>'
+	// 				+ '</fieldset>'
+	// 			;
+	// 			$('#customTuningName').val( tuningName );
+	// 			$('#customTuningStringLength').val( stringLength );
+	// 			$('#custom-tuning-ol-container').addClass('pretty-bg').parent().append( saveDelButtons ).trigger('create');
+	// 			for( var i = 0, l = tuning.length; i < l; i++ ){
+	// 				var
+	// 					note = tuning[i][0],
+	// 					octave = tuning[i][1],
+	// 					li = '<li data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
+	// 				;
+	// 				ol.append( li ).trigger('create');
+	// 			}
+	// 			rico.customTunings.tempTuning.name = rico.instruments.current.name;
+	// 			rico.customTunings.tempTuning.stringLength = rico.instruments.current.stringLength;
+	// 		}
+	// 		// $('.whatUnit span').text( rico.unitLength );
+	// 		if( $('#cust-tuning-select-note').length === 0 ) {
+	// 			var
+	// 				noteBlob = rico.createNoteSelectList('cust-tuning-select-note'),
+	// 				octaveBlob = rico.createOctaveSelectList('cust-tuning-select-octave')
+	// 			;
+	// 			$('#cust-tuning-note-container').append( noteBlob ).trigger('create');
+	// 			$('#cust-tuning-octave-container').append( octaveBlob ).trigger('create');
+	// 			var noteSel = $('#cust-tuning-select-note');
+	// 			noteSel[0].selectedIndex = 0;
+	// 			var octSel = $('#cust-tuning-select-octave');
+	// 			octSel[0].selectedIndex = 4;
+	// 			noteSel.add( octSel ).selectmenu('refresh');
+	// 		}
+	// }).bind('pageinit', function(){
+	// 		// Bind vclick events to pageinit to stop them firing mulitple times.
+	// 		$('#customTuningName')
+	// 			.bind('change', function(){
+	// 				rico.customTunings.tempTuning.name = $(this).val();
+	// 			})
+	// 			.blur(function(){
+	// 				if( $('.noName').length ){
+	// 					$('.noName').remove();
+	// 				}
+	// 			})
+	// 		;
+	// 		$('#customTuningStringLength').bind('change', function(){
+	// 			rico.customTunings.tempTuning.stringLength = +$(this).val();
+	// 		});
+	// 		$('#add-custom-tuning-note').live('vclick', function(){
+	// 			var
+	// 				saveButton = '<a data-role="button" id="save-custom-tuning" data-icon="check" data-role="button" href="#">Save tuning</a>',
+	// 				note = +$('#cust-tuning-select-note').val(),
+	// 				octave = +$('#cust-tuning-select-octave').val(),
+	// 				ol = $('#custom-tuning-ol'),
+	// 				listNum = $('#custom-tuning-ol li').length + 1,
+	// 				li = '<li data-list-number="' + listNum + '" data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
+	// 			;
+	// 			if( rico.editingOneString === true ) {
+	// 				var listItem = $('#custom-tuning-ol li').eq( rico.editingThisString );
+	// 				listItem.attr('data-note', note).attr('data-octave', octave).html('<span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a>');
+	// 				ol.trigger('create');
+	// 				$('#add-custom-tuning-note').find('span').removeClass('ui-icon-check').addClass('ui-icon-plus');
+	// 				rico.editingOneString = false;
+	// 			} else {
+	// 				if( $('#save-custom-tuning').length === 0 ){
+	// 					$('#custom-tuning-ol-container').addClass('pretty-bg');
+	// 					$('#cust-tuning-help').before( saveButton );
+	// 					$('#create-custom-tuning-page').trigger('create');
+	// 				}
+	// 				ol.append( li ).trigger('create');
+	// 			}
+	// 		});
+	// 		$('.editLi').live('vclick', function(){
+	// 			rico.editingOneString = true;
+	// 			rico.editingThisString = $(this).parent().index();
+	// 			console.log( rico.editingThisString );
+	// 			$(this).parent().html('select a note above');
+	// 			$('#add-custom-tuning-note').find('span').removeClass('ui-icon-plus').addClass('ui-icon-check');
+	// 		});
+	// 		$('.deleteLi').live('vclick', function(){
+	// 			$(this).parent().remove();
+	// 		});
+	// 		$('#save-custom-tuning').live('vclick', function(){
+	// 			if( rico.customTunings.editing === false ) {
+	// 				for( var i = 0, l = rico.customTunings.tuningsArray.length; i < l; i++ ){	
+	// 					if( rico.customTunings.tempTuning.name === rico.customTunings.tuningsArray[i].name ){
+	// 						var nameExists = '<p id="name-exists">There is alrea	 a tuning called <strong>' + rico.customTunings.tempTuning.name + '</strong>. Please choose another name.</p>';
+	// 						$('#custom-tuning-ol-container').append( nameExists ).trigger('create');
+	// 						$('#customTuningName').val('').focus();
+	// 						return true;
+	// 					}
+	// 				}
+	// 			}
+	// 			if( rico.customTunings.tempTuning.name == '' ) {
+	// 				$('#customTuningName').focus();
+	// 			} else {
+	// 				var newTuning = {};
+	// 				newTuning.name = rico.customTunings.tempTuning.name;
+	// 				newTuning.stringLength = ( rico.customTunings.tempTuning.stringLength != '' ) ? rico.customTunings.tempTuning.stringLength : 60;
+	// 				newTuning.tuning = [];
+	// 				$.each( $('#custom-tuning-ol li'), function(){
+	// 					var noteOctave = [];
+	// 					noteOctave.push( +$(this).attr('data-note'), +$(this).attr('data-octave') );
+	// 					newTuning.tuning.push( noteOctave );
+	// 				});
+	// 				if( rico.customTunings.editing === true ) {
+	// 					rico.customTunings.tuningsArray[ rico.instruments.current.customTuningId ] = newTuning;
+	// 				} else {
+	// 					rico.customTunings.tuningsArray.push( newTuning );
+	// 				}
+	// 				localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
+	// 				// Reset all the temp tunings properties.
+	// 				rico.customTunings.tempTuning.name = '';
+	// 				rico.customTunings.tempTuning.stringLength = '';
+	// 				rico.customTunings.tempTuning.tuning = [];
+	// 				$('#name-exists').remove();
+	// 				$.mobile.changePage( $('#custom-tunings-page'), {
+	// 					reverse: true
+	// 				});
+	// 			}
+	// 		});
+	// 		$('#delete-custom-tuning').live('vclick', function(){
+	// 			// Id of the tuning we're editing
+	// 			rico.customTunings.tuningsArray.splice( rico.instruments.current.customTuningId, 1 );
+	// 			localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
+	// 			$.mobile.changePage( $('#custom-tunings-page'), {
+	// 				reverse: true
+	// 			});
+	// 		});
+	// });
 
 	
  	/* Edit custom tunings */
