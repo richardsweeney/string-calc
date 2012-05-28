@@ -964,11 +964,15 @@ jQuery( function( $ ){
 			
 			}
 
+			this.diameter = this.diameter.toLocaleString();
+			this.diameterOct = this.diameterOct.toLocaleString();
+			this.tension = this.tension.toLocaleString();
+
 			var resultsText = '';
 			
 			// If we should show the octave results too
 			if( this.calcHelper.showOctave === true && currInst.showOctaves === true ) {
-				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' / ' + this.diameterOct + ' ' + this.unitDiameter;
+				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + '/' + this.diameterOct + ' ' + this.unitDiameter;
 			} else {
 				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' ' + this.unitDiameter;
 			}
@@ -993,6 +997,9 @@ jQuery( function( $ ){
 			 	this.tension = ( Math.round( ( this.tension * this.kgToLbs ) * 1000 ) / 1000 );
 				this.diameter = this.diameter.toFixed( 3 );
 			}
+
+			this.diameter = this.diameter.toLocaleString();
+			this.tension = this.tension.toLocaleString();
 			
 			// Append results to the DOM
 			resultsText = this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity;
@@ -1799,7 +1806,7 @@ jQuery( function( $ ){
 	  		  noteName = rico.whichNote( rico.instruments.current.tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[rico.calcHelper.currentString][1];
 	  		}
 
-	  		var diam = (rico.calcHelper.showOctave === true) ? rico.diameter + ' / ' + rico.diameterOct : rico.diameter;
+	  		var diam = (rico.calcHelper.showOctave === true) ? rico.diameter + '/' + rico.diameterOct : rico.diameter;
 	  		
 	  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-tension="' + rico.tension + '" data-diameter="' + diam +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '</td><td>' + rico.tension + ' ' + rico.unitDensity + '</td>';
 		  	
