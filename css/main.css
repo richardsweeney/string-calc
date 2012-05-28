@@ -555,53 +555,48 @@ thead, tr:nth-of-type(even) {
 }
 
 /* line 381, ../sass/main.scss */
-tr {
-  padding: 4px;
-}
-
-/* line 385, ../sass/main.scss */
-td {
-  padding: 5px;
-}
-
-/* line 389, ../sass/main.scss */
 th {
   font-weight: normal;
-  padding: 5px;
+  padding: 5px 3px;
 }
 
-/* line 394, ../sass/main.scss */
+/* line 386, ../sass/main.scss */
+td {
+  padding: 3px;
+}
+
+/* line 390, ../sass/main.scss */
 #diapason-tuning-list td:nth-of-type(1) {
   width: 30px;
 }
 
-/* line 398, ../sass/main.scss */
+/* line 394, ../sass/main.scss */
 #diapason-tuning-list td:nth-of-type(2) {
   width: 30px;
 }
 
-/* line 402, ../sass/main.scss */
+/* line 398, ../sass/main.scss */
 label.dab, legend.dab {
   text-align: center;
 }
 
-/* line 406, ../sass/main.scss */
+/* line 402, ../sass/main.scss */
 .ui-field-contain {
   border: none;
 }
 
-/* line 410, ../sass/main.scss */
+/* line 406, ../sass/main.scss */
 .ui-grid-a .doubleInput {
   width: 40%;
   margin-right: 2px;
 }
 
-/* line 415, ../sass/main.scss */
+/* line 411, ../sass/main.scss */
 .ricoSpecial .ui-btn-inner {
   padding: 10px 15px;
 }
 
-/* line 419, ../sass/main.scss */
+/* line 415, ../sass/main.scss */
 input.cT, input.customTone {
   width: 35%;
   float: left;
@@ -610,74 +605,74 @@ input.cT, input.customTone {
 }
 
 @media all and (min-width: 450px) {
-  /* line 427, ../sass/main.scss */
+  /* line 423, ../sass/main.scss */
   input#customTone {
     width: 58%;
   }
 }
-/* line 432, ../sass/main.scss */
+/* line 428, ../sass/main.scss */
 .musical .ui-btn-text {
   padding: 0 22px;
 }
 
-/* line 436, ../sass/main.scss */
+/* line 432, ../sass/main.scss */
 .musical span.ui-btn-inner {
   padding: 3px 0 !important;
 }
 
-/* line 440, ../sass/main.scss */
+/* line 436, ../sass/main.scss */
 .ui-btn-inner {
   white-space: normal;
 }
 
-/* line 444, ../sass/main.scss */
+/* line 440, ../sass/main.scss */
 .ui-body-c input {
   background: #fff;
 }
 
-/* line 448, ../sass/main.scss */
+/* line 444, ../sass/main.scss */
 .ui-icon-shadow {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 452, ../sass/main.scss */
+/* line 448, ../sass/main.scss */
 .ui-collapsible-content {
   padding-left: 0;
 }
 
-/* line 456, ../sass/main.scss */
+/* line 452, ../sass/main.scss */
 input.twoCols {
   margin-top: 8px;
 }
 
-/* line 460, ../sass/main.scss */
+/* line 456, ../sass/main.scss */
 .ui-controlgroup .ui-checkbox label, .ui-controlgroup .ui-radio label {
   font-size: 14px;
 }
 
-/* line 467, ../sass/main.scss */
+/* line 463, ../sass/main.scss */
 .ui-radio span.ui-btn-inner {
   padding: 12px 0;
 }
 
-/* line 471, ../sass/main.scss */
+/* line 467, ../sass/main.scss */
 .ui-radio .ui-icon {
   top: 1.5em;
 }
 
-/* line 475, ../sass/main.scss */
+/* line 471, ../sass/main.scss */
 #saveMe {
   padding: 10px 15% 0;
   text-align: center;
 }
 
-/* line 480, ../sass/main.scss */
+/* line 476, ../sass/main.scss */
 #saveDefaults {
   margin: 0 0;
 }
 
-/* line 484, ../sass/main.scss */
+/* line 480, ../sass/main.scss */
 .resultat, .saved {
   text-align: center;
   background-image: -webkit-linear-gradient(top, #fdfdfd, #eeeeee);
@@ -696,7 +691,7 @@ input.twoCols {
   margin-bottom: 0;
 }
 
-/* line 494, ../sass/main.scss */
+/* line 490, ../sass/main.scss */
 p.on {
   border: 1px solid #ccc;
   padding: 20px 0;
@@ -704,7 +699,7 @@ p.on {
   font-size: 20px;
 }
 
-/* line 501, ../sass/main.scss */
+/* line 497, ../sass/main.scss */
 p.yo {
   border: 1px solid #ccc;
   padding: 20px 0;
@@ -712,7 +707,7 @@ p.yo {
   font-size: 15px;
 }
 
-/* line 508, ../sass/main.scss */
+/* line 504, ../sass/main.scss */
 p.error {
   border: 1px solid #ccc;
   padding: 20px 0;
@@ -720,13 +715,13 @@ p.error {
   font-size: 17px;
 }
 
-/* line 515, ../sass/main.scss */
+/* line 511, ../sass/main.scss */
 p.off {
   opacity: 0;
 }
 
 /* Lists */
-/* line 525, ../sass/main.scss */
+/* line 521, ../sass/main.scss */
 .iOSlist-container ul {
   width: 100%;
   list-style: none;
@@ -741,18 +736,18 @@ p.off {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 534, ../sass/main.scss */
+/* line 530, ../sass/main.scss */
 .iOSlist-container li a {
   display: block;
   padding: 10px;
   color: #333;
   background: white url(../images/arrow-right.png) center right no-repeat;
 }
-/* line 539, ../sass/main.scss */
+/* line 535, ../sass/main.scss */
 .iOSlist-container li a.ui-link {
   color: #333;
 }
-/* line 542, ../sass/main.scss */
+/* line 538, ../sass/main.scss */
 .iOSlist-container li a.active-link, .iOSlist-container li a:active, .iOSlist-container li a:focus {
   background-color: #2489ce !important;
   color: #fff;
@@ -761,7 +756,7 @@ p.off {
 @inlcude box-shadow(0);
   outline: none;
 }
-/* line 551, ../sass/main.scss */
+/* line 547, ../sass/main.scss */
 .iOSlist-container li:first-child a {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -769,7 +764,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 554, ../sass/main.scss */
+/* line 550, ../sass/main.scss */
 .iOSlist-container li:last-child a {
   border-bottom: none;
   -webkit-border-radius: 0 0 10px 10px;
@@ -778,16 +773,16 @@ p.off {
   -o-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-/* line 558, ../sass/main.scss */
+/* line 554, ../sass/main.scss */
 .iOSlist-container li:nth-of-type(odd) a {
   background: #fff;
 }
-/* line 561, ../sass/main.scss */
+/* line 557, ../sass/main.scss */
 .iOSlist-container li:nth-of-type(even) a {
   background: #e2e2e2;
 }
 
-/* line 567, ../sass/main.scss */
+/* line 563, ../sass/main.scss */
 .ui-checkbox, .ui-radio, .ui-select {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -798,11 +793,11 @@ p.off {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 570, ../sass/main.scss */
+/* line 566, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner, .ui-radio .ui-btn-inner, .ui-select .ui-btn-inner {
   background: #fff;
 }
-/* line 572, ../sass/main.scss */
+/* line 568, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-btn-corner-all, .ui-radio .ui-btn-inner.ui-btn-corner-all, .ui-select .ui-btn-inner.ui-btn-corner-all {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -810,7 +805,7 @@ p.off {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 575, ../sass/main.scss */
+/* line 571, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-top, .ui-radio .ui-btn-inner.ui-corner-top, .ui-select .ui-btn-inner.ui-corner-top {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -818,7 +813,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 578, ../sass/main.scss */
+/* line 574, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-bottom, .ui-radio .ui-btn-inner.ui-corner-bottom, .ui-select .ui-btn-inner.ui-corner-bottom {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -826,7 +821,7 @@ p.off {
   -o-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-/* line 581, ../sass/main.scss */
+/* line 577, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-left, .ui-radio .ui-btn-inner.ui-corner-left, .ui-select .ui-btn-inner.ui-corner-left {
   -webkit-border-radius: 10px 0 0 10px;
   -moz-border-radius: 10px 0 0 10px;
@@ -834,7 +829,7 @@ p.off {
   -o-border-radius: 10px 0 0 10px;
   border-radius: 10px 0 0 10px;
 }
-/* line 584, ../sass/main.scss */
+/* line 580, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-right, .ui-radio .ui-btn-inner.ui-corner-right, .ui-select .ui-btn-inner.ui-corner-right {
   -webkit-border-radius: 0 10px 10px 0;
   -moz-border-radius: 0 10px 10px 0;
@@ -842,17 +837,17 @@ p.off {
   -o-border-radius: 0 10px 10px 0;
   border-radius: 0 10px 10px 0;
 }
-/* line 587, ../sass/main.scss */
+/* line 583, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-btn-down-c, .ui-radio .ui-btn-inner.ui-btn-down-c, .ui-select .ui-btn-inner.ui-btn-down-c {
   background: #eee;
 }
 
-/* line 596, ../sass/main.scss */
+/* line 592, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner {
   background: #e2e2e2;
 }
 
-/* line 603, ../sass/main.scss */
+/* line 599, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -861,7 +856,7 @@ p.off {
   border-radius: 0;
   border-bottom: none;
 }
-/* line 606, ../sass/main.scss */
+/* line 602, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-top {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -869,7 +864,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 609, ../sass/main.scss */
+/* line 605, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-bottom {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -879,12 +874,12 @@ p.off {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 615, ../sass/main.scss */
+/* line 611, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio {
   width: 50%;
   display: inline-block;
 }
-/* line 619, ../sass/main.scss */
+/* line 615, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn-active .ui-btn-inner {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2489ce), color-stop(100%, #2489ce));
   background-image: -webkit-linear-gradient(#2489ce, #2489ce);
@@ -894,49 +889,49 @@ p.off {
   background-image: linear-gradient(#2489ce, #2489ce);
   color: #fff;
 }
-/* line 624, ../sass/main.scss */
+/* line 620, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn {
   width: 100%;
 }
 
-/* line 630, ../sass/main.scss */
+/* line 626, ../sass/main.scss */
 .ui-select .ui-icon {
   background: url(images/icons-18-black.png) no-repeat -218px 0;
 }
 
 /* Hide default checkbox styles */
-/* line 637, ../sass/main.scss */
+/* line 633, ../sass/main.scss */
 .ui-checkbox input, .ui-radio input {
   display: none;
 }
 
-/* line 640, ../sass/main.scss */
+/* line 636, ../sass/main.scss */
 .ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on {
   background: rgba(0, 0, 0, 0.1) url(images/icons-18-black.png) no-repeat 0 0;
   border-radius: 5px;
 }
 
-/* line 645, ../sass/main.scss */
+/* line 641, ../sass/main.scss */
 .ui-icon-checkbox-off {
   background-position: -683px 0;
 }
 
-/* line 648, ../sass/main.scss */
+/* line 644, ../sass/main.scss */
 .ui-icon-checkbox-on {
   background-position: -648px 0;
 }
 
-/* line 651, ../sass/main.scss */
+/* line 647, ../sass/main.scss */
 .ui-icon-radio-off {
   background-position: -683px 0;
 }
 
-/* line 654, ../sass/main.scss */
+/* line 650, ../sass/main.scss */
 .ui-icon-radio-on {
   background-position: -648px 0;
 }
 
-/* line 658, ../sass/main.scss */
+/* line 654, ../sass/main.scss */
 a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -945,7 +940,7 @@ a:hover {
   box-shadow: 0;
 }
 
-/* line 664, ../sass/main.scss */
+/* line 660, ../sass/main.scss */
 a:active, a:focus {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -954,17 +949,17 @@ a:active, a:focus {
   box-shadow: 0;
 }
 
-/* line 670, ../sass/main.scss */
+/* line 666, ../sass/main.scss */
 a.button.ui-link {
   color: #fff;
 }
 
-/* line 674, ../sass/main.scss */
+/* line 670, ../sass/main.scss */
 a.back span {
   background: url(images/icons-18-white.png) -396px 50% no-repeat;
 }
 
-/* line 678, ../sass/main.scss */
+/* line 674, ../sass/main.scss */
 .button {
   display: block;
   text-align: center;
@@ -989,20 +984,20 @@ a.back span {
   background-clip: padding-box;
 }
 
-/* line 693, ../sass/main.scss */
+/* line 689, ../sass/main.scss */
 .button:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   background-image: #555555, #222222;
 }
 
-/* line 698, ../sass/main.scss */
+/* line 694, ../sass/main.scss */
 .calc-1 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 704, ../sass/main.scss */
+/* line 700, ../sass/main.scss */
 .calc-2 {
   float: left;
   display: block;
@@ -1011,24 +1006,24 @@ a.back span {
   text-align: center;
 }
 
-/* line 712, ../sass/main.scss */
+/* line 708, ../sass/main.scss */
 .calc-3 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 718, ../sass/main.scss */
+/* line 714, ../sass/main.scss */
 #tension-diameter-span {
   font-size: 20px;
 }
 
-/* line 722, ../sass/main.scss */
+/* line 718, ../sass/main.scss */
 #tension-diameter-input {
   text-align: center;
 }
 
-/* line 726, ../sass/main.scss */
+/* line 722, ../sass/main.scss */
 #calc-button {
   padding: 8px;
   margin: 2px;
@@ -1041,7 +1036,7 @@ a.back span {
   background-image: linear-gradient(#2489ce, #2489ce);
 }
 
-/* line 733, ../sass/main.scss */
+/* line 729, ../sass/main.scss */
 #calc-results {
   padding: 15px 1%;
   width: 98%;
@@ -1050,7 +1045,7 @@ a.back span {
   font-size: 20px;
 }
 
-/* line 741, ../sass/main.scss */
+/* line 737, ../sass/main.scss */
 .ui-body-c .ui-link {
   font-weight: normal;
 }

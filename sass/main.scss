@@ -378,17 +378,13 @@ thead, tr:nth-of-type( even ) {
 	background: #fff;
 }
 
-tr {
-	padding: 4px;
+th {
+	font-weight: normal;
+	padding: 5px 3px;
 }
 
 td {
-	padding: 5px;
-}
-
-th {
-	font-weight: normal;
-	padding: 5px;
+	padding: 3px;
 }
 
 #diapason-tuning-list td:nth-of-type( 1 ) {

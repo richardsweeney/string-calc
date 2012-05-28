@@ -1811,7 +1811,7 @@ jQuery( function( $ ){
 	  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-tension="' + rico.tension + '" data-diameter="' + diam +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '</td><td>' + rico.tension + ' ' + rico.unitDensity + '</td>';
 		  	
 		  	results += '<td>' + diam + ' ' + rico.unitDiameter + '</td>';
-		  	results += '<td><a href="#" class="delete-results">Delete</a></td></tr>';
+		  	results += '<td><a href="#" class="delete-results">delete</a></td></tr>';
 		  	
 		  	if( !$('#results-table').length ) {
 		  		$('#save-calcs-container').append( table );
