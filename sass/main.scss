@@ -1,10 +1,13 @@
 @import "compass";
 
+$blue: #2489CE;
+
 * {
 	-webkit-touch-callout:none;
 }
 
 a {
+	color: $blue;
 	text-decoration: none;
 }
 
@@ -30,7 +33,7 @@ h1, h2, h3 {
 		background: #111;
 		top: 12px;
 		&.ui-btn-down-a {
-			@include background-image(linear-gradient(#2489CE, #2489CE));
+			@include background-image(linear-gradient($blue, $blue));
 		}
 	}
 }
@@ -80,7 +83,7 @@ input.ui-input-text {
 	font-size: 14px;
 	@include border-radius(5px);
 	padding: 9px 2%;
-	width: 96%;
+	width: 98%;
 }
 
 input.nicelySpaced.ui-input-text {
@@ -232,7 +235,7 @@ fieldset.custom-select-pitch-container, .pretty-bg {
 	width: 30px;
 	height: 30px;
 	@include border-radius(20px);
-	box-shadow: 0 0 3px rgba( 0, 0, 0, 0.4 );
+	@include box-shadow(0 0 3px rgba(0, 0, 0, 0.4));
 	margin: 0 5px;
 	background: #fff url(images/delete.png) no-repeat 45% 50%;
 	color: #fff !important;
@@ -364,10 +367,11 @@ li.center {
 
 table {
 	text-align: left;
-	padding: 10px;
+	// padding: 10px;
 	border-collapse: separate;
 	border-spacing: 0;
-	width: 98%;
+	width: 100%;
+	padding-bottom: 15px;
 }
 
 thead, tr:nth-of-type( even ) {
@@ -536,9 +540,9 @@ p.off {
 				color: #333;
 			}
 			&.active-link, &:active, &:focus {
-				background-color: #2489CE !important;
+				background-color: $blue !important;
 				color: #fff;
-				-webkit-tap-highlight-color: #2489CE;
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
 				text-shadow: none;
 				@inlcude box-shadow(0);
 				outline: none;
@@ -613,7 +617,7 @@ p.off {
 	display: inline-block;
 	.ui-btn-active {
 		.ui-btn-inner {
-			@include background-image(linear-gradient(#2489CE, #2489CE));
+			@include background-image(linear-gradient($blue, $blue));
 			color: #fff;
 		}
 	}
@@ -652,19 +656,15 @@ p.off {
 }
 
 a:hover {
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ) !important;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 	text-shadow: none;
-	box-shadow: none !important;
-	-webkit-box-shadow: none !important;
+	@include box-shadow(0);
 }
 
 a:active, a:focus {
-	color: #fff !important;
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ) !important;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 	text-shadow: none;
-	box-shadow: none !important;
-	-webkit-box-shadow: none !important;
-	background-color: #2489CE;
+	@include box-shadow(0);
 }
 
 a.button.ui-link {
@@ -727,19 +727,15 @@ a.back span {
 	padding: 8px;
 	margin: 2px;
 	border-color: #555;
-	@include background-image(linear-gradient(#2489CE, #2489CE));
+	@include background-image(linear-gradient($blue, $blue));
 }
 
 #calc-results {
-	padding: 15px 5%;
-	width: 90%;
+	padding: 15px 1%;
+	width: 98%;
 	text-align: center;
 	clear: both;
 	font-size: 20px;
-}
-
-#save-calcs-container {
-	padding: 0 3% 3%;
 }
 
 .ui-body-c .ui-link {
