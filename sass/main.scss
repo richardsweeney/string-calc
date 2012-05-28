@@ -558,7 +558,7 @@ p.off {
 	}
 }
 
-body.ui-mobile-viewport-transitioning .iOSlist-container li a.active-link {
+.iOSlist-container li a.active-link {
 	background-color: $blue !important;
 	color: #fff;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);

@@ -782,7 +782,7 @@ p.off {
 }
 
 /* line 561, ../sass/main.scss */
-body.ui-mobile-viewport-transitioning .iOSlist-container li a.active-link {
+.iOSlist-container li a.active-link {
   background-color: #2489ce !important;
   color: #fff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
