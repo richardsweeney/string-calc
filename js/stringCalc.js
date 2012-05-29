@@ -1182,7 +1182,7 @@ jQuery( function( $ ){
 		})
 		.bind('pageinit', function individualResultsPageInit(){
 			$('#delete-these-results').bind('vclick', function(){
-				rico.resultsList.splice( rico.theseResultsId );
+				rico.resultsList.splice( rico.theseResultsId, 1 );
 	  		localStorage.resultsList = JSON.stringify( rico.resultsList );
 				$.mobile.changePage( $('#saved-results-page'), {
 					reverse: true
@@ -1200,8 +1200,7 @@ jQuery( function( $ ){
  	*/
 	$('#options')
 		.bind('pagebeforeshow',function OptionsPageBeforeShow(){
-			var
-				optionsBlob = rico.options(),
+			var optionsBlob = rico.options(),
 				okButton = '<a class="button" id="whereTo" href="#calculations-page">Go</a>',
 				optionsWrap = $('<div id="optionsWrap" />');
 			$('#optionsContent').append( optionsWrap );
@@ -1233,7 +1232,6 @@ jQuery( function( $ ){
 			});
 			$('#options-page-back-link, #home-link, #whereTo').live('vclick', function(){
 				if( $('#remember-settings').attr('checked') == 'checked' ) {
-					// rico.replaceDefault = {};
 					rico.replaceDefault = rico.instruments.current;
 					if( rico.customDefaults.length === 0 ) {
 						rico.customDefaults.push( rico.replaceDefault );
