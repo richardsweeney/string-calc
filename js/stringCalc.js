@@ -748,16 +748,11 @@ $( function(){
 		// Cache the instruments lists here, to speed things up
 		rico.instruments.lists.bowed = rico.listInstruments('bowed');
 		rico.instruments.lists.plucked = rico.listInstruments('plucked');
+		if( $.isEmptyObject(rico.instruments.current) ) {
+			rico.instruments.current = JSON.parse(localStorage.current);
+		}
 
 	})();
-	
-
-
-
-	// Test object - MUST comment this out!!!	
-	rico.instruments.current = rico.instruments.plucked[1];
-	
-
 
 
  /**
