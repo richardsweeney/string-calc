@@ -45,8 +45,6 @@
 				</ul>
 
 				<ul data-role="none">
-					<li><a href="#instructions">How to use the calculator</a></li>
-					<!-- <li><a href="#settings">Settings</a></li> -->
 					<li><a href="#about">About StringCalc</a></li>
 				</ul>
 
@@ -513,7 +511,6 @@
 				
 					<ul data-role="none">
 						<li><a href="#custom-note">Calculate custom note</a></li>
-						<li><a href="#calculation-help">Help using the calculator</a></li>
 					</ul>
 
 				</div>
@@ -535,14 +532,8 @@
 			
 			<div data-role="content" class="cust-calcs-container">
 			
-				<fieldset class="pretty-bg custom-select-pitch-container">
-					<div class="cust-desc">
-						<p class="cust-select-help">Select note &amp; octave *</p>
-					</div>
-					<div class="cnc" id="cust-select-note-container"></div>
-					<div class="cnc" id="cust-select-octave-container"></div>  
-				</fieldset>
-				
+				<input type="text" name="custom-note-name" id="custom-note-name" />
+
 				<div data-role="fieldcontain" class="lessPad">
 			    <fieldset class="ctcd select-tension-diameter" data-role="controlgroup" data-type="horizontal">
 			    	<input class="tension-diameter" type="radio" name="tensDiam" id="cust-radio-choice-1" value="tension" checked="checked" />
@@ -551,32 +542,24 @@
 	         	<label for="cust-radio-choice-2">Diameter</label>
 	        </fieldset>
 	      </div>
-	      
-	      <div id="cust-tension-container">
-					<fieldset class="r-grid-3 pretty-bg">
-						<div class="rg-1" id="cust-tension-1-container"></div>
-						<div class="point">
-							.
-						</div>
-						<div class="rg-2" id="cust-tension-2-container"></div>
-						<div class="rg-3">
-							<p>Kg = <span class="diameterResults"></span></p>
-						</div>
-					</fieldset>
+
+			  <div class="calc-1">
+	      	<input type="number" id="tension-diameter-input">
 	      </div>
-	      
-	      <div id="cust-diameter-container">
-					<fieldset class="r-grid-3 pretty-bg">
-						<div class="rg-1" id="cust-diameter-1-container"></div>
-						<div class="point">
-							.
-						</div>
-						<div class="rg-2" id="cust-diameter-2-container"></div>
-						<div class="rg-3">
-							<p>mm = <span class="tensionResults"></span></p>
-						</div>
-					</fieldset>
+	      <div class="calc-2">
+	      	<span id="tension-diameter-span"></span>
 	      </div>
+	      <div class="calc-3">
+	      	<a id="calc-button" class="button" href="#">Go</a>
+	      </div>
+
+				<div class="clear"></div>
+				
+	      <div id="calc-results"></div>
+	      
+	      <a id="save-this-calculation" class="button">Save this calculation</a>
+	      
+	      <div id="save-calcs-container"></div>
 	      
 	      <p>Select a note and octave from above to perform a custom calculation. You can use the chart below to help you calculate the correct notation for the pitch you're looking for.</p>
 				<img class="nice-img" src="images/pitch.png" alt="pitch notation">				
@@ -643,112 +626,6 @@
 				<p><strong>StringCalc</strong> was designed and built by Richard Sweeney in Malm&ouml;, Sweden.</p>
 				<p>The formulae to calculate tension &amp; diameter were generously shared by Arto Wikla whose online String Calculator (that I've been using for years!) was the inspiration behind this app.</p>
 			
-			</div>
-			
-		</div>
-
-
-		<!-- Instructions page -->
-
-		<div data-role="page" id="instructions">
-		
-			<div data-role="header">
-				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
-				<h1>Instructions</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
-			</div>
-			
-			<div data-role="content">
-				
-				<div data-role="collapsible-set">
-					
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>Step by step instructions</h3>
-						
-						<ul>
-							<li>Choose an instrumental group (bowed or plucked)</li>
-							<li>Select your instrument from the list on the following page</li>
-							<li>Change the relevant options for your instrument - <strong>material</strong>, <strong>pitch</strong> and <strong>string length</strong></li>
-							<li>When you're happy with this, click ok to go to the calculations page</li>
-							<li>The calculations page lists the strings on the selected instrument in descending order (highest to lowest)</li>
-						</ul>
-				
-					</div>
-					
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>Calculating the tension</h3>
-				
-						<p><strong>Example 1:</strong> Calculate the tension of the top string on a lute in kg.</p>
-						
-						<p>The highest pitched string on a lute usually has a diameter of around <strong>.44 mm</strong>. Click on the first string and type <strong>44</strong> in the text field that appears (leave out the decimal point and unit of measurement). Click <strong>Calculate Tension</strong> to perform the calculation.</p>
-						<p><strong>Example 2:</strong> Calculate the tension of the top string on a guitar in lbs.</p>
-						
-						<p>Let's say the highest string on my guitar is <strong>0.028 inches</strong> in diameter. Click on the first string and just enter <strong>0.028</strong> in the text field. Click <strong>Calculate Tension</strong> to get the tension.</p>
-				
-					</div>
-					
-					<div data-role="collapsible" data-collapsed="true">
-									
-						<h3>Calculating the diameter</h3>
-						
-						<p><strong>Example 1:</strong> Calculate the diameter of the e string on a baroque violin in mm.</p>
-						
-						<p>Let's say I want to find out how thick a string should use at a a tension of <strong>6 kg</strong>. Click on the first string and enter the number <strong>6</strong> in the text field (you can leave out the kg). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-						
-						<p><strong>Example 2:</strong> Calculate the diameter of the top string on a ukulele in inches.</p>
-						
-						<p>I want my uke's top string to have a tension of <strong>8 lbs</strong>. Click on the first string and enter the number <strong>8</strong> in the text field (you can leave out the lbs). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-							
-					</div>
-				
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>How the calculator works</h3>
-					
-						<p>This app will help you to calculate the tension and/or the diameter of the strings on your instrument.</p>
-						
-						<p>In order to perform these calculations we need to first know the <strong>density</strong> of the material, the <strong>length</strong> of the string and the <strong>frequency</strong> of the pitch.</p>
-						
-						<p>After selecting your instrument you'll be able to review these options required to perform your own calculations.</p>
-				
-					</div>
-					
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>Different materials</h3>
-						
-						<p>The provided densities for the various string materials are as accurate as the information I could find!</p>
-						
-						<p>Nylon may vary slightly in density between manufacturers and gut strings may feel like they have a higher or lesser tension depending on the thickness of the string and how the string has been prepared.</p>
-						
-						<p>It's difficult to calculate the density of a wound string, as it depends on both the material in the core and the outer winding. This varies from maker to maker. Most commercial retailers seem reluctant to make this information available. No wound string densities are provided for this reason.</p>
-						
-					</div>
-					
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>String lengths</h3>
-						
-						<p>The string lengths provided are averages only. As string lengths vary between instruments you'll get the most accurate results if you measure the string length of your own instrument.</p>
-						
-						<p><strong>N.B.</strong> the string length is measured as the distance between the nut and the bridge of the instrument.</p>
-					
-					</div>
-					
-					<div data-role="collapsible" data-collapsed="true">
-					
-						<h3>Choice of pitch</h3>
-						
-						<p>Historical musicians often tune to different pitches according to what music they're performing. Modern instruments are tuned to 440 Hz, or thereabouts.</p>
-						
-						<p>If you're not sure about this setting, leave it as is!</p>
-						
-					</div>
-					
-				</div>
-
 			</div>
 			
 		</div>
