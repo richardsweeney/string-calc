@@ -749,7 +749,9 @@ $( function(){
 		rico.instruments.lists.bowed = rico.listInstruments('bowed');
 		rico.instruments.lists.plucked = rico.listInstruments('plucked');
 		if( $.isEmptyObject(rico.instruments.current) ) {
-			rico.instruments.current = JSON.parse(localStorage.current);
+			if( localStorage.current !== undefined ) {
+				rico.instruments.current = JSON.parse(localStorage.current);
+			}
 		}
 
 	})();
