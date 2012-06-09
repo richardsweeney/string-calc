@@ -86,7 +86,7 @@ input.ui-input-text {
 	font-size: 14px;
 	@include border-radius(5px);
 	padding: 9px 2%;
-	width: 98%;
+	width: 96%;
 }
 
 input.nicelySpaced.ui-input-text {
@@ -552,10 +552,13 @@ p.off {
 			@include border-radius(0 0 10px 10px);
 		}
 		&:nth-of-type(odd) a {
-			background: #fff;
+			background-color: #fff;
 		}
 		&:nth-of-type(even) a {
-			background: #e2e2e2;
+			background-color: #f2f2f2;
+		}
+		&.single-list-item a {
+			@include border-radius(10px);
 		}
 	}
 }
