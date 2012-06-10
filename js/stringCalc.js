@@ -732,6 +732,10 @@ $( function(){
  	*/
 	var rico = Vals.create( Vals );
 
+	if( $(window).width() >= 768 ) {
+		alert("It looks as though you're accessing this site on a non-mobile device. stringCalc isn't really designed for large screens. Feel free to use it, if you so desire, but for best results try using an iPhone or Android phone.");
+	}
+
  /**
 	* Local Storage shenannigans & 'caching'
 	* Get & Set local storage metric settings
