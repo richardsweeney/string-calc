@@ -1249,7 +1249,7 @@ $( function(){
 				okButton = '<a class="button" id="whereTo" href="#calculations-page">Go</a>',
 				optionsWrap = $('<div id="optionsWrap" />');
 			$('#optionsContent').append( optionsWrap );
-			$('h1#options-title').text( 'Options: ' + rico.instruments.current.name );
+			$('h1#options-title').text( rico.instruments.current.name );
 			if( rico.instruments.current.dataName === 'quickie' ) {
 				okButton = '<a class="button" id="whereTo" href="#custom-note">Go</a>';
 				$('#options-page-back-link').attr('href', '#index');
