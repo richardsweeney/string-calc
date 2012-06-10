@@ -604,7 +604,10 @@ p.off {
 	.ui-checkbox, .ui-radio, .ui-select {
 		&:nth-of-type(even) {
 			.ui-btn-inner {
-				background: #e2e2e2;
+				background: #f6f6f6;
+			}
+			label.ui-btn-down-c .ui-btn-inner {
+				background: rgba(0,0,0,0.3);
 			}
 		}
 	}

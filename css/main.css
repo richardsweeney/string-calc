@@ -867,10 +867,14 @@ p.off {
 
 /* line 606, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner {
-  background: #e2e2e2;
+  background: #f6f6f6;
+}
+/* line 609, ../sass/main.scss */
+.ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner, .ui-controlgroup-vertical .ui-select:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner {
+  background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 613, ../sass/main.scss */
+/* line 616, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -879,7 +883,7 @@ p.off {
   border-radius: 0;
   border-bottom: none;
 }
-/* line 616, ../sass/main.scss */
+/* line 619, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-top {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -887,7 +891,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 619, ../sass/main.scss */
+/* line 622, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-bottom {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -897,12 +901,12 @@ p.off {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 625, ../sass/main.scss */
+/* line 628, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio {
   width: 50%;
   display: inline-block;
 }
-/* line 629, ../sass/main.scss */
+/* line 632, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn-active .ui-btn-inner {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2489ce), color-stop(100%, #2489ce));
   background-image: -webkit-linear-gradient(#2489ce, #2489ce);
@@ -912,49 +916,49 @@ p.off {
   background-image: linear-gradient(#2489ce, #2489ce);
   color: #fff;
 }
-/* line 634, ../sass/main.scss */
+/* line 637, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn {
   width: 100%;
 }
 
-/* line 640, ../sass/main.scss */
+/* line 643, ../sass/main.scss */
 .ui-select .ui-icon {
   background: url(images/icons-18-black.png) no-repeat -218px 0;
 }
 
 /* Hide default checkbox styles */
-/* line 647, ../sass/main.scss */
+/* line 650, ../sass/main.scss */
 .ui-checkbox input, .ui-radio input {
   display: none;
 }
 
-/* line 650, ../sass/main.scss */
+/* line 653, ../sass/main.scss */
 .ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on {
   background: rgba(0, 0, 0, 0.1) url(images/icons-18-black.png) no-repeat 0 0;
   border-radius: 5px;
 }
 
-/* line 655, ../sass/main.scss */
+/* line 658, ../sass/main.scss */
 .ui-icon-checkbox-off {
   background-position: -683px 0;
 }
 
-/* line 658, ../sass/main.scss */
+/* line 661, ../sass/main.scss */
 .ui-icon-checkbox-on {
   background-position: -648px 0;
 }
 
-/* line 661, ../sass/main.scss */
+/* line 664, ../sass/main.scss */
 .ui-icon-radio-off {
   background-position: -683px 0;
 }
 
-/* line 664, ../sass/main.scss */
+/* line 667, ../sass/main.scss */
 .ui-icon-radio-on {
   background-position: -648px 0;
 }
 
-/* line 668, ../sass/main.scss */
+/* line 671, ../sass/main.scss */
 a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -963,7 +967,7 @@ a:hover {
   box-shadow: 0;
 }
 
-/* line 674, ../sass/main.scss */
+/* line 677, ../sass/main.scss */
 a:active, a:focus {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -972,17 +976,17 @@ a:active, a:focus {
   box-shadow: 0;
 }
 
-/* line 680, ../sass/main.scss */
+/* line 683, ../sass/main.scss */
 a.button.ui-link {
   color: #fff;
 }
 
-/* line 684, ../sass/main.scss */
+/* line 687, ../sass/main.scss */
 a.back span {
   background: url(images/icons-18-white.png) -396px 50% no-repeat;
 }
 
-/* line 688, ../sass/main.scss */
+/* line 691, ../sass/main.scss */
 .button {
   display: block;
   text-align: center;
@@ -1007,20 +1011,20 @@ a.back span {
   background-clip: padding-box;
 }
 
-/* line 703, ../sass/main.scss */
+/* line 706, ../sass/main.scss */
 .button:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   background-image: #555555, #222222;
 }
 
-/* line 708, ../sass/main.scss */
+/* line 711, ../sass/main.scss */
 .calc-1 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 714, ../sass/main.scss */
+/* line 717, ../sass/main.scss */
 .calc-2 {
   float: left;
   display: block;
@@ -1029,24 +1033,24 @@ a.back span {
   text-align: center;
 }
 
-/* line 722, ../sass/main.scss */
+/* line 725, ../sass/main.scss */
 .calc-3 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 728, ../sass/main.scss */
+/* line 731, ../sass/main.scss */
 #tension-diameter-span {
   font-size: 20px;
 }
 
-/* line 732, ../sass/main.scss */
+/* line 735, ../sass/main.scss */
 #tension-diameter-input {
   text-align: center;
 }
 
-/* line 736, ../sass/main.scss */
+/* line 739, ../sass/main.scss */
 #calc-button {
   padding: 8px;
   margin: 2px;
@@ -1059,7 +1063,7 @@ a.back span {
   background-image: linear-gradient(#2489ce, #2489ce);
 }
 
-/* line 743, ../sass/main.scss */
+/* line 746, ../sass/main.scss */
 #calc-results {
   padding: 15px 1%;
   width: 98%;
@@ -1068,7 +1072,7 @@ a.back span {
   font-size: 20px;
 }
 
-/* line 751, ../sass/main.scss */
+/* line 754, ../sass/main.scss */
 .ui-body-c .ui-link {
   font-weight: normal;
 }
