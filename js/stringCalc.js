@@ -702,7 +702,28 @@ $( function(){
 			}
 			optionsBlob += '</ul>';
 			return optionsBlob;
+		},
+
+		/**
+		 * Feedback for click on saved button.
+		 */
+		showSavedMessage: function(button) {
+			$('<span class="saved-message">Saved!</span>')
+				.insertBefore(button)
+				.animate({
+					height: '20px'
+				}, 150, function() {
+					$(this)
+						.delay(1000)
+						.animate({
+							height: 0,
+							opacity: 0
+						}, 100, function() {
+							$(this).remove()
+						});
+				});
 		}
+
 	}
 
 
@@ -710,7 +731,6 @@ $( function(){
  	* Create the rico object
  	*/
 	var rico = Vals.create( Vals );
-
 
  /**
 	* Local Storage shenannigans & 'caching'
@@ -720,9 +740,31 @@ $( function(){
 	* Create instrument lists here too
 	*/
 	(function initDefaults(){
-		rico.customTunings.tuningsArray = ( localStorage.customTunings !== undefined ) ? JSON.parse( localStorage.customTunings ) : [];
-		rico.customDefaults = ( localStorage.customDefaults !== undefined ) ? JSON.parse( localStorage.customDefaults ) : [];
-		rico.resultsList = ( localStorage.resultsList !== undefined ) ? JSON.parse( localStorage.resultsList ) : [];
+		rico.isLocalStorage = (function() {
+      var uid = new Date,
+      	result;
+      try {
+        localStorage.setItem(uid, uid);
+        result = localStorage.getItem(uid) == uid;
+        localStorage.removeItem(uid);
+        return result;
+      } catch(e) {}
+    })();
+    if( rico.isLocalStorage === true ) {
+			rico.customTunings.tuningsArray = ( localStorage.customTunings !== undefined ) ? JSON.parse( localStorage.customTunings ) : [];
+			rico.customDefaults = ( localStorage.customDefaults !== undefined ) ? JSON.parse( localStorage.customDefaults ) : [];
+			rico.resultsList = ( localStorage.resultsList !== undefined ) ? JSON.parse( localStorage.resultsList ) : [];
+			// Cache the instruments lists here, to speed things up
+			rico.instruments.lists.bowed = rico.listInstruments('bowed');
+			rico.instruments.lists.plucked = rico.listInstruments('plucked');
+			if( $.isEmptyObject(rico.instruments.current) ) {
+				if( localStorage.current !== undefined ) {
+					rico.instruments.current = JSON.parse(localStorage.current);
+				}
+			}
+		} else {
+			alert("Local storage is not available on your device. You won't be able to save results and/or preferences. Go get yourself an iPhone and all your problems will be solved :)");
+		}
 		switch( localStorage.metricImperial ){
 			case undefined:
 				localStorage.metricImperial = 'metric';
@@ -744,16 +786,6 @@ $( function(){
 				rico.unitLength = 'in';
 			break;
 		}
-
-		// Cache the instruments lists here, to speed things up
-		rico.instruments.lists.bowed = rico.listInstruments('bowed');
-		rico.instruments.lists.plucked = rico.listInstruments('plucked');
-		if( $.isEmptyObject(rico.instruments.current) ) {
-			if( localStorage.current !== undefined ) {
-				rico.instruments.current = JSON.parse(localStorage.current);
-			}
-		}
-
 	})();
 
 
@@ -1136,7 +1168,9 @@ $( function(){
 					instrumentId = +$(this).attr('data-id'),
 					match = false;
 				rico.instruments.current = rico.instruments[ rico.instrumentType ][ instrumentId ];
-				localStorage.current = JSON.stringify( rico.instruments.current );
+	  		if( rico.isLocalStorage === true ) {
+					localStorage.current = JSON.stringify( rico.instruments.current );
+				}
 				for( var i = 0, l = rico.customDefaults.length; i < l; i++ ){
 					if( rico.customDefaults[ i ].dataName === rico.instruments[ rico.instrumentType ][ instrumentId ].dataName ) {
 						match = true;
@@ -1259,7 +1293,11 @@ $( function(){
 						} else {
 							rico.customDefaults[hereInArray] = rico.replaceDefault;
 						}
-						localStorage.customDefaults = JSON.stringify( rico.customDefaults );
+	  				if( rico.isLocalStorage === true ) {
+							localStorage.customDefaults = JSON.stringify( rico.customDefaults );
+						} else {
+							alert("Seems like storage is not available on your device. I'm afraid I won't be able to save your prefrences.");
+						}
 					}
 				}
 			});
@@ -1827,6 +1865,8 @@ $( function(){
 		  		$('#save-calcs-container').append( saveResultsButton ).trigger('create');
 		  	}
 
+		  	rico.showSavedMessage($(this));
+
 		  }
 		  	
 	  });
@@ -1864,7 +1904,13 @@ $( function(){
 	  	
 	  	});
 	  	rico.resultsList.push( fullResults );
-	  	localStorage.resultsList = JSON.stringify( rico.resultsList );
+	  	if( rico.isLocalStorage === true ) {
+	  		localStorage.resultsList = JSON.stringify( rico.resultsList );
+	  	} else {
+	  		alert("Local storage is not available on your device. I'm afraid you won't be able to save your results.")
+	  	}
+
+		  rico.showSavedMessage($(this));
 	  	
 	  });
 
