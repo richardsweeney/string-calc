@@ -969,19 +969,21 @@ p.off {
 /* line 676, ../sass/main.scss */
 .ui-icon-checkbox-on {
   background-position: -648px 0;
+  background-color: #2489ce;
 }
 
-/* line 679, ../sass/main.scss */
+/* line 680, ../sass/main.scss */
 .ui-icon-radio-off {
   background-position: -683px 0;
 }
 
-/* line 682, ../sass/main.scss */
+/* line 683, ../sass/main.scss */
 .ui-icon-radio-on {
   background-position: -648px 0;
+  background-color: #2489ce;
 }
 
-/* line 686, ../sass/main.scss */
+/* line 688, ../sass/main.scss */
 a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -990,7 +992,7 @@ a:hover {
   box-shadow: 0;
 }
 
-/* line 692, ../sass/main.scss */
+/* line 694, ../sass/main.scss */
 a:active, a:focus {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -999,17 +1001,17 @@ a:active, a:focus {
   box-shadow: 0;
 }
 
-/* line 698, ../sass/main.scss */
+/* line 700, ../sass/main.scss */
 a.button.ui-link {
   color: #fff;
 }
 
-/* line 702, ../sass/main.scss */
+/* line 704, ../sass/main.scss */
 a.back span {
   background: url(images/icons-18-white.png) -396px 50% no-repeat;
 }
 
-/* line 706, ../sass/main.scss */
+/* line 708, ../sass/main.scss */
 .button {
   display: block;
   text-align: center;
@@ -1033,21 +1035,28 @@ a.back span {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-
 /* line 721, ../sass/main.scss */
-.button:active {
+.button:active, .button:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  background-image: #555555, #222222;
+}
+/* line 724, ../sass/main.scss */
+.button:active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #555555), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#555555, #222222);
+  background-image: -moz-linear-gradient(#555555, #222222);
+  background-image: -o-linear-gradient(#555555, #222222);
+  background-image: -ms-linear-gradient(#555555, #222222);
+  background-image: linear-gradient(#555555, #222222);
 }
 
-/* line 726, ../sass/main.scss */
+/* line 729, ../sass/main.scss */
 .calc-1 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 732, ../sass/main.scss */
+/* line 735, ../sass/main.scss */
 .calc-2 {
   float: left;
   display: block;
@@ -1056,24 +1065,24 @@ a.back span {
   text-align: center;
 }
 
-/* line 740, ../sass/main.scss */
+/* line 743, ../sass/main.scss */
 .calc-3 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 746, ../sass/main.scss */
+/* line 749, ../sass/main.scss */
 #tension-diameter-span {
   font-size: 20px;
 }
 
-/* line 750, ../sass/main.scss */
+/* line 753, ../sass/main.scss */
 #tension-diameter-input {
   text-align: center;
 }
 
-/* line 754, ../sass/main.scss */
+/* line 757, ../sass/main.scss */
 #calc-button {
   padding: 8px;
   margin: 2px;
@@ -1086,7 +1095,7 @@ a.back span {
   background-image: linear-gradient(#2489ce, #2489ce);
 }
 
-/* line 761, ../sass/main.scss */
+/* line 764, ../sass/main.scss */
 #calc-results {
   padding: 15px 1%;
   width: 98%;
@@ -1095,7 +1104,7 @@ a.back span {
   font-size: 20px;
 }
 
-/* line 769, ../sass/main.scss */
+/* line 772, ../sass/main.scss */
 .ui-body-c .ui-link {
   font-weight: normal;
 }

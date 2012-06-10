@@ -656,7 +656,7 @@ p.off {
 
 .ui-select {
 	.ui-icon {
-		background: url(images/icons-18-black.png) no-repeat -218px 0;;
+		background: url(images/icons-18-black.png) no-repeat -218px 0;
 	}
 }
 
@@ -675,12 +675,14 @@ p.off {
 }
 .ui-icon-checkbox-on {
 	background-position: -648px 0;
+	background-color: $blue;
 }
 .ui-icon-radio-off {
 	background-position: -683px 0;
 }
 .ui-icon-radio-on {
 	background-position: -648px 0;
+	background-color: $blue;
 }
 
 a:hover {
@@ -716,11 +718,12 @@ a.back span {
 	@include border-radius(5px);
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-}
-
-.button:active {
-	-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ) !important;
-	@include background-image(#555, #222);
+	&:active, &:hover {
+		-webkit-tap-highlight-color: rgba( 0, 0, 0, 0 ) !important;
+	}
+	&:active {
+		@include background-image( linear-gradient(#555, #222));
+	}
 }
 
 .calc-1 {
