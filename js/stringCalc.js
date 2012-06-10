@@ -1,4 +1,4 @@
-$(document).bind('mobileinit', function() {
+$(document).bind('mobileinit', function () {
 
 	$.extend($.mobile, {
 		touchOverflowEnabled: true,
@@ -8,7 +8,7 @@ $(document).bind('mobileinit', function() {
 
 });
 
-$(document).bind('pagecreate', function() {
+$(document).bind('pagecreate', function () {
 
 	// Find lists with only 1 item, for styling.
 	$list = $('.iOSlist-container ul');
@@ -1004,9 +1004,9 @@ $( function(){
 			
 			}
 
-			this.diameter = this.diameter.toLocaleString();
-			this.diameterOct = this.diameterOct.toLocaleString();
-			this.tension = this.tension.toLocaleString();
+			// this.diameter = this.diameter.toLocaleString();
+			// this.diameterOct = this.diameterOct.toLocaleString();
+			// this.tension = this.tension.toLocaleString();
 
 			var resultsText = '';
 			
@@ -1038,8 +1038,8 @@ $( function(){
 				this.diameter = this.diameter.toFixed( 3 );
 			}
 
-			this.diameter = this.diameter.toLocaleString();
-			this.tension = this.tension.toLocaleString();
+			// this.diameter = this.diameter.toLocaleString();
+			// this.tension = this.tension.toLocaleString();
 			
 			// Append results to the DOM
 			resultsText = this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity;
