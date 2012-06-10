@@ -708,20 +708,16 @@ $( function(){
 		 * Feedback for click on saved button.
 		 */
 		showSavedMessage: function(button) {
-			$('<span class="saved-message">Saved!</span>')
-				.insertBefore(button)
-				.animate({
-					height: '20px'
-				}, 250, function() {
-					$(this)
-						.delay(1000)
-						.animate({
-							height: 0,
-							opacity: 0
-						}, 100, function() {
-							$(this).remove()
-						});
-				});
+			var message = $('<span class="saved-message">Saved!</span>').insertBefore(button);
+			setTimeout(function () {
+				message.addClass('woot');
+				setTimeout(function () {
+					message.addClass('skoot');
+					setTimeout(function () {
+						message.remove();
+					}, 250);
+				}, 1500);
+			}, 10);
 		}
 
 	}

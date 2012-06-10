@@ -112,6 +112,15 @@ input.nicelySpaced.ui-input-text {
 	color: #333;
 	font-size: 20px;
 	height: 0;
+	@include transition(all 0.25s ease-out);
+	&.woot {
+		opacity: 1;
+		height: 20px;
+	}
+	&.skoot {
+		opacity: 0;
+		height: 0;
+	}
 }
 
 
