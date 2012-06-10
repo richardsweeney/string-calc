@@ -712,7 +712,7 @@ $( function(){
 				.insertBefore(button)
 				.animate({
 					height: '20px'
-				}, 150, function() {
+				}, 250, function() {
 					$(this)
 						.delay(1000)
 						.animate({
