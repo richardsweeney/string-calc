@@ -1307,38 +1307,37 @@ $( function(){
 		})
 	;
 	
-	
- /* CURRENTLY DISABLED */
+
  /**
  	* Settings Page ( imperial / metric )
  	*/
-	$('#settings')
-		.bind( 'pagebeforeshow', function refreshMetricImperialRadio() {
-			if( localStorage.metricImperial === 'metric' ) {
-				$( 'input.metric' ).eq( 0 ).attr( 'checked', 'checked' ).checkboxradio( 'refresh' );
-			} else {
-				$( 'input.metric' ).eq( 1 ).attr( 'checked', 'checked' ).checkboxradio( 'refresh' );	
-			}
-		}).bind('pageinit', function(){
-			$( 'input.metric' ).bind( 'change', function getMetricOrImperialVals(){
-				localStorage.metricImperial = $(this).val();
-				if(localStorage.metricImperial === 'metric' ) {
-					rico.unitDiameter = 'mm';
-					rico.unitDensity = 'kg';
-					rico.unitLength = 'cm';
-				} else if ( localStorage.metricImperial === 'imperial' ) {
-					rico.unitDiameter = 'in';
-					rico.unitDensity = 'lbs';
-					rico.unitLength = 'in';
-				}
-				rico.metricImperial = localStorage.metricImperial;
-				$.mobile.changePage( $('#index'), {
-					reverse: true
-				});
-				console.log( rico.unitDiameter, rico.unitDensity );
-			});
-		})
-	;
+	// $('#settings')
+	// 	.bind( 'pagebeforeshow', function refreshMetricImperialRadio() {
+	// 		if( localStorage.metricImperial === 'metric' ) {
+	// 			$( 'input.metric' ).eq( 0 ).attr( 'checked', 'checked' ).checkboxradio( 'refresh' );
+	// 		} else {
+	// 			$( 'input.metric' ).eq( 1 ).attr( 'checked', 'checked' ).checkboxradio( 'refresh' );
+	// 		}
+	// 	}).bind('pageinit', function(){
+	// 		$( 'input.metric' ).bind( 'change', function getMetricOrImperialVals(){
+	// 			localStorage.metricImperial = $(this).val();
+	// 			if(localStorage.metricImperial === 'metric' ) {
+	// 				rico.unitDiameter = 'mm';
+	// 				rico.unitDensity = 'kg';
+	// 				rico.unitLength = 'cm';
+	// 			} else if ( localStorage.metricImperial === 'imperial' ) {
+	// 				rico.unitDiameter = 'in';
+	// 				rico.unitDensity = 'lbs';
+	// 				rico.unitLength = 'in';
+	// 			}
+	// 			rico.metricImperial = localStorage.metricImperial;
+	// 			$.mobile.changePage( $('#index'), {
+	// 				reverse: true
+	// 			});
+	// 			console.log( rico.unitDiameter, rico.unitDensity );
+	// 		});
+	// 	})
+	// ;
 	
 	
 	
@@ -1360,10 +1359,12 @@ $( function(){
 			$('.pitch').live('change', function(e){
 				rico.instruments.current.pitch = +$(this).val();
 				$('#customPitch').val('');
-				$.mobile.changePage( $('#options'), {
-					transition: 'flip',
-					reverse: true
-				});
+				setTimeout(function () {
+					$.mobile.changePage( $('#options'), {
+						transition: 'flip',
+						reverse: true
+					});
+				}, 250);
 			});
 			$('#customPitch').bind('change', function(){
 				rico.instruments.current.pitch = +$(this).val();
@@ -1399,10 +1400,12 @@ $( function(){
 				$('#customDensity').val('');
 				rico.instruments.current.material = $(this).attr('id');
 				rico.instruments.current.density = +$(this).val();
-				$.mobile.changePage( $('#options'), {
-					transition: 'flip',
-					reverse: true
-				});
+				setTimeout(function () {
+					$.mobile.changePage( $('#options'), {
+						transition: 'flip',
+						reverse: true
+					});
+				}, 250);
 			});
 			$('#customDensity').bind('change', function(){
 				rico.instruments.current.material = 'Custom density';
