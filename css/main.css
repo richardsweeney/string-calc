@@ -832,6 +832,10 @@ p.off {
   background: #fff;
 }
 /* line 588, ../sass/main.scss */
+.ui-checkbox .ui-btn-inner:hover, .ui-checkbox .ui-btn-inner:active, .ui-radio .ui-btn-inner:hover, .ui-radio .ui-btn-inner:active, .ui-select .ui-btn-inner:hover, .ui-select .ui-btn-inner:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* line 591, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-btn-corner-all, .ui-radio .ui-btn-inner.ui-btn-corner-all, .ui-select .ui-btn-inner.ui-btn-corner-all {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -839,7 +843,7 @@ p.off {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 591, ../sass/main.scss */
+/* line 594, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-top, .ui-radio .ui-btn-inner.ui-corner-top, .ui-select .ui-btn-inner.ui-corner-top {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -847,7 +851,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 594, ../sass/main.scss */
+/* line 597, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-bottom, .ui-radio .ui-btn-inner.ui-corner-bottom, .ui-select .ui-btn-inner.ui-corner-bottom {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -855,7 +859,7 @@ p.off {
   -o-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
 }
-/* line 597, ../sass/main.scss */
+/* line 600, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-left, .ui-radio .ui-btn-inner.ui-corner-left, .ui-select .ui-btn-inner.ui-corner-left {
   -webkit-border-radius: 10px 0 0 10px;
   -moz-border-radius: 10px 0 0 10px;
@@ -863,7 +867,7 @@ p.off {
   -o-border-radius: 10px 0 0 10px;
   border-radius: 10px 0 0 10px;
 }
-/* line 600, ../sass/main.scss */
+/* line 603, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-corner-right, .ui-radio .ui-btn-inner.ui-corner-right, .ui-select .ui-btn-inner.ui-corner-right {
   -webkit-border-radius: 0 10px 10px 0;
   -moz-border-radius: 0 10px 10px 0;
@@ -871,25 +875,29 @@ p.off {
   -o-border-radius: 0 10px 10px 0;
   border-radius: 0 10px 10px 0;
 }
-/* line 603, ../sass/main.scss */
+/* line 606, ../sass/main.scss */
 .ui-checkbox .ui-btn-inner.ui-btn-down-c, .ui-radio .ui-btn-inner.ui-btn-down-c, .ui-select .ui-btn-inner.ui-btn-down-c {
   background: #eee;
 }
-/* line 607, ../sass/main.scss */
+/* line 610, ../sass/main.scss */
 .ui-checkbox label.ui-btn-down-c .ui-btn-inner, .ui-radio label.ui-btn-down-c .ui-btn-inner, .ui-select label.ui-btn-down-c .ui-btn-inner {
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 615, ../sass/main.scss */
+/* line 618, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner {
   background: #f6f6f6;
 }
-/* line 618, ../sass/main.scss */
+/* line 620, ../sass/main.scss */
+.ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* line 624, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner, .ui-controlgroup-vertical .ui-select:nth-of-type(even) label.ui-btn-down-c .ui-btn-inner {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 625, ../sass/main.scss */
+/* line 631, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -898,7 +906,7 @@ p.off {
   border-radius: 0;
   border-bottom: none;
 }
-/* line 628, ../sass/main.scss */
+/* line 634, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-top {
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -906,7 +914,7 @@ p.off {
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-/* line 631, ../sass/main.scss */
+/* line 637, ../sass/main.scss */
 .ui-controlgroup-vertical .ui-radio.ui-corner-bottom {
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
@@ -916,12 +924,12 @@ p.off {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 637, ../sass/main.scss */
+/* line 643, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio {
   width: 50%;
   display: inline-block;
 }
-/* line 641, ../sass/main.scss */
+/* line 647, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn-active .ui-btn-inner {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2489ce), color-stop(100%, #2489ce));
   background-image: -webkit-linear-gradient(#2489ce, #2489ce);
@@ -931,49 +939,49 @@ p.off {
   background-image: linear-gradient(#2489ce, #2489ce);
   color: #fff;
 }
-/* line 646, ../sass/main.scss */
+/* line 652, ../sass/main.scss */
 .ui-controlgroup-horizontal .ui-radio .ui-btn {
   width: 100%;
 }
 
-/* line 652, ../sass/main.scss */
+/* line 658, ../sass/main.scss */
 .ui-select .ui-icon {
   background: url(images/icons-18-black.png) no-repeat -218px 0;
 }
 
 /* Hide default checkbox styles */
-/* line 659, ../sass/main.scss */
+/* line 665, ../sass/main.scss */
 .ui-checkbox input, .ui-radio input {
   display: none;
 }
 
-/* line 662, ../sass/main.scss */
+/* line 668, ../sass/main.scss */
 .ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on {
   background: rgba(0, 0, 0, 0.1) url(images/icons-18-black.png) no-repeat 0 0;
   border-radius: 5px;
 }
 
-/* line 667, ../sass/main.scss */
+/* line 673, ../sass/main.scss */
 .ui-icon-checkbox-off {
   background-position: -683px 0;
 }
 
-/* line 670, ../sass/main.scss */
+/* line 676, ../sass/main.scss */
 .ui-icon-checkbox-on {
   background-position: -648px 0;
 }
 
-/* line 673, ../sass/main.scss */
+/* line 679, ../sass/main.scss */
 .ui-icon-radio-off {
   background-position: -683px 0;
 }
 
-/* line 676, ../sass/main.scss */
+/* line 682, ../sass/main.scss */
 .ui-icon-radio-on {
   background-position: -648px 0;
 }
 
-/* line 680, ../sass/main.scss */
+/* line 686, ../sass/main.scss */
 a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -982,7 +990,7 @@ a:hover {
   box-shadow: 0;
 }
 
-/* line 686, ../sass/main.scss */
+/* line 692, ../sass/main.scss */
 a:active, a:focus {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   text-shadow: none;
@@ -991,17 +999,17 @@ a:active, a:focus {
   box-shadow: 0;
 }
 
-/* line 692, ../sass/main.scss */
+/* line 698, ../sass/main.scss */
 a.button.ui-link {
   color: #fff;
 }
 
-/* line 696, ../sass/main.scss */
+/* line 702, ../sass/main.scss */
 a.back span {
   background: url(images/icons-18-white.png) -396px 50% no-repeat;
 }
 
-/* line 700, ../sass/main.scss */
+/* line 706, ../sass/main.scss */
 .button {
   display: block;
   text-align: center;
@@ -1026,20 +1034,20 @@ a.back span {
   background-clip: padding-box;
 }
 
-/* line 715, ../sass/main.scss */
+/* line 721, ../sass/main.scss */
 .button:active {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   background-image: #555555, #222222;
 }
 
-/* line 720, ../sass/main.scss */
+/* line 726, ../sass/main.scss */
 .calc-1 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 726, ../sass/main.scss */
+/* line 732, ../sass/main.scss */
 .calc-2 {
   float: left;
   display: block;
@@ -1048,24 +1056,24 @@ a.back span {
   text-align: center;
 }
 
-/* line 734, ../sass/main.scss */
+/* line 740, ../sass/main.scss */
 .calc-3 {
   float: left;
   display: block;
   width: 40%;
 }
 
-/* line 740, ../sass/main.scss */
+/* line 746, ../sass/main.scss */
 #tension-diameter-span {
   font-size: 20px;
 }
 
-/* line 744, ../sass/main.scss */
+/* line 750, ../sass/main.scss */
 #tension-diameter-input {
   text-align: center;
 }
 
-/* line 748, ../sass/main.scss */
+/* line 754, ../sass/main.scss */
 #calc-button {
   padding: 8px;
   margin: 2px;
@@ -1078,7 +1086,7 @@ a.back span {
   background-image: linear-gradient(#2489ce, #2489ce);
 }
 
-/* line 755, ../sass/main.scss */
+/* line 761, ../sass/main.scss */
 #calc-results {
   padding: 15px 1%;
   width: 98%;
@@ -1087,7 +1095,7 @@ a.back span {
   font-size: 20px;
 }
 
-/* line 763, ../sass/main.scss */
+/* line 769, ../sass/main.scss */
 .ui-body-c .ui-link {
   font-weight: normal;
 }
