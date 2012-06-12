@@ -832,7 +832,7 @@ p.off {
   background: #fff;
 }
 /* line 588, ../sass/main.scss */
-.ui-checkbox .ui-btn-inner:hover, .ui-checkbox .ui-btn-inner:active, .ui-radio .ui-btn-inner:hover, .ui-radio .ui-btn-inner:active, .ui-select .ui-btn-inner:hover, .ui-select .ui-btn-inner:active {
+.ui-checkbox .ui-btn-inner:active, .ui-radio .ui-btn-inner:active, .ui-select .ui-btn-inner:active {
   background: rgba(0, 0, 0, 0.2);
 }
 /* line 591, ../sass/main.scss */
@@ -889,7 +889,7 @@ p.off {
   background: #f6f6f6;
 }
 /* line 620, ../sass/main.scss */
-.ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner:hover, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner:active {
+.ui-controlgroup-vertical .ui-checkbox:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-radio:nth-of-type(even) .ui-btn-inner:active, .ui-controlgroup-vertical .ui-select:nth-of-type(even) .ui-btn-inner:active {
   background: rgba(0, 0, 0, 0.2);
 }
 /* line 624, ../sass/main.scss */

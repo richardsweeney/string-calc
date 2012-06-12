@@ -585,7 +585,7 @@ p.off {
 	@include border-radius(10px);
 	.ui-btn-inner {
 		background: #fff;
-		&:hover, &:active {
+		&:active {
 			background: rgba(0,0,0,0.2);
 		}
 		&.ui-btn-corner-all {
@@ -617,7 +617,7 @@ p.off {
 		&:nth-of-type(even) {
 			.ui-btn-inner {
 				background: #f6f6f6;
-				&:hover, &:active {
+				&:active {
 					background: rgba(0,0,0,0.2);
 				}
 			}
@@ -773,3 +773,8 @@ a.back span {
 	font-weight: normal;
 }
 
+// @media screen and (max-width: 770px) {
+// 	.ui-page {
+// 		width: 60px;
+// 	}
+// }
