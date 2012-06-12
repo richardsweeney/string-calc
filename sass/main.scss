@@ -585,9 +585,6 @@ p.off {
 	@include border-radius(10px);
 	.ui-btn-inner {
 		background: #fff;
-		&:active {
-			background: rgba(0,0,0,0.2);
-		}
 		&.ui-btn-corner-all {
 			@include border-radius(10px);
 		}
@@ -617,9 +614,6 @@ p.off {
 		&:nth-of-type(even) {
 			.ui-btn-inner {
 				background: #f6f6f6;
-				&:active {
-					background: rgba(0,0,0,0.2);
-				}
 			}
 			label.ui-btn-down-c .ui-btn-inner {
 				background: rgba(0,0,0,0.3);
@@ -773,8 +767,8 @@ a.back span {
 	font-weight: normal;
 }
 
-// @media screen and (max-width: 770px) {
-// 	.ui-page {
-// 		width: 60px;
-// 	}
-// }
+@media screen and (min-width:770px) {
+	.ui-mobile [data-role="page"], .ui-page {
+		max-width: 770px;
+	}
+}
