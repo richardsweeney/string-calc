@@ -66,7 +66,7 @@ $( function(){
 			quickie: {
 				stringLength: 60,
 				material: 'gut',
-				pitch: 440,	
+				pitch: 440,
 				density: 1300,
 				dataName: 'quickie',
 				name: 'Quick Calculation'
@@ -113,7 +113,7 @@ $( function(){
 					name: 'Violoncello Piccolo/da Spalla',
 					stringLength: 65,
 					multipleTunings: false,
-					tuning: [ [5,4], [0,3], [7,3], [2,2], [9,2] ]	
+					tuning: [ [5,4], [0,3], [7,3], [2,2], [9,2] ]
 				},
 				{
 					dataName: 'bassViolin',
@@ -182,7 +182,7 @@ $( function(){
 					dataName: 'renaissanceLute',
 					name: 'Renaissance Lute',
 					material: 'gut',
-					pitch: 415,	
+					pitch: 415,
 					density: 1300,
 					stringLength: 60,
 					numberCourses: 10,
@@ -229,7 +229,7 @@ $( function(){
 					dataName: 'baroqueLute',
 					name: 'Baroque Lute',
 					material: 'gut',
-					pitch: 415,	
+					pitch: 415,
 					density: 1300,
 					stringLength: 71,
 					diapasonLength: 96,
@@ -244,7 +244,7 @@ $( function(){
 					dataName: 'archlute',
 					name: 'Archlute',
 					material: 'gut',
-					pitch: 415,	
+					pitch: 415,
 					density: 1300,
 					stringLength: 67,
 					diapasonLength: 150,
@@ -260,7 +260,7 @@ $( function(){
 					dataName: 'theorbo',
 					name: 'Theorbo',
 					material: 'gut',
-					pitch: 415,	
+					pitch: 415,
 					density: 1300,
 					stringLength: 90,
 					diapasonLength: 160,
@@ -298,7 +298,7 @@ $( function(){
 					dataName: 'baroqueGuitar',
 					name: 'Baroque Guitar',
 					material: 'gut',
-					pitch: 415,	
+					pitch: 415,
 					density: 1300,
 					stringLength: 66,
 					numberCourses: 5,
@@ -312,7 +312,7 @@ $( function(){
 					dataName: 'classicalGuitar',
 					name: 'Classical Guitar',
 					material: 'nylon',
-					pitch: 440,	
+					pitch: 440,
 					density: 1140,
 					stringLength: 66,
 					multipleTunings: false,
@@ -323,7 +323,7 @@ $( function(){
 					dataName: 'mandolin',
 					name: 'Mandolin',
 					material: 'steel',
-					pitch: 440,	
+					pitch: 440,
 					density: 7800,
 					stringLength: 33,
 					multipleTunings: false,
@@ -333,7 +333,7 @@ $( function(){
 					dataName: 'ukulele',
 					name: 'Ukulele',
 					material: 'nylon',
-					pitch: 440,	
+					pitch: 440,
 					density: 1140,
 					stringLength: 33,
 					multipleTunings: true,
@@ -369,7 +369,7 @@ $( function(){
 					dataName: 'oud',
 					name: 'Oud',
 					material: 'gut',
-					pitch: 440,	
+					pitch: 440,
 					density: 1300,
 					stringLength: 63,
 					octavesFromCourse: 5,
@@ -407,7 +407,7 @@ $( function(){
 						},
 						{
 							name: 'D, A, E, B, F#, B',
-							tuning: [ [7,4], [0,3], [5,3], [-2,2], [3,2], [-2,1] ]	
+							tuning: [ [7,4], [0,3], [5,3], [-2,2], [3,2], [-2,1] ]
 						}
 					]
 				}
@@ -466,7 +466,7 @@ $( function(){
 
 	/**
 		* Lists the instruments
-		* 
+		*
 		* @param string category of instrument (bowed or plucked)
 		* @return <ul> of instruments
 		*/
@@ -541,7 +541,7 @@ $( function(){
 
 	/**
 		* Capitalize the first letter of a string
-		* 
+		*
 		* @param string
 		* @return string
 		*/
@@ -552,7 +552,7 @@ $( function(){
 
 	 /**
 		* Disply each tuning as a radio input
-		* 
+		*
 		* @param integer id of the tuning
 		* @param string human name of the tuning
 		* @param string name of the tuning without spaces, for easy comparison
@@ -565,7 +565,7 @@ $( function(){
 
 	 /**
 		* Calculate note name from pitch offset
-		* 
+		*
 		* @param string the note from which to calculate the pitch offset
 		* @return integer pitch-offset
 		*/
@@ -590,10 +590,10 @@ $( function(){
 			}
 			return pitchOffset;
 		},
-	
+
 	 /**
 		* Calculate pitch offset from note name
-		* 
+		*
 		* @param integer the pitch offset from which to calculate the note name
 		* @return string the name of the note
 		*/
@@ -656,7 +656,7 @@ $( function(){
 			} else {
 				optionsBlob += '<li><a data-transition="flip" href="#string-length"><span>String length:</span> ' + sl + ' ' + this.unitLength + '</a></li>';
 			}
-			if( thisInstrument.numberCourses !== undefined ) {				
+			if( thisInstrument.numberCourses !== undefined ) {
 				optionsBlob += '<li><a data-transition="flip" href="#number-courses"><span>Number of courses:</span> ' + thisInstrument.numberCourses + '</a></li>';
 			}
 			if( thisInstrument.diapasonLength !== undefined ) {
@@ -674,7 +674,7 @@ $( function(){
 
 			/* Remove alternate diapason tuning for now */
 
-			// if( thisInstrument.numberCourses !== undefined && thisInstrument.dataName !== 'baroqueGuitar' ) {				
+			// if( thisInstrument.numberCourses !== undefined && thisInstrument.dataName !== 'baroqueGuitar' ) {
 			// 	var
 			// 		arr = ( thisInstrument.multipleTunings === true ) ? thisInstrument.tuning[ +thisInstrument.tuningId ].tuning : thisInstrument.tuning,
 			// 		diapasonsArray = arr.slice( 6, thisInstrument.numberCourses ), // from the 7th course, downward
@@ -736,7 +736,7 @@ $( function(){
 	* Local Storage shenannigans & 'caching'
 	* Get & Set local storage metric settings
 	* Custom Defaulst, Custom Tunings & Saved results
-	* 
+	*
 	* Create instrument lists here too
 	*/
 	(function initDefaults(){
@@ -819,12 +819,12 @@ $( function(){
 		if( this.instruments.current.pitch == pitch ) {
 			pitchBlob += '<input class="pitch" type="radio" name="pitch" data-key="pitch" id="pitch-' + pitch + '" value="' + pitch + '" checked="checked" />';
 		} else {
-			pitchBlob += '<input class="pitch" type="radio" name="pitch" data-key="pitch" id="pitch-' + pitch + '" value="' + pitch + '" />';			
+			pitchBlob += '<input class="pitch" type="radio" name="pitch" data-key="pitch" id="pitch-' + pitch + '" value="' + pitch + '" />';
 		}
 		return pitchBlob;
 	}
 
-	
+
  /**
 	* Add the various tunings to the tunings page.
 	*
@@ -876,16 +876,16 @@ $( function(){
 				calcBlob += '<option value="' + ( +currInst.frettedCourses + i ) + '">' + ( ( +currInst.frettedCourses + i ) + 1 ) + ': ' + this.whichNote( diapasonsArray[i][0] ) + diapasonsArray[i][1] + '</option>';
 			}
 			calcBlob += '</optgroup>';
-		} else {		
+		} else {
 			for( var i = 0, l = tuningArray.length; i < l; i++ ) {
-				calcBlob += '<option value="' + i + '">' + ( i + 1 ) + ': ' + this.whichNote( tuningArray[i][0] ) + tuningArray[i][1] + '</option>';	
+				calcBlob += '<option value="' + i + '">' + ( i + 1 ) + ': ' + this.whichNote( tuningArray[i][0] ) + tuningArray[i][1] + '</option>';
 			}
 		}
 		calcBlob += '</select>';
 		return calcBlob;
 	}
-	
-	
+
+
  /**
 	* Calculate the frequency of any pitch
 	*
@@ -897,11 +897,11 @@ $( function(){
 	rico.calculateFrequency = function( pitchOffset, octaveOffset ) {
 		return ( rico.instruments.current.pitch / Math.pow( this.semiTone, pitchOffset ) ) * octaveOffset;
 	}
-	
-	
+
+
  /**
 	* Add the select lists to the #instruments page
-	* 
+	*
 	* @param array :
 	*	[0] = class of container
 	* [1] = number of items in list
@@ -925,8 +925,8 @@ $( function(){
 			$( '#' + selectArray[i][0] ).append( sel ).trigger( 'create' );
 		}
 	}
-	
-	
+
+
  /**
 	* Create a select list for all note values
 	*
@@ -944,7 +944,7 @@ $( function(){
 		noteBlob += '</select></div>';
 		return noteBlob;
 	}
-	
+
  /**
 	* Create a select list for the octave values
 	*
@@ -962,8 +962,8 @@ $( function(){
 		octaveBlob += '</select></div>';
 		return octaveBlob;
 	}
-	
-	
+
+
  /**
 	* Calculate the tension / diameter of the string
 	* Appends the results directly to the page
@@ -971,37 +971,37 @@ $( function(){
 	* @return null
 	*/
 	rico.doCalcs = function() {
-		
+
 		var currInst = this.instruments.current, // The current instrument
 			stringLength = ( this.calcHelper.diapason === true ) ? currInst.diapasonLength : currInst.stringLength, // Whether it a diapason or a regular string
 			tensDiam = this.calcHelper.tensDiam; // Are we calculating the tension or the diameter
-		
+
 		// Calculate the tension
 		if ( this.tensionOrDiameter === 'tension' ) {
-			
+
 			// Set tension variable
 			this.tension = tensDiam;
-			
+
 			// Imperial conversions
 			var tension = ( this.metricImperial === 'imperial' ) ? tensDiam * this.kgToLbs : tensDiam;
-			
+
 			// Calculate the diameter of the string (BIG thanks to Arto Wikla for the formula)
 			this.diameter = Math.sqrt( Math.pow( ( 10e+4 / this.frequency ), 2 ) * tension * 9.81 / Math.pow( stringLength, 2 ) / Math.PI / currInst.density );
-			
+
 			if( this.metricImperial === 'metric' ) {
-				
+
 				// Round up the diameter & fix decimal places
 				this.diameter = ( Math.round( this.diameter * 100 ) / 100 ).toFixed( 2 );
 				// Get octave diameter
 				this.diameterOct = ( this.diameter / 2 ).toFixed( 2 );
-			
+
 			}	else if( this.metricImperial === 'imperial' ) {
-				
+
 				// Round up the diameter & fix decimal places
 				this.diameter = ( Math.round( ( this.diameter * this.mmToInch ) * 1000 ) / 1000 ).toFixed( 3 );
 				// Get octave diameter
 				this.diameterOct = ( this.diameter / 2 ).toFixed( 3 );
-			
+
 			}
 
 			// this.diameter = this.diameter.toLocaleString();
@@ -1009,41 +1009,41 @@ $( function(){
 			// this.tension = this.tension.toLocaleString();
 
 			var resultsText = '';
-			
+
 			// If we should show the octave results too
 			if( this.calcHelper.showOctave === true && currInst.showOctaves === true ) {
 				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + '/' + this.diameterOct + ' ' + this.unitDiameter;
 			} else {
 				resultsText = this.tension + ' ' + this.unitDensity + ' = ' + this.diameter + ' ' + this.unitDiameter;
 			}
-		
-		// If we should calculate the diameter	
+
+		// If we should calculate the diameter
 		} else if( this.tensionOrDiameter === 'diameter' ) {
-			
+
 			this.diameter = tensDiam;
-			
+
 			// Imperial conversion
 			var diameter = ( this.metricImperial === 'imperial' ) ? tensDiam * this.mmToInch : tensDiam;
-			
+
 			// Calculate the tension of the string (HUGE thanks to Arto Wikla for the formula!)
 			this.tension = Math.pow( ( this.frequency * ( stringLength * 10 ) * diameter ), 2 ) * ( Math.PI * currInst.density / 981e+10 );
-			
+
 			// Correct results for decimal points & metric/imperial
 			if( this.metricImperial === 'metric' ) {
 				this.tension = ( Math.round( ( this.tension ) * 100 ) / 100 );
-				
+
 			} else if( this.metricImperial === 'imperial' ) {
-				
+
 			 	this.tension = ( Math.round( ( this.tension * this.kgToLbs ) * 1000 ) / 1000 );
 				this.diameter = this.diameter.toFixed( 3 );
 			}
 
 			// this.diameter = this.diameter.toLocaleString();
 			// this.tension = this.tension.toLocaleString();
-			
+
 			// Append results to the DOM
 			resultsText = this.diameter + ' ' + this.unitDiameter + ' = ' + this.tension + ' ' + this.unitDensity;
-			
+
 		}
 
 		$('#calc-results').text(resultsText).addClass('pretty-bg').css({ 'margin-top': '15px' });
@@ -1070,8 +1070,8 @@ $( function(){
 			return cTblob;
 		}
 	}
-	
-	
+
+
 
  /**
  	* Add list of results to results page
@@ -1131,8 +1131,8 @@ $( function(){
 	$('.iOSlist-container ul a').live('vclick', function (){
 		$(this).addClass('active-link');
 	});
-	
-	
+
+
  /**
   * Remove active class on page hide
   */
@@ -1140,7 +1140,7 @@ $( function(){
 		$( '.iOSlist-container li a' ).removeClass('active-link');
 	});
 
-	
+
  /**
  	* Index Page
  	*/
@@ -1182,7 +1182,7 @@ $( function(){
 				} else {
 					if( rico.instrumentType === 'bowed' ) {
 						rico.instruments.current.material = 'gut';
-						rico.instruments.current.pitch = 415;	
+						rico.instruments.current.pitch = 415;
 						rico.instruments.current.density = 1300;
 					}
 				}
@@ -1192,9 +1192,9 @@ $( function(){
 			$('#instrument-list-container').empty();
 		})
 	;
-	
-	
-	
+
+
+
  /**
  	* Saved Results Page
  	*/
@@ -1214,8 +1214,8 @@ $( function(){
 			$('#saved-results-container').empty();
 		})
 	;
-	
-	
+
+
  /**
  	* Individual Results Page
  	*/
@@ -1239,7 +1239,7 @@ $( function(){
 		})
 	;
 
-	
+
  /**
  	* Options Page
  	*/
@@ -1306,7 +1306,7 @@ $( function(){
 			$('.custom-tuning-funk, #optionsWrap').remove();
 		})
 	;
-	
+
 
  /**
  	* Settings Page ( imperial / metric )
@@ -1338,9 +1338,9 @@ $( function(){
 	// 		});
 	// 	})
 	// ;
-	
-	
-	
+
+
+
  /**
  	* Pitch Page
  	*/
@@ -1374,9 +1374,9 @@ $( function(){
 			$('#pitch-container').empty();
 		})
 	;
-	
-	
-	
+
+
+
  /**
  	* Materials Page
  	*/
@@ -1416,8 +1416,8 @@ $( function(){
 			$('#material-container').empty();
 		})
 	;
-	
-	
+
+
 
  /**
  	* Stringlength Page
@@ -1456,15 +1456,15 @@ $( function(){
 			$('#string-length-container').empty();
 		})
 	;
-	
-	
-	
+
+
+
  /**
  	* Number of courses page
  	*/
 	$('#number-courses')
 		.bind('pagebeforeshow', function numberCoursesPageBeforeShow(){
-			var 
+			var
 				currInst = rico.instruments.current,
 				min = 10,
 				max = 14;
@@ -1487,9 +1487,9 @@ $( function(){
 			});
 		})
 	;
-	
-	
-	
+
+
+
 	// Number of fretted courses
 	$('#number-fretted-courses')
 		.bind('pagebeforeshow', function(){
@@ -1553,7 +1553,7 @@ $( function(){
 			$('#octaveCourses').live('change', function(){
 				rico.instruments.current.octavesFromCourse = +$(this).val();
 			});
-			$('.yes-no-octaves').live('change', function(){	
+			$('.yes-no-octaves').live('change', function(){
 				var detta = $(this);
 				if( detta.attr('id') === 'no-octaves' ) {
 					$('#octaveCourses').slider('disable');
@@ -1568,37 +1568,37 @@ $( function(){
 			});
 		})
 	;
-	
-	
-	
+
+
+
 	// How does sir with to tune his diapasons today?
 	$('#diapason-tuning')
-	
+
 		.bind('pagebeforeshow', function(){
-	
+
 			rico.editingThisString = '';
 			rico.thisStringNoteOctave = [];
-	
+
 			if( !$('#diapason-tuning-select-note').length ) {
-			
+
 				var noteBlob = rico.createNoteSelectList('diapason-tuning-select-note'),
 					octaveBlob = rico.createOctaveSelectList('diapason-tuning-select-octave');
-					
+
 				$('#diapason-tuning-note-container').append( noteBlob ).trigger('create');
 				$('#diapason-tuning-octave-container').append( octaveBlob ).trigger('create');
-				
+
 				var noteSel = $('#diapason-tuning-select-note');
 				noteSel[0].selectedIndex = 9;
-				
+
 				var octSel = $('#diapason-tuning-select-octave');
 				octSel[0].selectedIndex = 2;
-				
+
 				noteSel.add( octSel ).selectmenu('refresh');
-				
+
 			}
-			
+
 			$('#diapason-show-hide').hide();
-			
+
 			// Append the list of diapasons to the DOM
 			var container = $('#diapason-tuning-container'),
 				table = '<table id="diapason-tuning-list"><thead><tr><th>Course</th><th>Note</th><th>Action</th></tr></thead><tbody>';
@@ -1608,48 +1608,48 @@ $( function(){
 				li = '',
 				i = 0,
 				l = diapasonsArray.length;
-				
+
 			for( ; i < l; i++ ) {
-			
+
 				var note = diapasonsArray[i][0],
 					octave = diapasonsArray[i][1];
-					
+
 				table += '<tr data-list-number="' + ( i + 1 ) + '" data-note="' + note + '" data-octave="' + octave + '"><td class="number">' + ( i + 7 ) + '.</td><td class="change-this"><span class="note-name">' + rico.whichNote( note ) + octave + '</span></td><td><a class="editLi" href="#">change</a></td></tr>';
-				
+
 			}
 			table += '</tbody></table>';
-		
+
 			container.append( table ).trigger( 'create' );
-		
+
 		})
-		
+
 		.bind('pageinit', function(){
-			
+
 			// Edit a diapason
 			$('#diapason-tuning-list a').live('vclick', function(){
-		
+
 					// If we're already editing a string - change that stuff back
 				if( rico.editingThisString != '' && rico.thisStringNoteOctave.length > 0 ) {
 
 					var oldNote = rico.thisStringNoteOctave[0],
 						oldOctave = rico.thisStringNoteOctave[1],
 						tr = $( '#diapason-tuning-list tr' ).eq( rico.editingThisString - 1 );
-					
+
 					tr.find( 'span.note-name' ).html( rico.whichNote( oldNote ) + oldOctave );
-					
+
 					$( '#diapason-tuning-list' ).trigger( 'create' );
-					
+
 				}
-				
+
 				rico.thisStringNoteOctave = [];
-				
+
 				var thisTr = $(this).closest( 'tr' ),
 					note = +thisTr.attr('data-note'),
 					octave = +thisTr.attr('data-octave');
-					
+
 				rico.thisStringNoteOctave.push( note, octave );
-				rico.editingThisString = +thisTr.attr('data-list-number');				
-				
+				rico.editingThisString = +thisTr.attr('data-list-number');
+
 /*
 				var
 					note = $(this).parent().parent().attr('data-note')
@@ -1663,44 +1663,44 @@ $( function(){
 				noteSel.add( octSel ).selectmenu('refresh');
 */
 				$( '#diapason-show-hide' ).show();
-				
+
 				$(this).parent().html('select a note above');
-				
+
 			});
-			
-			$('#edit-diapason').live('vclick', function(){			
-			
+
+			$('#edit-diapason').live('vclick', function(){
+
 				var note = +$('#diapason-tuning-select-note').val(),
 					octave = +$('#diapason-tuning-select-octave').val(),
 					tr = $('#diapason-tuning-list tr').eq( rico.editingThisString )
 					tuningArray = ( rico.instruments.current.multipleTunings === true ) ? rico.instruments.current.tuning[ +rico.instruments.current.tuningId ].tuning : rico.instruments.current.tuning,
 					where = rico.editingThisString + 6,
 					arr = [];
-				
+
 				arr.push( note, octave );
 				tuningArray.splice( where, 1, arr );
-				
-				tr.find('span.note-name').html( rico.whichNote( note ) + octave ).trigger('create');	
+
+				tr.find('span.note-name').html( rico.whichNote( note ) + octave ).trigger('create');
 				rico.editingThisString = '';
 				rico.thisStringNoteOctave	= [];
-				
-				
-				
+
+
+
 			});
-			
+
 		})
-		
+
 		.bind('pagehide', function(){
-		
+
 			$('#diapason-tuning-note-container', '#diapason-tuning-octave-container').empty();
 			$('#diapason-tuning-list').remove();
-			
-		});
-	
-	
 
-	
-	// Single or double diapasons	
+		});
+
+
+
+
+	// Single or double diapasons
 	$('#single-diapasons-page').bind('pageinit', function(){
 		$('.single-double-diapasons').live('change', function(){
 			var disVal = $(this).val();
@@ -1715,9 +1715,9 @@ $( function(){
 			});
 		});
 	});
-	
 
-	
+
+
 	// Alternate tunings
 	$('#dynamic-tuning')
 		.bind('pagebeforeshow', function(){
@@ -1772,7 +1772,7 @@ $( function(){
 		$('#tension-diameter-span').text( rico.unitDensity );
   	$('.tension-diameter').filter(':first').attr('checked', true).checkboxradio('refresh');
   	$('#radio-choice-2').attr('checked', false).checkboxradio('refresh');
-		
+
 	}).bind('pageinit', function calculactionsPageInit() {
 
 		$('#tension-diameter-input').bind('change', function getTensionDiameterInput() {
@@ -1783,12 +1783,12 @@ $( function(){
 		$('#calc-button').click( function () {
 			rico.doCalcs();
 		});
-		
+
   	$('.tension-diameter').bind('change', function() {
 
 			rico.tensionOrDiameter = $(this).val();
 			$('#tension-diameter-input').val('');
-			
+
 			if( rico.tensionOrDiameter === 'diameter' ) {
 				rico.calcHelper.tensDiam = rico.diameter;
 				$('#tension-diameter-span').text('mm');
@@ -1800,7 +1800,7 @@ $( function(){
   	});
 
 		$('#select-string').live('change', function selectString() {
-		
+
   		rico.calcHelper.currentString = +$(this).val();
 
   		if( rico.instruments.current.frettedCourses === undefined ) {
@@ -1834,17 +1834,17 @@ $( function(){
   		if( rico.calcHelper.tensDiam !== '' ) {
   			rico.doCalcs();
 			}
-			
+
 	  });
-	  
+
 	  $('#save-this-calculation').bind('click', function saveThisCalculation() {
 
 	  	if( $('#tension-diameter-input').val() != '' ) {
-	  
+
 		  	var saveResultsButton = '<a id="save-results-list" class="button">Save all results</a>',
 		  		table = '<table id="results-table"><thead><tr><th scope="col">string</th><th>tension</th><th>diameter</th><th>action</th></tr></thead><tbody></tbody></table>',
 		  		noteName;
-		  		
+
 		  	if( rico.instruments.current.multipleTunings === true ) {
 	  			noteName = rico.whichNote( rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][0] ) + rico.instruments.current.tuning[+rico.instruments.current.tuningId].tuning[rico.calcHelper.currentString][1];
 	  		} else {
@@ -1852,18 +1852,18 @@ $( function(){
 	  		}
 
 	  		var diam = (rico.calcHelper.showOctave === true) ? rico.diameter + '/' + rico.diameterOct : rico.diameter;
-	  		
+
 	  		var results = '<tr data-string="' + ( rico.calcHelper.currentString + 1 ) + '" data-tension="' + rico.tension + '" data-diameter="' + diam +  '"><td>' + ( rico.calcHelper.currentString + 1 ) + '</td><td>' + rico.tension + ' ' + rico.unitDensity + '</td>';
-		  	
+
 		  	results += '<td>' + diam + ' ' + rico.unitDiameter + '</td>';
 		  	results += '<td><a href="#" class="delete-results">delete</a></td></tr>';
-		  	
+
 		  	if( !$('#results-table').length ) {
 		  		$('#save-calcs-container').append( table );
 		  	}
-		  	
+
 		  	$('#results-table tbody').append( results ).trigger('create');
-		  	
+
 		  	if( !$('#save-results-list').length ) {
 		  		$('#save-calcs-container').append( saveResultsButton ).trigger('create');
 		  	}
@@ -1871,18 +1871,18 @@ $( function(){
 		  	rico.showSavedMessage($(this));
 
 		  }
-		  	
+
 	  });
-	  
+
 	  $('a.delete-results').live('click', function deleteResults() {
-	  
+
 	  	$(this).parent().parent().remove();
 	  	if( !$('#results-table tr').length <= 1 ) {
 	  		$('#save-calcs-container').empty().removeClass('pretty-bg');
 	  	}
-	  	
+
 	  });
-	  
+
 	  $('#save-results-list').live('click', function saveResultsList(){
 
 	  	var fullResults = {
@@ -1892,7 +1892,7 @@ $( function(){
 	  		pitch: rico.instruments.current.pitch,
 	  		results: []
 	  	};
-	  	
+
 	  	$.each( $('#results-table tr'), function(i){
 	  		var $this = $(this);
 	  		// First result is the table header!
@@ -1904,7 +1904,7 @@ $( function(){
 		  		};
 	  			fullResults.results.push( myVals );
 	  		}
-	  	
+
 	  	});
 	  	rico.resultsList.push( fullResults );
 	  	if( rico.isLocalStorage === true ) {
@@ -1914,11 +1914,11 @@ $( function(){
 	  	}
 
 		  rico.showSavedMessage($(this));
-	  	
+
 	  });
 
 	}).bind('pagehide', function removeHTMLonPageHide() {
-			
+
 		rico.calcHelper.tensDiam = '';
 		$('#container, #container2').remove();
 		$('.diameterResults, .tensionResults, #save-calcs-container').empty().removeClass('pretty-bg');
@@ -1928,7 +1928,7 @@ $( function(){
 
 
 
-	// Custom note shenannigans	
+	// Custom note shenannigans
 	$('#custom-note').bind('pagebeforecreate', function() {
 
 		rico.calcHelper = {
@@ -1948,192 +1948,5 @@ $( function(){
 		$('#calc-results').empty().removeClass('pretty-bg').css({ 'margin-top': 0 });
 	});
 
-
-
-	// List custom tunings page
-	// $('#custom-tunings-page').bind('pagebeforeshow', function customTuningsPageBeforeShow(){
-	// 	var
-	// 		cTblob = rico.addCustomTuningsToPage(),
-	// 		ct = $('<div id="ct-box" />'),
-	// 		createDeleteList = '<a data-role="button" data-icon="arrow-r" data-iconpos="right" id="create-custom-tuning-page-link" href="#">Create custom tuning</a>'
-	// 	;
-	// 	$('#custom-tunings-container').prepend( ct );
-	// 	ct.append( cTblob ).append( createDeleteList ).trigger('create');
-	// }).bind('pageinit', function(){
-	// 	$('.customTuning').live('vclick', function(){
-	// 		var disId = +$(this).attr('data-id');
-	// 		rico.instruments.current = rico.customTunings.tuningsArray[ disId ];
-	// 		rico.instruments.current.customTuningId = disId;
-	// 		rico.instruments.current.stringLength = ( rico.customTunings.tuningsArray[disId].stringLength !== false ) ? rico.customTunings.tuningsArray[disId].stringLength : 60;
-	// 		rico.instruments.current.dataName = 'customTuning';
-	// 		rico.instruments.current.yepTuning = 'false';
-	// 		rico.instruments.current.density = 1300;
-	// 		rico.instruments.current.material = 'gut';
-	// 		rico.instruments.current.pitch = 415;
-	// 		$.mobile.changePage( $('#options') );
-	// 	});
-	// 	$('#create-custom-tuning-page-link').live('vclick', function(e){
-	// 		e.preventDefault();
-	// 		rico.customTunings.editing = false;
-	// 		$.mobile.changePage( $('#create-custom-tuning-page') );
-	// 	});
-	// }).bind('pagehide', function(){
-	// 	$('#ct-box').remove();
-	// });
-	
-	
-	// Create / edit custom tunings page
-	// $('#create-custom-tuning-page').bind('pagebeforeshow', function(){
-	// 		rico.editingOneString = false;
-	// 		// We need to make sure that the relevant fields are empty if we've previously been viewing a custom tuning
-	// 		$('#customTuningName, #customTuningStringLength').val('');
-	// 		$('#custom-tuning-ol').empty();
-	// 		$('#save-custom-tuning, .saveDeleteButtons, #name-exists').remove();
-	// 		$('#custom-tuning-ol-container').removeClass('pretty-bg');
-	// 		if( rico.customTunings.editing === true ) {
-	// 			var
-	// 				current = rico.instruments.current,
-	// 				tuningName = current.name,
-	// 				stringLength = current.stringLength,
-	// 				tuning = current.tuning,
-	// 				tuningId = current.customTuningId,
-	// 				ol = $('#custom-tuning-ol'),
-	// 				saveDelButtons = '<fieldset class="ui-grid-a saveDeleteButtons">'
-	// 					+ '<div class="ui-block-a"><a data-role="button" data-iconpos="right" id="delete-custom-tuning" data-icon="delete" href="#">Delete</a></div>'
-	// 					+	'<div class="ui-block-b"><a data-role="button" data-iconpos="right" id="save-custom-tuning" data-icon="check" href="#">Save</a></div>'
-	// 				+ '</fieldset>'
-	// 			;
-	// 			$('#customTuningName').val( tuningName );
-	// 			$('#customTuningStringLength').val( stringLength );
-	// 			$('#custom-tuning-ol-container').addClass('pretty-bg').parent().append( saveDelButtons ).trigger('create');
-	// 			for( var i = 0, l = tuning.length; i < l; i++ ){
-	// 				var
-	// 					note = tuning[i][0],
-	// 					octave = tuning[i][1],
-	// 					li = '<li data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
-	// 				;
-	// 				ol.append( li ).trigger('create');
-	// 			}
-	// 			rico.customTunings.tempTuning.name = rico.instruments.current.name;
-	// 			rico.customTunings.tempTuning.stringLength = rico.instruments.current.stringLength;
-	// 		}
-	// 		// $('.whatUnit span').text( rico.unitLength );
-	// 		if( $('#cust-tuning-select-note').length === 0 ) {
-	// 			var
-	// 				noteBlob = rico.createNoteSelectList('cust-tuning-select-note'),
-	// 				octaveBlob = rico.createOctaveSelectList('cust-tuning-select-octave')
-	// 			;
-	// 			$('#cust-tuning-note-container').append( noteBlob ).trigger('create');
-	// 			$('#cust-tuning-octave-container').append( octaveBlob ).trigger('create');
-	// 			var noteSel = $('#cust-tuning-select-note');
-	// 			noteSel[0].selectedIndex = 0;
-	// 			var octSel = $('#cust-tuning-select-octave');
-	// 			octSel[0].selectedIndex = 4;
-	// 			noteSel.add( octSel ).selectmenu('refresh');
-	// 		}
-	// }).bind('pageinit', function(){
-	// 		// Bind vclick events to pageinit to stop them firing mulitple times.
-	// 		$('#customTuningName')
-	// 			.bind('change', function(){
-	// 				rico.customTunings.tempTuning.name = $(this).val();
-	// 			})
-	// 			.blur(function(){
-	// 				if( $('.noName').length ){
-	// 					$('.noName').remove();
-	// 				}
-	// 			})
-	// 		;
-	// 		$('#customTuningStringLength').bind('change', function(){
-	// 			rico.customTunings.tempTuning.stringLength = +$(this).val();
-	// 		});
-	// 		$('#add-custom-tuning-note').live('vclick', function(){
-	// 			var
-	// 				saveButton = '<a data-role="button" id="save-custom-tuning" data-icon="check" data-role="button" href="#">Save tuning</a>',
-	// 				note = +$('#cust-tuning-select-note').val(),
-	// 				octave = +$('#cust-tuning-select-octave').val(),
-	// 				ol = $('#custom-tuning-ol'),
-	// 				listNum = $('#custom-tuning-ol li').length + 1,
-	// 				li = '<li data-list-number="' + listNum + '" data-note="' + note + '" data-octave="' + octave + '"><span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a></li>'
-	// 			;
-	// 			if( rico.editingOneString === true ) {
-	// 				var listItem = $('#custom-tuning-ol li').eq( rico.editingThisString );
-	// 				listItem.attr('data-note', note).attr('data-octave', octave).html('<span class="note-name">' + rico.whichNote( note ) + octave + '</span> &nbsp;<a class="editLi" href="#">edit</a> <a class="deleteLi" href="#">remove</a>');
-	// 				ol.trigger('create');
-	// 				$('#add-custom-tuning-note').find('span').removeClass('ui-icon-check').addClass('ui-icon-plus');
-	// 				rico.editingOneString = false;
-	// 			} else {
-	// 				if( $('#save-custom-tuning').length === 0 ){
-	// 					$('#custom-tuning-ol-container').addClass('pretty-bg');
-	// 					$('#cust-tuning-help').before( saveButton );
-	// 					$('#create-custom-tuning-page').trigger('create');
-	// 				}
-	// 				ol.append( li ).trigger('create');
-	// 			}
-	// 		});
-	// 		$('.editLi').live('vclick', function(){
-	// 			rico.editingOneString = true;
-	// 			rico.editingThisString = $(this).parent().index();
-	// 			console.log( rico.editingThisString );
-	// 			$(this).parent().html('select a note above');
-	// 			$('#add-custom-tuning-note').find('span').removeClass('ui-icon-plus').addClass('ui-icon-check');
-	// 		});
-	// 		$('.deleteLi').live('vclick', function(){
-	// 			$(this).parent().remove();
-	// 		});
-	// 		$('#save-custom-tuning').live('vclick', function(){
-	// 			if( rico.customTunings.editing === false ) {
-	// 				for( var i = 0, l = rico.customTunings.tuningsArray.length; i < l; i++ ){	
-	// 					if( rico.customTunings.tempTuning.name === rico.customTunings.tuningsArray[i].name ){
-	// 						var nameExists = '<p id="name-exists">There is alrea	 a tuning called <strong>' + rico.customTunings.tempTuning.name + '</strong>. Please choose another name.</p>';
-	// 						$('#custom-tuning-ol-container').append( nameExists ).trigger('create');
-	// 						$('#customTuningName').val('').focus();
-	// 						return true;
-	// 					}
-	// 				}
-	// 			}
-	// 			if( rico.customTunings.tempTuning.name == '' ) {
-	// 				$('#customTuningName').focus();
-	// 			} else {
-	// 				var newTuning = {};
-	// 				newTuning.name = rico.customTunings.tempTuning.name;
-	// 				newTuning.stringLength = ( rico.customTunings.tempTuning.stringLength != '' ) ? rico.customTunings.tempTuning.stringLength : 60;
-	// 				newTuning.tuning = [];
-	// 				$.each( $('#custom-tuning-ol li'), function(){
-	// 					var noteOctave = [];
-	// 					noteOctave.push( +$(this).attr('data-note'), +$(this).attr('data-octave') );
-	// 					newTuning.tuning.push( noteOctave );
-	// 				});
-	// 				if( rico.customTunings.editing === true ) {
-	// 					rico.customTunings.tuningsArray[ rico.instruments.current.customTuningId ] = newTuning;
-	// 				} else {
-	// 					rico.customTunings.tuningsArray.push( newTuning );
-	// 				}
-	// 				localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
-	// 				// Reset all the temp tunings properties.
-	// 				rico.customTunings.tempTuning.name = '';
-	// 				rico.customTunings.tempTuning.stringLength = '';
-	// 				rico.customTunings.tempTuning.tuning = [];
-	// 				$('#name-exists').remove();
-	// 				$.mobile.changePage( $('#custom-tunings-page'), {
-	// 					reverse: true
-	// 				});
-	// 			}
-	// 		});
-	// 		$('#delete-custom-tuning').live('vclick', function(){
-	// 			// Id of the tuning we're editing
-	// 			rico.customTunings.tuningsArray.splice( rico.instruments.current.customTuningId, 1 );
-	// 			localStorage.customTunings = JSON.stringify( rico.customTunings.tuningsArray );
-	// 			$.mobile.changePage( $('#custom-tunings-page'), {
-	// 				reverse: true
-	// 			});
-	// 		});
-	// });
-
-	
- 	/* Edit custom tunings */
-	
-	// $('#edit-current-custom-tuning-page').bind('pagehide', function(){
-	// 	$('#edit-current-container').empty();
-	// });
 
 });
