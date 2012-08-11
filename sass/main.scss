@@ -1,4 +1,5 @@
 @import "compass";
+@import "jquerymobile";
 
 $blue: #2489CE;
 
@@ -27,9 +28,11 @@ h1, h2, h3 {
 	background: #333;
 	@include background-image(linear-gradient(#2A2A2A, #444));
 	color: #fff;
-	.ui-btn {
+	.ui-btn,
+	.ui-btn-right,
+	.ui-btn-left {
 		@include border-radius(18px);
-		@include box-shadow(0 0 4px rgba(255,255,255,0.5));
+		@include box-shadow(0 0 4px rgba(#fff, 0.5));
 		background: #111;
 		top: 12px;
 		&.ui-btn-down-a {
@@ -45,21 +48,21 @@ h1, h2, h3 {
 	background: url(images/icons-18-white.png) no-repeat 0 0;
 }
 
-.ui-icon-back {
-	background-position: -397px 1px;
+.back-button,
+.home-button {
+	text-indent: -9999px;
+	width: 18px;
+	height: 18px;
 }
 
-.ui-icon-home {
-	background-position: -576px 0;
+.back-button {
+	background: url(images/icons-18-white.png) no-repeat -397px 1px !important;
+	margin-left: 10px;
 }
 
-.ui-header {
-	.ui-btn-left {
-		left: 15px;
-	}
-	.ui-btn-right {
-		right: 15px;
-	}
+.home-button {
+	background: url(images/icons-18-white.png) no-repeat -576px 0 !important;
+	margin-right: 10px;
 }
 
 .styleCustomTuningHeader > h2 {
@@ -119,7 +122,7 @@ input.nicelySpaced.ui-input-text {
 	}
 	&.skoot {
 		opacity: 0;
-		height: 0;	
+		height: 0;
 	}
 }
 
@@ -173,7 +176,7 @@ a.ui-slider-handle {
 @media all and (min-width: 480px){
 	label.ui-slider { display: inline-block;  width: 20%;  margin: 0 2% 0 0; }
 	div.ui-slider { width: 45%; }
-}	
+}
 
 div.ui-slider-switch { height: 32px;  overflow: hidden; margin-left: 0; }
 div.ui-slider-inneroffset { margin-left: 50%; position: absolute; top: 1px; height: 100%; width: 50%; }
