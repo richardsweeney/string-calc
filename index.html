@@ -15,12 +15,11 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-		<link rel="stylesheet" href="css/jquery.mobile.1.1.0.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<script src="js/jquery.1.7.1.js"></script>
-		<script src="js/stringCalc.js"></script>
-		<script src="js/jquery.mobile.1.1.0.js"></script>
+		<script src="js/string.calc.min.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
 
 	</head>
 
@@ -54,132 +53,132 @@
 
 
 		<!-- Instrument lists page -->
-		
-		<div data-role="page" id="instrument-lists-page" dataprefech>
-	
-			<div data-role="header">			
-				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+
+		<div data-role="page" id="instrument-lists-page">
+
+			<div data-role="header">
+				<a href="#index" data-direction="reverse" class="back-button">Back</a>
 				<h1>Select an instrument</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content" id="instrument-list-container" class="iOSlist-container"></div>
-					
+
 		</div>
 
 
 		<!-- Options -->
 
 		<div data-role="page" id="options" dataprefech>
-		
+
 			<div data-role="header" class="header">
-				<a id="options-page-back-link" href="#instrument-lists-page" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a id="options-page-back-link" href="#instrument-lists-page" data-direction="reverse" class="back-button">Back</a>
 				<h1 id="options-title"></h1>
-				<a id="home-link" href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a id="home-link" href="#index" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" id="optionsContent" class="iOSlist-container"></div>
-			
+
 		</div>
 
 
 		<!-- Custom instruments / tunings page -->
-				
+
 <!-- 		<div data-role="page" id="custom-tunings-page">
-	
+
 			<div data-role="header">
-				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a href="#index" data-direction="reverse" class="back-button">Back</a>
 				<h1>Custom Tunings</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content" id="custom-tunings-container" class="iOSlist-container"></div>
-			
+
 		</div> -->
 
 
 		<!-- Saved results page -->
-				
+
 		<div data-role="page" id="saved-results-page">
-	
+
 			<div data-role="header">
-				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a href="#index" data-direction="reverse" class="back-button">Back</a>
 				<h1>Saved Results</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content" id="saved-results-container" class="iOSlist-container"></div>
-			
+
 		</div>
 
 
 		<!-- Individual results page -->
-				
+
 		<div data-role="page" id="individual-results-page">
-	
+
 			<div data-role="header">
-				<a href="#saved-results-page" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a href="#saved-results-page" class="back-button">Back</a>
 				<h1 class="page-header">Saved Results</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-			
+
 				<div id="individual-results-container"></div>
-				
+
 				<a id="delete-these-results" class="button" href="#">Delete results</a>
-								
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Edit Custom instruments / tunings page -->
-				
+
 <!-- 		<div data-role="page" id="edit-custom-tunings-page">
-	
+
 			<div data-role="header">
-				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Edit Custom Tunings</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content" id="edit-custom-daddy">
-		
+
 			  <div id="edit-custom-container" data-role="collapsible-set"></div>
-								
+
 			</div>
-					
+
 		</div> -->
 
 
 		<!-- Edit Current instrument tuning page -->
-				
+
 <!-- 		<div data-role="page" id="edit-current-custom-tuning-page">
-		
+
 			<div data-role="header">
 				<h1>Edit Custom Tuning</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" class="container">
-			
+
 				<div data-role="fieldcontain">
-				
+
 					<label for="editCustomTuningName">Enter a name for the instrument / tuning</label>
 						<input type="text" id="editCustomTuningName" name="customTuningName"  />
-					
+
 					<label class="whatUnit" for="editCustomTuningStringLength">Enter a string length (in <span></span>) *</label>
 						<input type="number" id="editCustomTuningStringLength"  />
-											
+
 					<p>Enter a note in the format <strong>A4</strong>. Start with the highest (top) string</p>
-			    
+
 			    <div id="edit-current-container"></div>
-				     	
+
 					<a class="button addNewNote" class="button">Add another string</a>
-				
+
 				</div>
-				
+
 				<fieldset class="ui-grid-a">
 					<div class="ui-block-a">
 						<a class="button cancelCustomTuning">Cancel</a>
@@ -188,70 +187,70 @@
 						<a class="button" id="editCustomTuning">Save</a>
 					</div>
 				</fieldset>
-				
+
 			</div>
-		
+
 		</div> -->
 
 
 		<!-- Settings page -->
-		
+
 		<div data-role="page" id="settings">
-		
+
 			<div data-role="header">
-				
-				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Settings</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
-			
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
+
 			</div>
-			
+
 			<div data-role="content">
-		
+
 				<div data-role="fieldcontain">
-				
+
 					<fieldset data-role="controlgroup">
-						
+
 						<label for="metric">Metric</label>
 		       		<input class="metric" type="radio" name="metric" data-key="metric" id="metric" value="metric" />
 
-		       <label for="imperial">Imperial *</label>		
+		       <label for="imperial">Imperial *</label>
 		       		<input class="metric" type="radio" name="metric" data-key="metric" id="imperial" value="imperial" />
-							
+
 					</fieldset>
-				
+
 				</div>
-				
+
 				<p>* Custom densities must be given in kg/m&sup3;</p>
-			
+
 			</div>
-			
+
 		</div>
 
 
 
-		<!-- pitch -->		
+		<!-- pitch -->
 
 		<div data-role="page" id="pitch">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Select Pitch</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content">
-		
+
 				<div data-role="fieldcontain" id="pitch-container"></div>
-					
+
 				<div data-role="field contain" class="quickChange">
 					<input id="customPitch" type="number" name="pitch" data-key="pitch"  placeholder="Enter any pitch in Hz" />
 				</div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-				
+
 			</div>
-		
+
 		</div>
 
 
@@ -261,72 +260,72 @@
 		<div data-role="page" id="material">
 
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Materials</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content">
-		
+
 				<div data-role="fieldcontain" id="material-container"></div>
-					
+
 				<div data-role="field contain">
 					<input id="customDensity" type="number" name="density" data-key="density"  placeholder="Enter any density in kg/m&sup3;" />
 				</div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-				
+
 			</div>
-		
+
 		</div>
 
 
 
-		<!-- String Length -->		
+		<!-- String Length -->
 
 		<div data-role="page" id="string-length">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>String Length</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-			
+
 				<div id="string-length-container"></div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-				
+
 				<p>* The string length or <em>'scale length'</em> is the measured as the distance between the nut and the bridge on an instrument.</p>
 				<p>The provided measurements are averages only. For more accurate results it's recommended that you take your own measurements.</p>
-		
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Get number of courses for various pluckers -->
 
 		<div data-role="page" id="number-courses">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Number of courses</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-		
+
 				<div data-role="fieldcontain" id="num-courses-div">
 					<label for="num-courses">Number of courses</label>
 						<input type="range" id="num-courses" />
 				</div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-		
+
 			</div>
-			
+
 		</div>
 
 
@@ -334,39 +333,39 @@
 		<!-- Get number of fretted courses for archlutes and theorboes -->
 
 		<div data-role="page" id="number-fretted-courses">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Fretted Courses</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-		
+
 				<div data-role="fieldcontain" class="clearfix">
 					<label for="frettedCourses">Number of fretted courses</label>
 					<input type="range" class="frettedCourses" id="frettedCourses" data-key="frettedCourses"  min="0" max="16" />
 				</div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-		
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Get number of octave courses for lutes &co. -->
 
 		<div data-role="page" id="octave-courses">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Fretted Courses</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-			
+
 				<div data-role="fieldcontain" id="octave-courses-container">
 					<label id="labLab" for="octaveCourses">Show octave stringing from course:</label>
 					<input type="range" class="octaveCourses" id="octaveCourses" data-key="octaveCourses" />
@@ -380,26 +379,26 @@
 	         	<label for="no-octaves">Don't show octave courses</label>
 	        </fieldset>
 	      </div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-		
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Tunings for the diapasons. -->
 
 <!-- 		<div data-role="page" id="diapason-tuning">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Diapason tuning</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-		
+
 			<div data-role="content">
-				
+
 				<fieldset class="pretty-bg custom-select-pitch-container">
 					<div id="diapason-show-hide">
 						<div class="cnc" id="diapason-tuning-note-container"></div>
@@ -410,22 +409,22 @@
 					</div>
 					<div class="clear" id="diapason-tuning-container"></div>
 				</fieldset>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-		
+
 			</div>
-			
+
 		</div> -->
 
 
 		<!-- Select single or double courses for diapason strings. -->
 
 		<div data-role="page" id="single-diapasons-page">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Diapasons</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
 
 			<div data-role="content">
@@ -438,44 +437,44 @@
 	         	<label for="double-diapasons">Double courses</label>
 	        </fieldset>
 	      </div>
-				
+
 				<a class="button" data-rel="back">Ok</a>
-		
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Dynamic tunings page template -->
 
 		<div data-role="page" id="dynamic-tuning">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Select Tuning</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" id="tunings-container">
-				
+
 				<a class="button" data-rel="back">Ok</a>
-				
+
 			</div>
-		
+
 		</div>
 
 
 
 		<!-- Calculation Page template -->
-		
+
 		<div data-cache="false" data-role="page" id="calculations-page">
-		
+
 			<div data-role="header">
-				<a href="#options" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1 id="instrument-name"></h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" class="content calcsContainer">
 
 				<div id="selectBox"></div>
@@ -500,15 +499,15 @@
 	      </div>
 
 				<div class="clear"></div>
-				
+
 	      <div id="calc-results"></div>
-	      
+
 	      <a id="save-this-calculation" class="button">Save this calculation</a>
-	      
+
 	      <div id="save-calcs-container"></div>
-	      
+
 <!-- 	      <div class="iOSlist-container">
-				
+
 					<ul data-role="none">
 						<li><a href="#custom-note">Calculate custom note</a></li>
 					</ul>
@@ -525,13 +524,13 @@
 		<div data-role="page" id="custom-note">
 
 			<div data-role="header">
-				<a data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Choose a note</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" class="cust-calcs-container">
-			
+
 				<input type="text" name="custom-note-name" id="custom-note-name" />
 
 				<div data-role="fieldcontain" class="lessPad">
@@ -554,18 +553,18 @@
 	      </div>
 
 				<div class="clear"></div>
-				
+
 	      <div id="calc-results"></div>
-	      
+
 	      <a id="save-this-calculation" class="button">Save this calculation</a>
-	      
+
 	      <div id="save-calcs-container"></div>
-	      
+
 	      <p>Select a note and octave from above to perform a custom calculation. You can use the chart below to help you calculate the correct notation for the pitch you're looking for.</p>
-				<img class="nice-img" src="images/pitch.png" alt="pitch notation">				
-			
+				<img class="nice-img" src="images/pitch.png" alt="pitch notation">
+
 			</div>
-		
+
 		</div>
 
 
@@ -574,20 +573,20 @@
 		<!-- Custom tuning page template -->
 
 		<div data-role="page" id="create-custom-tuning-page">
-		
+
 			<div data-role="header">
-				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Create custom tuning</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content" id="create-custom-tuning-container">
-			
+
 				<div data-role="fieldcontain">
 					<input class="nicelySpaced customTuningName" type="text" id="customTuningName"  placeholder="Name of the instrument/tuning">
 					<input class="nicelySpaced customTuningStringLength" type="number" id="customTuningStringLength"  placeholder="String length (optional)">
 				</div>
-				
+
 				<fieldset class="pretty-bg custom-select-pitch-container">
 					<div class="cnc" id="cust-tuning-note-container"></div>
 					<div class="cnc" id="cust-tuning-octave-container"></div>
@@ -595,18 +594,18 @@
 						<a data-role="button" data-icon="plus" id="add-custom-tuning-note" data-iconpos="notext">Add note</a>
 					</div>
 				</fieldset>
-				
+
 				<div id="custom-tuning-ol-container">
-				
+
 					<ol id="custom-tuning-ol"></ol>
-					
+
 				</div>
-		      
+
 	      <p id="cust-tuning-help">Select a note and octave from above and click the plus symbol to add the note to your tuning. You can use the chart below to help you calculate the correct notation for the pitch you're looking for.</p>
 				<img class="nice-img" src="images/pitch.png" alt="pitch notation">
-				
+
 			</div>
-		
+
 		</div>
 
 
@@ -614,98 +613,95 @@
 		<!-- About page -->
 
 		<div data-role="page" id="about">
-		
+
 			<div data-role="header">
-				<a href="#index" data-direction="reverse" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>About</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content">
-		
+
 				<p><strong>StringCalc</strong> was designed and built by Richard Sweeney in Malm&ouml;, Sweden.</p>
 				<p>The formulae to calculate tension &amp; diameter were generously shared by Arto Wikla whose online String Calculator (that I've been using for years!) was the inspiration behind this app.</p>
-			
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Calcultation help template -->
 
 		<div data-role="page" id="calculation-help">
-		
+
 			<div data-role="header">
-				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Calculations help</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
-			
+
 			<div data-role="content">
-			
+
 				<p>In order to calculate the <strong>tension</strong> of a string you need to know first the <strong>diameter</strong> of the string, or vice versa. Here's a couple of examples to help you get your head around this.</p>
-			
+
 				<h3>Calculating the tension</h3>
-				
+
 				<p><strong>Example 1:</strong> Calculate the tension of the top string on a lute in kg.</p>
-				
+
 				<p>The highest pitched string on a lute usually has a diameter of around <strong>.44 mm</strong>. Click on the first string and type <strong>44</strong> in the text field that appears (leave out the decimal point and unit of measurement). Click <strong>Calculate Tension</strong> to perform the calculation.</p>
 				<p><strong>Example 2:</strong> Calculate the tension of the top string on a guitar in lbs.</p>
-				
+
 				<p>Let's say the highest string on my guitar is <strong>0.028 inches</strong> in diameter. Click on the first string and just enter <strong>0.028</strong> in the text field. Click <strong>Calculate Tension</strong> to get the tension.</p>
-				
+
 				<hr>
-				
+
 				<h3>Calculating the diameter</h3>
-				
+
 				<p><strong>Example 1:</strong> Calculate the diameter of the e string on a baroque violin in mm.</p>
-				
+
 				<p>Let's say I want to find out how thick a string should use at a a tension of <strong>6 kg</strong>. Click on the first string and enter the number <strong>6</strong> in the text field (you can leave out the kg). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-				
+
 				<p><strong>Example 2:</strong> Calculate the diameter of the top string on a ukulele in inches.</p>
-				
+
 				<p>I want my uke's top string to have a tension of <strong>8 lbs</strong>. Click on the first string and enter the number <strong>8</strong> in the text field (you can leave out the lbs). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-				
+
 			</div>
-			
+
 		</div>
 
 
 		<!-- Custom tone help template -->
 
 		<div data-role="page" id="custom-tone-help">
-		
-			<div data-role="header">
-				<a data-rel="back" data-icon="back" class="ui-btn-left" data-iconpos="notext">Back</a>
-				<h1>Custom note help</h1>
-				<a href="#index" data-direction="reverse" data-icon="home" class="ui-btn-right" data-iconpos="notext">Home</a>
-			</div>
-			
-			<div data-role="content">
-			
-				<p>On this page you can enter any note and calculate either the diameter or tension. This is useful if you only need to retune one or two of your strings and don't want to add an entire custom tuning.</p>
-				
-				<p>You must enter the tone using 'scientific' pitch notation (in the format <strong>A4</strong>, <strong>C3</strong> etc). Use the following chart to help you to figure this out what pitch you need.</p>
-				
-				<img class="nice-img" src="images/pitch.png" alt="image of pitches">
-				
-			</div>
-			
-		</div>
-		<script type="text/javascript">
 
+			<div data-role="header">
+				<a data-rel="back" class="back-button">Back</a>
+				<h1>Custom note help</h1>
+				<a href="#index" data-direction="reverse" class="home-button">Home</a>
+			</div>
+
+			<div data-role="content">
+
+				<p>On this page you can enter any note and calculate either the diameter or tension. This is useful if you only need to retune one or two of your strings and don't want to add an entire custom tuning.</p>
+
+				<p>You must enter the tone using 'scientific' pitch notation (in the format <strong>A4</strong>, <strong>C3</strong> etc). Use the following chart to help you to figure this out what pitch you need.</p>
+
+				<img class="nice-img" src="images/pitch.png" alt="image of pitches">
+
+			</div>
+
+		</div>
+		<script>
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-32923519-1']);
 		  _gaq.push(['_trackPageview']);
-
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-
 		</script>
 
 	</body>
-	
+
 </html>
