@@ -57,7 +57,7 @@
 		<div data-role="page" id="instrument-lists-page">
 
 			<div data-role="header">
-				<a href="#index" data-direction="reverse" class="back-button">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Select an instrument</h1>
 				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
@@ -72,7 +72,7 @@
 		<div data-role="page" id="options" dataprefech>
 
 			<div data-role="header" class="header">
-				<a id="options-page-back-link" href="#instrument-lists-page" data-direction="reverse" class="back-button">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1 id="options-title"></h1>
 				<a id="home-link" href="#index" class="home-button">Home</a>
 			</div>
@@ -82,27 +82,13 @@
 		</div>
 
 
-		<!-- Custom instruments / tunings page -->
-
-<!-- 		<div data-role="page" id="custom-tunings-page">
-
-			<div data-role="header">
-				<a href="#index" data-direction="reverse" class="back-button">Back</a>
-				<h1>Custom Tunings</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content" id="custom-tunings-container" class="iOSlist-container"></div>
-
-		</div> -->
-
 
 		<!-- Saved results page -->
 
 		<div data-role="page" id="saved-results-page">
 
 			<div data-role="header">
-				<a href="#index" data-direction="reverse" class="back-button">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1>Saved Results</h1>
 				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
@@ -117,7 +103,7 @@
 		<div data-role="page" id="individual-results-page">
 
 			<div data-role="header">
-				<a href="#saved-results-page" class="back-button">Back</a>
+				<a data-rel="back" class="back-button">Back</a>
 				<h1 class="page-header">Saved Results</h1>
 				<a href="#index" data-direction="reverse" class="home-button">Home</a>
 			</div>
@@ -131,66 +117,6 @@
 			</div>
 
 		</div>
-
-
-		<!-- Edit Custom instruments / tunings page -->
-
-<!-- 		<div data-role="page" id="edit-custom-tunings-page">
-
-			<div data-role="header">
-				<a data-rel="back" class="back-button">Back</a>
-				<h1>Edit Custom Tunings</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content" id="edit-custom-daddy">
-
-			  <div id="edit-custom-container" data-role="collapsible-set"></div>
-
-			</div>
-
-		</div> -->
-
-
-		<!-- Edit Current instrument tuning page -->
-
-<!-- 		<div data-role="page" id="edit-current-custom-tuning-page">
-
-			<div data-role="header">
-				<h1>Edit Custom Tuning</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content" class="container">
-
-				<div data-role="fieldcontain">
-
-					<label for="editCustomTuningName">Enter a name for the instrument / tuning</label>
-						<input type="text" id="editCustomTuningName" name="customTuningName"  />
-
-					<label class="whatUnit" for="editCustomTuningStringLength">Enter a string length (in <span></span>) *</label>
-						<input type="number" id="editCustomTuningStringLength"  />
-
-					<p>Enter a note in the format <strong>A4</strong>. Start with the highest (top) string</p>
-
-			    <div id="edit-current-container"></div>
-
-					<a class="button addNewNote" class="button">Add another string</a>
-
-				</div>
-
-				<fieldset class="ui-grid-a">
-					<div class="ui-block-a">
-						<a class="button cancelCustomTuning">Cancel</a>
-					</div>
-					<div class="ui-block-b">
-						<a class="button" id="editCustomTuning">Save</a>
-					</div>
-				</fieldset>
-
-			</div>
-
-		</div> -->
 
 
 		<!-- Settings page -->
@@ -387,35 +313,6 @@
 		</div>
 
 
-		<!-- Tunings for the diapasons. -->
-
-<!-- 		<div data-role="page" id="diapason-tuning">
-
-			<div data-role="header">
-				<a data-rel="back" class="back-button">Back</a>
-				<h1>Diapason tuning</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content">
-
-				<fieldset class="pretty-bg custom-select-pitch-container">
-					<div id="diapason-show-hide">
-						<div class="cnc" id="diapason-tuning-note-container"></div>
-						<div class="cnc" id="diapason-tuning-octave-container"></div>
-						<div class="cust-desc">
-							<a href="#">Ok</a>
-						</div>
-					</div>
-					<div class="clear" id="diapason-tuning-container"></div>
-				</fieldset>
-
-				<a class="button" data-rel="back">Ok</a>
-
-			</div>
-
-		</div> -->
-
 
 		<!-- Select single or double courses for diapason strings. -->
 
@@ -505,14 +402,6 @@
 	      <a id="save-this-calculation" class="button">Save this calculation</a>
 
 	      <div id="save-calcs-container"></div>
-
-<!-- 	      <div class="iOSlist-container">
-
-					<ul data-role="none">
-						<li><a href="#custom-note">Calculate custom note</a></li>
-					</ul>
-
-				</div> -->
 
 			</div>
 
@@ -630,67 +519,6 @@
 		</div>
 
 
-		<!-- Calcultation help template -->
-
-		<div data-role="page" id="calculation-help">
-
-			<div data-role="header">
-				<a data-rel="back" class="back-button">Back</a>
-				<h1>Calculations help</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content">
-
-				<p>In order to calculate the <strong>tension</strong> of a string you need to know first the <strong>diameter</strong> of the string, or vice versa. Here's a couple of examples to help you get your head around this.</p>
-
-				<h3>Calculating the tension</h3>
-
-				<p><strong>Example 1:</strong> Calculate the tension of the top string on a lute in kg.</p>
-
-				<p>The highest pitched string on a lute usually has a diameter of around <strong>.44 mm</strong>. Click on the first string and type <strong>44</strong> in the text field that appears (leave out the decimal point and unit of measurement). Click <strong>Calculate Tension</strong> to perform the calculation.</p>
-				<p><strong>Example 2:</strong> Calculate the tension of the top string on a guitar in lbs.</p>
-
-				<p>Let's say the highest string on my guitar is <strong>0.028 inches</strong> in diameter. Click on the first string and just enter <strong>0.028</strong> in the text field. Click <strong>Calculate Tension</strong> to get the tension.</p>
-
-				<hr>
-
-				<h3>Calculating the diameter</h3>
-
-				<p><strong>Example 1:</strong> Calculate the diameter of the e string on a baroque violin in mm.</p>
-
-				<p>Let's say I want to find out how thick a string should use at a a tension of <strong>6 kg</strong>. Click on the first string and enter the number <strong>6</strong> in the text field (you can leave out the kg). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-
-				<p><strong>Example 2:</strong> Calculate the diameter of the top string on a ukulele in inches.</p>
-
-				<p>I want my uke's top string to have a tension of <strong>8 lbs</strong>. Click on the first string and enter the number <strong>8</strong> in the text field (you can leave out the lbs). Click <strong>Calculate Diameter</strong> to perform the calculation.</p>
-
-			</div>
-
-		</div>
-
-
-		<!-- Custom tone help template -->
-
-		<div data-role="page" id="custom-tone-help">
-
-			<div data-role="header">
-				<a data-rel="back" class="back-button">Back</a>
-				<h1>Custom note help</h1>
-				<a href="#index" data-direction="reverse" class="home-button">Home</a>
-			</div>
-
-			<div data-role="content">
-
-				<p>On this page you can enter any note and calculate either the diameter or tension. This is useful if you only need to retune one or two of your strings and don't want to add an entire custom tuning.</p>
-
-				<p>You must enter the tone using 'scientific' pitch notation (in the format <strong>A4</strong>, <strong>C3</strong> etc). Use the following chart to help you to figure this out what pitch you need.</p>
-
-				<img class="nice-img" src="images/pitch.png" alt="image of pitches">
-
-			</div>
-
-		</div>
 		<script>
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-32923519-1']);
